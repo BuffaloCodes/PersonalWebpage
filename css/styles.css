@@ -1,0 +1,89 @@
+/* Base */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+.navbar-left { display: flex; align-items: center; gap: 0.5rem; }
+.navbar-left img { height: 40px; width: 40px; }
+.navbar-left span { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2px; }
+.navbar-right a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.navbar-right a:hover { color: #0645ad; }
+
+/* Page container */
+.container {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 0 2rem;
+}
+
+/* Home layout */
+.home-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+.home-photo img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 8px;
+}
+.home-about h1 { margin-top: 0; }
+
+/* Section headers on inner pages */
+.page-title {
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Reusable blocks */
+.card {
+  padding: 1rem 1.25rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #fff;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* Footer (optional, add later if you want) */
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Basic responsive tweak */
+@media (max-width: 800px) {
+  .home-layout { grid-template-columns: 1fr; }
+  .navbar { padding: 0.75rem 1rem; }
+  .container { padding: 0 1rem; }
+}
