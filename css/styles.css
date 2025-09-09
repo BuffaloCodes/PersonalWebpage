@@ -1,3 +1,11 @@
+/* GLOBAL STYLES */
+body {
+  background-color: #f0f0f0;   /* page background */
+  color: #000000;              /* default text color */
+  font-family: 'Helvetica Neue', Arial, sans-serif;  /* font family */
+  font-size: 16px;             /* base font size */
+  line-height: 1.6;            /* line spacing */
+}
 /* Base */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
