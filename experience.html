@@ -6,57 +6,49 @@
   <title>Pierce A. Wallar — Experience</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://buffalocodes.github.io/PersonalWebpage/experience.html">
   <meta name="robots" content="index, follow">
-
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-left">
-    <img src="assets/logo.png" alt="Logo">
-    <span>Pierce A. Wallar</span>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="assets/logo.png" alt="Logo">
+      <span>Pierce A. Wallar</span>
+    </div>
+    <div class="navbar-right">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="bookshelf.html">Bookshelf</a>
+      <a href="contact.html">Contact</a>
+      <button class="search-btn" id="openSearch" aria-label="Search">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="search-modal" id="searchModal" aria-hidden="true">
+    <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+      <h2 id="searchTitle">Search this site</h2>
+      <form id="siteSearchForm" class="search-row" role="search">
+        <input id="q" name="q" type="search" placeholder="Type and press Enter" aria-label="Search">
+        <button type="submit">Search</button>
+        <button type="button" class="search-close" id="closeSearch" aria-label="Close">Close</button>
+      </form>
+    </div>
   </div>
-  <div class="navbar-right">
-    <a href="index.html">Home</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="bookshelf.html">Bookshelf</a>
-    <a href="contact.html">Contact</a>
-
-    <!-- Search button -->
-    <button class="search-btn" id="openSearch" aria-label="Search">
-      <!-- inline SVG magnifier -->
-      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
-        <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
-      </svg>
-    </button>
-  </div>
-</nav>
-<!-- Search modal -->
-<div class="search-modal" id="searchModal" aria-hidden="true">
-  <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
-    <h2 id="searchTitle">Search this site</h2>
-    <form id="siteSearchForm" class="search-row" role="search">
-      <input id="q" name="q" type="search" placeholder="Type and press Enter" aria-label="Search">
-      <button type="submit">Search</button>
-      <button type="button" class="search-close" id="closeSearch" aria-label="Close">Close</button>
-    </form>
-  </div>
-</div>
-
-
   <main class="container">
     <h1 class="page-title">Experience</h1>
-
     <section class="card" style="margin-bottom: 1rem;">
       <h2>Gordian</h2>
-      <p><strong>Account Manager, Facilities Assessments and Capital Planning</strong><br />Jan 2024 to Jun 2025</p>
+      <p><strong>Account Manager, Facilities Assessments and Capital Planning</strong><br>Jan 2024 to Jun 2025</p>
       <ul>
         <li>Managed large scale facility assessments across multiple sectors and supported capital planning outcomes.</li>
         <li>Partnered with cross functional teams to deliver portfolio analysis and data quality improvements.</li>
       </ul>
     </section>
-
     <section class="card" style="margin-bottom: 1rem;">
       <h2>United States Army</h2>
       <p><strong>Logistics Officer, Deputy Group Engineer, Executive Officer</strong></p>
@@ -65,63 +57,111 @@
         <li>Drove process improvement, risk reduction, and readiness through structured planning and execution.</li>
       </ul>
     </section>
-
     <section class="card">
       <h2>Education</h2>
       <p><strong>University of Oklahoma</strong> MBA</p>
     </section>
   </main>
-<script>
-  // Set these to match your live site
-  // Example for https://buffalocodes.github.io/PersonalWebpage/
-  const SITE_HOST = "buffalocodes.github.io";  // root host only
-  const SITE_PATH = "/PersonalWebpage";        // repo path starting with a slash
-
-  // Grab elements
-  const openBtn = document.getElementById("openSearch");
-  const modal = document.getElementById("searchModal");
-  const closeBtn = document.getElementById("closeSearch");
-  const input = document.getElementById("q");
-  const form = document.getElementById("siteSearchForm");
-
-  // Open and close helpers
-  function openModal() {
-    modal.classList.add("open");
-    modal.setAttribute("aria-hidden", "false");
-    setTimeout(() => input && input.focus(), 50);
-  }
-  function closeModal() {
-    modal.classList.remove("open");
-    modal.setAttribute("aria-hidden", "true");
-    if (openBtn) openBtn.focus();
-  }
-
-  // Wire events
-  if (openBtn) openBtn.addEventListener("click", openModal);
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
-  if (modal) modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
-
-  // Submit handler routes to a web search scoped to your site
-  if (form) form.addEventListener("submit", e => {
-    e.preventDefault();
-    const q = (input && input.value || "").trim();
-    if (!q) return;
-
-    // DuckDuckGo
-    const url = "https://duckduckgo.com/?q=" + encodeURIComponent(
-      `site:${SITE_HOST} inurl:${SITE_PATH} ${q}`
-    );
-
-    // If you prefer Google, comment the line above and use this:
-    // const url = "https://www.google.com/search?q=" + encodeURIComponent(
-    //   `site:${SITE_HOST} inurl:${SITE_PATH} ${q}`
-    // );
-
-    window.location.href = url;
-  });
-</script>
-
-
+  <script>
+    const SITE_HOST = "buffalocodes.github.io";
+    const SITE_PATH = "PersonalWebpage";
+    const PAGES = [
+      { title: "Home", url: "index.html" },
+      { title: "Experience", url: "experience.html" },
+      { title: "Projects", url: "projects.html" },
+      { title: "Bookshelf", url: "bookshelf.html" },
+      { title: "Contact", url: "contact.html" }
+    ];
+    const openBtn = document.getElementById("openSearch");
+    const modal = document.getElementById("searchModal");
+    const closeBtn = document.getElementById("closeSearch");
+    const input = document.getElementById("q");
+    const form = document.getElementById("siteSearchForm");
+    function openModal() {
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      setTimeout(() => input && input.focus(), 50);
+    }
+    function closeModal() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      if (openBtn) openBtn.focus();
+    }
+    if (openBtn) openBtn.addEventListener("click", openModal);
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (modal) modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+    function ensureResultsContainer() {
+      const panel = document.querySelector(".search-panel");
+      let box = panel.querySelector(".results");
+      if (!box) {
+        box = document.createElement("div");
+        box.className = "results";
+        panel.appendChild(box);
+      }
+      return box;
+    }
+    async function fetchText(url) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (!res.ok) return "";
+        const html = await res.text();
+        const tmp = document.createElement("div");
+        tmp.innerHTML = html;
+        return tmp.textContent || "";
+      } catch {
+        return "";
+      }
+    }
+    async function localSearch(query) {
+      const q = query.toLowerCase();
+      const results = [];
+      for (const page of PAGES) {
+        const text = await fetchText(page.url);
+        const hay = (page.title + " " + text).toLowerCase();
+        let score = 0;
+        if (hay.includes(q)) score = 2;
+        else q.split(/\s+/).forEach(w => { if (w && hay.includes(w)) score += 1; });
+        if (score > 0) results.push({ ...page, score });
+      }
+      results.sort((a, b) => b.score - a.score);
+      return results.slice(0, 10);
+    }
+    function googleUrl(query) {
+      const webQ = `site:${SITE_HOST} inurl:${SITE_PATH} ${query}`;
+      return "https://www.google.com/search?q=" + encodeURIComponent(webQ);
+    }
+    async function showLocalResults(query) {
+      const box = ensureResultsContainer();
+      box.innerHTML = "<p>Searching this site…</p>";
+      const results = await localSearch(query);
+      if (!results.length) {
+        box.innerHTML = `
+          <p>No in site results.</p>
+          <p><a href="${googleUrl(query)}">Search on Google instead</a></p>
+        `;
+        return;
+      }
+      const base = location.origin + location.pathname.replace(/[^/]*$/, "");
+      box.innerHTML = results.map(r => `
+        <div class="card" style="margin-top:0.75rem">
+          <strong><a href="${r.url}">${r.title}</a></strong>
+          <div style="font-size:0.95rem;color:#555">${base}${r.url}</div>
+        </div>
+      `).join("") + `
+        <p style="margin-top:0.75rem">
+          <a href="${googleUrl(query)}">See web results on Google</a>
+        </p>
+      `;
+    }
+    if (form) {
+      form.addEventListener("submit", async e => {
+        e.preventDefault();
+        const q = (input && input.value || "").trim();
+        if (!q) return;
+        await showLocalResults(q);
+      });
+    }
+  </script>
 </body>
 </html>
