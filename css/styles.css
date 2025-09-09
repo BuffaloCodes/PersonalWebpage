@@ -1,18 +1,60 @@
-/* GLOBAL STYLES */
-body {
-  background-color: #f0f0f0;   /* page background */
-  color: #000000;              /* default text color */
-  font-family: 'Helvetica Neue', Arial, sans-serif;  /* font family */
-  font-size: 16px;             /* base font size */
-  line-height: 1.6;            /* line spacing */
+/* OU palette as CSS variables */
+:root {
+  --crimson: #841617;       /* Oklahoma Crimson */
+  --dark-crimson: #4e0002;  /* accent linework only */
+  --black: #000000;
+  --dark-gray: #323232;     /* utility footer only */
+  --light-gray: #f0f0f0;
+  --white: #ffffff;
+
+  --sky: #bcdceb;           /* tiny accents only */
+  --leaf: #8ca57d;          /* tiny accents only */
+  --stone: #beb4a5;         /* tiny accents only */
+
+  --radius: 8px;
+  --shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
-/* Base */
+
+/* Global reset and base */
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.6;
-  color: #222;
+}
+
+/* Accessible link styles */
+a {
+  color: var(--black);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+a:hover,
+a:focus {
+  color: var(--crimson);
+  border-bottom-color: var(--crimson);
+  outline: none;
+}
+a:focus-visible {
+  outline: 2px solid var(--sky);
+  outline-offset: 2px;
+}
+
+/* Headings use Oklahoma Crimson by default */
+h1, h2, h3, h4 {
+  color: var(--crimson);
+  margin-top: 0;
+}
+
+/* Page container */
+.container {
+  max-width: 1000px;
+  margin: 4rem auto 2.5rem auto; /*top right bottom left*/
+  padding: 0 2rem;
 }
 
 /* Navbar */
@@ -20,54 +62,62 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 2rem;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--white);
+  border-bottom: 3px solid var(--crimson);
+  padding: 0.75rem 2rem 1rem 2rem; /*top right bottom left */
 }
 .navbar-left { display: flex; align-items: center; gap: 0.5rem; }
-.navbar-left img { height: 40px; width: 40px; }
-.navbar-left span { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2px; }
+.navbar-left img {
+  height: 40px;
+  width: auto;
+  margin-right: 0.5rem; /* space before “Pierce A. Wallar” */
+}
+.navbar-left span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--crimson);
+}
 .navbar-right a {
   margin-left: 1.5rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--black);
 }
-.navbar-right a:hover { color: #0645ad; }
-
-/* Page container */
-.container {
-  max-width: 1000px;
-  margin: 2.5rem auto;
-  padding: 0 2rem;
-}
+.navbar-right a:hover,
+.navbar-right a:focus { color: var(--crimson); }
 
 /* Home layout */
 .home-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr; /* left photo one third, right about two thirds */
   gap: 2rem;
 }
 .home-photo img {
   width: 100%;
   max-width: 340px;
-  border-radius: 8px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-.home-about h1 { margin-top: 0; }
+.home-about h1 { margin-bottom: 0.5rem; }
 
 /* Section headers on inner pages */
 .page-title {
   margin: 0 0 1rem 0;
   padding-bottom: 0.25rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--light-gray);
 }
 
-/* Reusable blocks */
+/* Reusable cards */
 .card {
   padding: 1rem 1.25rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  background: #fff;
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-left: 4px solid var(--crimson);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
+
+/* Simple grids */
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -79,19 +129,117 @@ body {
   gap: 1.25rem;
 }
 
-/* Footer (optional, add later if you want) */
+/* Lists inside cards */
+.card ul {
+  margin: 0.5rem 0 0 1rem;
+}
+.card li { margin-bottom: 0.4rem; }
+
+/* Utility footer if you add one later */
 .footer {
   margin-top: 3rem;
   padding: 1.5rem 2rem;
-  border-top: 1px solid #eee;
+  background-color: var(--dark-gray); /* per guideline, utility footer only */
+  color: var(--white);
   text-align: center;
-  color: #666;
   font-size: 0.95rem;
 }
 
-/* Basic responsive tweak */
+/* Tiny accent examples, keep under two percent overall usage */
+.accent-line { border-top: 2px solid var(--dark-crimson); }
+.badge-sky   { background: var(--sky); color: var(--black); padding: 0.15rem 0.4rem; border-radius: 999px; }
+.badge-leaf  { background: var(--leaf); color: var(--white); padding: 0.15rem 0.4rem; border-radius: 999px; }
+.badge-stone { background: var(--stone); color: var(--black); padding: 0.15rem 0.4rem; border-radius: 999px; }
+
+/* Forms on contact page */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  font: inherit;
+}
+button {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--crimson);
+  background: var(--crimson);
+  color: var(--white);
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+button:hover,
+button:focus { background: var(--dark-crimson); border-color: var(--dark-crimson); }
+
+/* Responsive */
 @media (max-width: 800px) {
-  .home-layout { grid-template-columns: 1fr; }
-  .navbar { padding: 0.75rem 1rem; }
   .container { padding: 0 1rem; }
+  .navbar { padding: 0.75rem 1rem; }
+  .home-layout { grid-template-columns: 1fr; }
+  .navbar-right a { margin-left: 1rem; }
+}
+/* Search icon and modal */
+.search-btn {
+  background: transparent;
+  border: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.search-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.search-modal.open { display: flex; }
+
+.search-panel {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-left: 4px solid var(--crimson);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: min(600px, 92vw);
+  padding: 1rem 1.25rem;
+}
+
+.search-panel h2 {
+  margin: 0 0 0.75rem 0;
+  color: var(--crimson);
+  font-size: 1.25rem;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-row input[type="search"] {
+  flex: 1;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+.search-row button[type="submit"] {
+  padding: 0.6rem 1rem;
+}
+
+.search-close {
+  background: transparent;
+  border: 0;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: var(--black);
 }
