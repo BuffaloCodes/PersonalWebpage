@@ -9,21 +9,44 @@
   <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <img src="assets/Circle_Logo.png" alt="Logo" />
-      <span>Pierce A. Wallar</span>
-    </div>
-    <div class="navbar-right">
-      <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html">Projects</a>
-      <a href="bookshelf.html">Bookshelf</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/logo.png" alt="Logo">
+    <span>Pierce A. Wallar</span>
+  </div>
+  <div class="navbar-right">
+    <a href="index.html">Home</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="bookshelf.html">Bookshelf</a>
+    <a href="contact.html">Contact</a>
+
+    <!-- Search button -->
+    <button class="search-btn" id="openSearch" aria-label="Search">
+      <!-- inline SVG magnifier -->
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+        <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<!-- Search modal -->
+<div class="search-modal" id="searchModal" aria-hidden="true">
+  <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+    <h2 id="searchTitle">Search this site</h2>
+    <form id="siteSearchForm" class="search-row" role="search">
+      <input id="q" name="q" type="search" placeholder="Type and press Enter" aria-label="Search">
+      <button type="submit">Search</button>
+      <button type="button" class="search-close" id="closeSearch" aria-label="Close">Close</button>
+    </form>
+  </div>
+</div>
+
 
   <main class="container home-layout">
     <div class="home-photo">
@@ -39,5 +62,57 @@
       </p>
     </div>
   </main>
+<script>
+  // Set these to match your live site
+  // Example for https://buffalocodes.github.io/PersonalWebpage/
+  const SITE_HOST = "buffalocodes.github.io";  // root host only
+  const SITE_PATH = "/PersonalWebpage";        // repo path starting with a slash
+
+  // Grab elements
+  const openBtn = document.getElementById("openSearch");
+  const modal = document.getElementById("searchModal");
+  const closeBtn = document.getElementById("closeSearch");
+  const input = document.getElementById("q");
+  const form = document.getElementById("siteSearchForm");
+
+  // Open and close helpers
+  function openModal() {
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    setTimeout(() => input && input.focus(), 50);
+  }
+  function closeModal() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    if (openBtn) openBtn.focus();
+  }
+
+  // Wire events
+  if (openBtn) openBtn.addEventListener("click", openModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  if (modal) modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+
+  // Submit handler routes to a web search scoped to your site
+  if (form) form.addEventListener("submit", e => {
+    e.preventDefault();
+    const q = (input && input.value || "").trim();
+    if (!q) return;
+
+    // DuckDuckGo
+    const url = "https://duckduckgo.com/?q=" + encodeURIComponent(
+      `site:${SITE_HOST} inurl:${SITE_PATH} ${q}`
+    );
+
+    // If you prefer Google, comment the line above and use this:
+    // const url = "https://www.google.com/search?q=" + encodeURIComponent(
+    //   `site:${SITE_HOST} inurl:${SITE_PATH} ${q}`
+    // );
+
+    window.location.href = url;
+  });
+</script>
+
+
 </body>
 </html>
