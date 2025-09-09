@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pierce A. Wallar — Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="assets/logo.png" alt="Logo" />
+      <span>Pierce A. Wallar</span>
+    </div>
+    <div class="navbar-right">
+      <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
+      <a href="projects.html">Projects</a>
+      <a href="bookshelf.html">Bookshelf</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title">Contact</h1>
+
+    <section class="card" style="max-width: 700px;">
+      <p>Email: <a href="mailto:your@email.com">your@email.com</a>
+      <br />LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener">Profile</a>
+      <br />Resume PDF: <a href="assets/Pierce_Wallar_Resume.pdf" target="_blank" rel="noopener">Download</a></p>
+
+      <!-- Optional simple contact form via formspree or similar service -->
+      <!-- Replace the action URL with your service endpoint if you choose to enable this -->
+      <form action="#" method="POST">
+        <label for="name">Name</label><br />
+        <input id="name" name="name" type="text" required style="width:100%; padding:0.5rem; margin:0.25rem 0 0.75rem 0;" />
+
+        <label for="email">Email</label><br />
+        <input id="email" name="email" type="email" required style="width:100%; padding:0.5rem; margin:0.25rem 0 0.75rem 0;" />
+
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="6" required style="width:100%; padding:0.5rem; margin:0.25rem 0 0.75rem 0;"></textarea>
+
+        <button type="submit" class="card" style="cursor:pointer;">Send</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
