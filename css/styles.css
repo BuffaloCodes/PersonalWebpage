@@ -48,13 +48,6 @@ a:focus-visible { outline:2px solid var(--sky); outline-offset:2px; }
 /* Headings */
 h1, h2, h3, h4 { color:var(--crimson); margin-top:0; }
 
-/* Control long words globally to prevent overflow on mobile */
-p, h1, h2, h3, h4, li {
-  overflow-wrap:break-word;
-  word-break:normal;
-  max-width:100%;
-}
-
 /* Page container */
 .container { max-width:1000px; margin:4rem auto 2.5rem auto; padding:0 2rem; }
 
@@ -70,6 +63,7 @@ p, h1, h2, h3, h4, li {
 .navbar-left { display:flex; align-items:center; gap:.5rem; }
 .navbar-left img { height:40px; width:auto; margin-right:.5rem; }
 .navbar-left span { font-size:1.2rem; font-weight:700; letter-spacing:.2px; color:var(--crimson); }
+
 .navbar-right { display:flex; align-items:center; gap:1rem; }
 .navbar-right a { font-weight:600; color:var(--black); }
 .navbar-right a:hover, .navbar-right a:focus { color:var(--crimson); font-weight:700; }
@@ -122,11 +116,14 @@ html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important;
 /* About column */
 .home-about { min-width:0; }
 
-/* Title stays on one line but scales responsively */
+/* Title stays on one line and never truncates */
 .home-about h1 {
-  margin-bottom:.5rem;
-  font-size:clamp(1.2rem, 6vw, 2.5rem);
-  line-height:1.2;
+  margin:0 0 .5rem 0;
+  white-space:nowrap;                 /* single line */
+  overflow:visible;                   /* no clipping */
+  text-overflow:clip;                 /* no ellipsis */
+  font-size:clamp(0.95rem, 5.2vw, 2.6rem); /* fluid size that will fit */
+  line-height:1.15;
 }
 
 /* Section headers on inner pages */
@@ -258,30 +255,12 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
   justify-content:center;
   padding:0;
 }
-
-/* If the markup uses three spans inside .nav-toggle, make them clear and large */
-.nav-toggle .bars {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-}
-.nav-toggle .bars span {
-  display:block;
-  width:24px;
-  height:3px;
-  background:var(--white);
-  border-radius:2px;
-}
-
-/* If the markup uses an inline SVG inside .nav-toggle, size it up as well */
 .nav-toggle svg {
-  width:24px;
-  height:24px;
+  width:28px;
+  height:28px;
   stroke:#fff;
   fill:none;
-  stroke-width:2.25;
+  stroke-width:2.5;
   display:block;
 }
 
@@ -304,6 +283,8 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
     border-bottom:2px solid var(--light-gray);
     padding:.5rem 1rem .75rem 1rem;
     z-index:50;
+    box-sizing:border-box;
+    max-width:100%;
   }
   .navbar-right.open { display:flex; }
   .navbar-right a { padding:.5rem 0; margin:0; }
@@ -311,17 +292,18 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
 
   .container { margin:3rem auto 2rem auto; padding:0 1rem; }
 
-  /* Ensure the home title scales further on small screens and stays on one line */
-  .home-about h1 { font-size:clamp(1.1rem, 7vw, 2.25rem); white-space:nowrap; }
+  /* Prevent any mobile horizontal overflow without touching desktop */
+  html, body { overflow-x:hidden; }
+  .home-layout { width:100%; }
+  .home-about, .home-photo { max-width:100%; }
 
-  /* Constrain generic paragraphs on mobile to avoid horizontal scroll */
-  p { max-width:100%; }
+  /* Make sure the title always fits on one line at small widths */
+  .home-about h1 { font-size:clamp(0.9rem, 5.5vw, 2.2rem); white-space:nowrap; }
 }
 
 /* Content responsiveness */
 @media (max-width:800px) {
   .home-layout { grid-template-columns:1fr; justify-items:center; text-align:center; }
-  .home-about h1 { font-size:clamp(1.2rem, 6.5vw, 2.3rem); }
 }
 
 /* Dark mode */
@@ -340,15 +322,21 @@ html[data-theme="dark"] .tl-item,
 html[data-theme="dark"] .search-panel { background:var(--white); border-color:var(--light-gray); }
 html[data-theme="dark"] a { color:var(--black); }
 html[data-theme="dark"] .footer { background:var(--dark-gray); }
-/* Mobile-only guards to kill horizontal scroll without touching desktop */
-@media (max-width: 720px) {
-  html, body { overflow-x: hidden; }           /* contain any stray overflow */
-  .home-layout { width: 100%; }               /* grid wrapper never exceeds viewport */
-  .navbar-right { box-sizing: border-box; }   /* include padding in width calc */
-  .navbar, .navbar-right, .home-about, .home-photo { max-width: 100%; }
-  .navbar svg, .nav-toggle svg, .search-btn svg { max-width: 100%; height: auto; }
-  .card, .search-panel, .navbar-right a { overflow-wrap: anywhere; }  /* long strings wrap */
+/* Make the H1 always fit on one line by allowing a smaller minimum size on very small screens */
+@media (max-width: 420px) {
+  .container { padding: 0 0rem; }       /* a little extra room */
+  .home-about h1 {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: clamp(0.80rem, 4.6vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: normal;
+  }
+}
 
-  /* Keep the home H1 on one line but allow smaller text on tiny phones */
-  .home-about h1 { font-size: clamp(1rem, 6.5vw, 2.25rem); white-space: nowrap; }
+/* Safety for slightly larger phones as well */
+@media (min-width: 421px) and (max-width: 720px) {
+  .container { padding: 0 0rem; }       /* a little extra room */
+  .home-about h1 { font-size: clamp(0.80rem, 4.6vw, 2.2rem); }
 }
