@@ -343,3 +343,15 @@ html[data-theme="dark"] .tl-item,
 html[data-theme="dark"] .search-panel { background:var(--white); border-color:var(--light-gray); }
 html[data-theme="dark"] a { color:var(--black); }
 html[data-theme="dark"] .footer { background:var(--dark-gray); }
+/* Mobile-only guards to kill horizontal scroll without touching desktop */
+@media (max-width: 720px) {
+  html, body { overflow-x: hidden; }           /* contain any stray overflow */
+  .home-layout { width: 100%; }               /* grid wrapper never exceeds viewport */
+  .navbar-right { box-sizing: border-box; }   /* include padding in width calc */
+  .navbar, .navbar-right, .home-about, .home-photo { max-width: 100%; }
+  .navbar svg, .nav-toggle svg, .search-btn svg { max-width: 100%; height: auto; }
+  .card, .search-panel, .navbar-right a { overflow-wrap: anywhere; }  /* long strings wrap */
+
+  /* Keep the home H1 on one line but allow smaller text on tiny phones */
+  .home-about h1 { font-size: clamp(1rem, 6.5vw, 2.25rem); white-space: nowrap; }
+}
