@@ -260,3 +260,64 @@ button:focus {
   flex-shrink: 0;
 }
 .search-btn:hover { background-color: var(--dark-crimson); }
+/* Mobile nav toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: var(--crimson);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tighten logo/name to avoid 3-line wrapping */
+.navbar-left img { height: 36px; }
+.navbar-left span {
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  white-space: nowrap;
+  max-width: 60vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Mobile layout */
+@media (max-width: 720px) {
+  .navbar {
+    position: relative;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  .nav-toggle {
+    display: flex;              /* show the hamburger */
+    margin-left: 0.75rem;
+  }
+  /* Right side becomes a dropdown panel */
+  .navbar-right {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;              /* hidden by default */
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 2px solid var(--light-gray);
+    padding: 0.5rem 1rem 0.75rem 1rem;
+    z-index: 50;
+  }
+  .navbar-right.open { display: flex; }
+  .navbar-right a {
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+  .search-btn {
+    align-self: flex-start;
+    margin-top: 0.25rem;
+  }
+  /* Page container spacing on mobile */
+  .container { margin: 3rem auto 2rem auto; padding: 0 1rem; }
+}
+
