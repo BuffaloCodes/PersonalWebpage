@@ -456,3 +456,14 @@ html[data-theme="dark"] .footer { background:var(--dark-gray); }
   background: rgba(255,255,255,0.12);
   border-color: #ffffff;
 }
+.last-updated {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--dark-gray, #323232);
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .last-updated {
+  color: #ffffff;
+  opacity: 0.6;
+}
