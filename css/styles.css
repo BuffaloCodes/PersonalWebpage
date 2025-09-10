@@ -13,7 +13,7 @@
   --shadow:0 1px 2px rgba(0,0,0,0.06);
 }
 
-/* Disable transitions during initial theme set (removed by JS) */
+/* Disable transitions during initial theme set */
 .no-theme-transitions *,
 .no-theme-transitions,
 .no-theme-transitions:before,
@@ -30,7 +30,7 @@ body {
   line-height:1.6;
 }
 
-/* Smooth theme transitions after load */
+/* Smooth theme transitions */
 html, body, .navbar, .card, .tl-item, .search-panel, .footer, .navbar-right a, .search-btn {
   transition:background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
@@ -47,6 +47,13 @@ a:focus-visible { outline:2px solid var(--sky); outline-offset:2px; }
 
 /* Headings */
 h1, h2, h3, h4 { color:var(--crimson); margin-top:0; }
+
+/* Control long words globally to prevent overflow on mobile */
+p, h1, h2, h3, h4, li {
+  overflow-wrap:break-word;
+  word-break:normal;
+  max-width:100%;
+}
 
 /* Page container */
 .container { max-width:1000px; margin:4rem auto 2.5rem auto; padding:0 2rem; }
@@ -68,7 +75,7 @@ h1, h2, h3, h4 { color:var(--crimson); margin-top:0; }
 .navbar-right a:hover, .navbar-right a:focus { color:var(--crimson); font-weight:700; }
 .navbar-right a.active { color:var(--crimson); font-weight:700; border-bottom:2px solid var(--crimson); }
 
-/* Theme toggle (scoped to navbar) */
+/* Theme toggle in navbar */
 .navbar .theme-btn {
   background:var(--crimson);
   color:var(--white);
@@ -89,7 +96,7 @@ h1, h2, h3, h4 { color:var(--crimson); margin-top:0; }
 html[data-theme="dark"] .navbar .theme-btn .icon-moon { display:none !important; }
 html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important; }
 
-/* Home layout container: center and limit width */
+/* Home layout container */
 .home-layout {
   display:grid;
   grid-template-columns:auto 1fr;
@@ -100,7 +107,7 @@ html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important;
   align-items:start;
 }
 
-/* Image sizing and centering inside its cell */
+/* Photo */
 .home-photo { display:flex; justify-content:center; }
 .home-photo img {
   width:300px;
@@ -112,14 +119,15 @@ html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important;
   flex-shrink:0;
 }
 
-/* Let text shrink instead of pushing the image */
+/* About column */
 .home-about { min-width:0; }
 
-/* Title on one line with responsive size */
+/* Title stays on one line but scales responsively */
 .home-about h1 {
   margin-bottom:.5rem;
   white-space:nowrap;
-  font-size:clamp(1.2rem, 4vw, 2.5rem);
+  font-size:clamp(1.2rem, 6vw, 2.75rem);
+  line-height:1.15;
   overflow:hidden;
   text-overflow:ellipsis;
 }
@@ -155,7 +163,7 @@ html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important;
   font-size:.95rem;
 }
 
-/* Tiny accent badges/lines */
+/* Badges */
 .accent-line { border-top:2px solid var(--dark-crimson); }
 .badge-sky { background:var(--sky); color:var(--black); padding:.15rem .4rem; border-radius:999px; }
 .badge-leaf { background:var(--leaf); color:var(--white); padding:.15rem .4rem; border-radius:999px; }
@@ -207,7 +215,7 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
 .search-row button[type="submit"] { padding:.6rem 1rem; }
 .search-close { background:transparent; border:0; font-size:1rem; margin-left:.5rem; cursor:pointer; color:var(--black); }
 
-/* Search button (circular crimson with white icon) */
+/* Search button */
 .search-btn {
   background-color:var(--crimson);
   border:none;
@@ -222,7 +230,7 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
 .search-btn svg { width:22px; height:22px; stroke:var(--white); flex-shrink:0; }
 .search-btn:hover { background-color:var(--dark-crimson); }
 
-/* Timeline (Experience page) */
+/* Timeline */
 .timeline { position:relative; margin:0 0 2rem 0; padding-left:1.75rem; }
 .timeline::before { content:""; position:absolute; top:0; bottom:0; left:.65rem; width:2px; background:var(--light-gray); }
 .tl-item {
@@ -239,26 +247,54 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
 .tl-item .tl-date { font-weight:700; color:var(--black); }
 .tl-item .tl-dot { position:absolute; left:-1.05rem; top:1rem; width:14px; height:14px; background:var(--crimson); border:2px solid var(--white); border-radius:50%; box-shadow:0 0 0 2px var(--crimson); }
 
-/* Mobile nav toggle (hidden on desktop) */
+/* Mobile nav toggle button and icon */
 .nav-toggle {
   display:none;
   background:var(--crimson);
   color:var(--white);
   border:none;
   border-radius:8px;
-  width:40px;
-  height:40px;
+  width:44px;
+  height:44px;
   cursor:pointer;
   align-items:center;
   justify-content:center;
+  padding:0;
 }
 
-/* Mobile layout (<=720px: hamburger + dropdown) */
+/* If the markup uses three spans inside .nav-toggle, make them clear and large */
+.nav-toggle .bars {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+}
+.nav-toggle .bars span {
+  display:block;
+  width:24px;
+  height:3px;
+  background:var(--white);
+  border-radius:2px;
+}
+
+/* If the markup uses an inline SVG inside .nav-toggle, size it up as well */
+.nav-toggle svg {
+  width:24px;
+  height:24px;
+  stroke:#fff;
+  fill:none;
+  stroke-width:2.25;
+  display:block;
+}
+
+/* Mobile layout */
 @media (max-width:720px) {
   .navbar { position:relative; padding:.5rem 1rem .5rem 1rem; }
   .nav-toggle { display:flex; margin-left:.75rem; }
   .navbar-left img { height:36px; }
   .navbar-left span { font-size:clamp(1rem, 3.5vw, 1.2rem); white-space:nowrap; max-width:60vw; overflow:hidden; text-overflow:ellipsis; }
+
   .navbar-right {
     position:absolute;
     top:100%;
@@ -275,16 +311,23 @@ button:hover, button:focus { background:var(--dark-crimson); border-color:var(--
   .navbar-right.open { display:flex; }
   .navbar-right a { padding:.5rem 0; margin:0; }
   .search-btn { align-self:flex-start; margin-top:.25rem; }
+
   .container { margin:3rem auto 2rem auto; padding:0 1rem; }
+
+  /* Ensure the home title scales further on small screens and stays on one line */
+  .home-about h1 { font-size:clamp(1.1rem, 7vw, 2.25rem); white-space:nowrap; }
+
+  /* Constrain generic paragraphs on mobile to avoid horizontal scroll */
+  p { max-width:100%; }
 }
 
-/* Content responsiveness (<=800px: single column on home) */
+/* Content responsiveness */
 @media (max-width:800px) {
   .home-layout { grid-template-columns:1fr; justify-items:center; text-align:center; }
-  .home-about h1 { font-size:clamp(1.3rem, 6vw, 2rem); }
+  .home-about h1 { font-size:clamp(1.2rem, 6.5vw, 2.3rem); }
 }
 
-/* Dark mode — applied on <html data-theme="dark"> */
+/* Dark mode */
 html[data-theme="dark"] {
   --white:#323232;
   --black:#ffffff;
