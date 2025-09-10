@@ -235,7 +235,54 @@
       <svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
     </a>
   </div>
+<footer class="site-footer">
+  <div class="footer-socials">
+    <!-- LinkedIn / GitHub / Email icons -->
+  </div>
+
+  <p class="last-updated">
+    Last updated: <span id="last-updated">Loading…</span>
+  </p>
 </footer>
+
+<script>
+  // Set these once
+  const GH_OWNER = "buffalocodes";
+  const GH_REPO  = "PersonalWebpage";
+
+  async function setLastUpdatedFromGitHub() {
+    const el = document.getElementById("last-updated");
+    const fmt = { year: "numeric", month: "long", day: "numeric" };
+
+    try {
+      // 1 get default branch so this works if you use main or gh pages
+      const repoRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`);
+      if (!repoRes.ok) throw new Error("Repo lookup failed");
+      const repo = await repoRes.json();
+      const branch = repo.default_branch || "main";
+
+      // 2 get most recent commit on that branch
+      const commitsRes = await fetch(
+        `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/commits?sha=${encodeURIComponent(branch)}&per_page=1`
+      );
+      if (!commitsRes.ok) throw new Error("Commits lookup failed");
+      const commits = await commitsRes.json();
+      const iso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
+      if (!iso) throw new Error("No commit date");
+
+      el.textContent = new Date(iso).toLocaleDateString(undefined, fmt);
+    } catch (err) {
+      // graceful fallback if API rate limited or offline
+      try {
+        el.textContent = new Date(document.lastModified).toLocaleDateString(undefined, fmt);
+      } catch {
+        el.textContent = "Unavailable";
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", setLastUpdatedFromGitHub);
+</script>
 
 
 </body>

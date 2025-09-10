@@ -2,7 +2,7 @@
 
 ## Core Features
 - [x] Download Resume button with visible label and file name convention (⭐)
-- [ ] Linked social icons in footer and Contact page (⭐)
+- [x] Linked social icons in footer and Contact page (⭐)
 - [ ] Structured Data Person markup for basic profile and links (⭐⭐)
 - [ ] Project cards include concise tags for skills and tech (⭐⭐)
 - [ ] Collapsible sections for long content such as Bookshelf (⭐⭐)
@@ -12,7 +12,7 @@
 - [x] Favicons (completed)
 
 ## UX & Navigation
-- [ ] Clear primary call-to-action on Home and Projects (⭐)
+- [ ] Clear primary call-to-action on Home and Projects (⭐⭐⭐⭐⭐)
 - [ ] Back to top button on long pages (⭐⭐)
 - [ ] Sticky header that collapses height on scroll (⭐⭐⭐)
 - [ ] Anchor links or table of contents for long pages (⭐⭐⭐)
