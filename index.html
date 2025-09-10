@@ -162,6 +162,24 @@
         await showLocalResults(q);
       });
     }
+    // Mobile nav toggle
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  // Auto-close dropdown after clicking a link
+  const navLinks = navMenu.querySelectorAll("a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
   </script>
 </body>
 </html>
