@@ -125,11 +125,8 @@ html[data-theme="dark"] .navbar .theme-btn .icon-sun { display:block !important;
 /* Title stays on one line but scales responsively */
 .home-about h1 {
   margin-bottom:.5rem;
-  white-space:nowrap;
-  font-size:clamp(1rem, 5vw, 2.5rem);
-  line-height:1.15;
-  overflow:visible;
-  text-overflow:unset;
+  font-size:clamp(1.2rem, 6vw, 2.5rem);
+  line-height:1.2;
 }
 
 /* Section headers on inner pages */
