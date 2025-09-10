@@ -1,7 +1,7 @@
 # Portfolio Website To-Do List
 
 ## Core Features
-- [ ] Download Resume button with visible label and file name convention (⭐)
+- [x] Download Resume button with visible label and file name convention (⭐)
 - [ ] Linked social icons in footer and Contact page (⭐)
 - [ ] Structured Data Person markup for basic profile and links (⭐⭐)
 - [ ] Project cards include concise tags for skills and tech (⭐⭐)
