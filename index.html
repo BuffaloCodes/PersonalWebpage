@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Pierce A. Wallar — Home</title>
 
-  <!-- Theme boot -->
-  <script>
-    (function () {
-      const d = document.documentElement;
-      d.classList.add('no-theme-transitions');
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch {}
-      if (saved === 'dark' || saved === 'light') {
-        d.setAttribute('data-theme', saved);
-      } else {
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        d.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-      }
-    })();
-  </script>
+<!-- Theme boot: default to light, only use dark if saved -->
+<script>
+  (function () {
+    const d = document.documentElement;
+    d.classList.add('no-theme-transitions');
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch {}
+    if (saved === 'dark') {
+      d.setAttribute('data-theme', 'dark');
+    } else {
+      d.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
 
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="css/styles.css"/>
