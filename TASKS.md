@@ -1,5 +1,8 @@
 # Portfolio Website To-Do List
 
+## Bugs
+- [ ] Pages loads in dark mode
+
 ## Core Features
 - [x] Download Resume button with visible label and file name convention (⭐)
 - [x] Linked social icons in footer and Contact page (⭐)
