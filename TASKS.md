@@ -1,7 +1,8 @@
 # Portfolio Website To-Do List
 
-## Bugs
+## Bugs & Overall To-Do
 - [ ] Pages loads in dark mode
+- [ ] Create CV & refine Resume download buttons
 
 ## Core Features
 - [x] Download Resume button with visible label and file name convention (⭐)
