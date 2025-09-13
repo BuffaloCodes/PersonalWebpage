@@ -1,62 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <!-- TEMPORARY: remove this line when the page is complete -->
-<meta http-equiv="refresh" content="0; url=coming-soon.html">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pierce A. Wallar — Projects</title>
-  <script>
-    (function () {
-      const d = document.documentElement;
-      d.classList.add('no-theme-transitions');
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch {}
-      if (saved === 'dark' || saved === 'light') {
-        d.setAttribute('data-theme', saved);
-        return;
-      }
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      d.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-    })();
-  </script>
+  <title>Pierce A. Wallar — Home</title>
+
+<!-- Theme boot: default to light, only use dark if saved -->
+<script>
+  (function () {
+    const d = document.documentElement;
+    d.classList.add('no-theme-transitions');
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch {}
+    if (saved === 'dark') {
+      d.setAttribute('data-theme', 'dark');
+    } else {
+      d.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#ffffff">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://buffalocodes.github.io/PersonalWebpage/projects.html">
+  <link rel="canonical" href="https://buffalocodes.github.io/PersonalWebpage/index.html">
   <meta name="robots" content="index, follow">
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-left">
-      <img src="assets/logo.png" alt="Logo">
+      <img src="assets/images/logo.png" alt="Logo">
       <span>Pierce A. Wallar</span>
     </div>
+
+    <!-- Mobile toggle -->
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
-        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/>
-        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     </button>
+
     <div class="navbar-right" id="navMenu">
       <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
+      <!-- <a href="experience.html">Experience</a> -->
       <a href="projects.html" class="active">Projects</a>
-      <a href="bookshelf.html">Bookshelf</a>
-      <a href="contact.html">Contact</a>
+      <!-- <a href="bookshelf.html">Bookshelf</a>
+      <a href="contact.html">Contact</a> -->
+
       <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
         <svg class="icon-moon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
         <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm9-9h2V1h-2v3zm7.04.46l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM17 13h3v-2h-3v2zM11 23h2v-3h-2v3zM4.22 19.78l1.41 1.41 1.8-1.79-1.42-1.42-1.79 1.8zM19.78 19.78l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/></svg>
       </button>
-      <button class="search-btn" id="openSearch" aria-label="Search">
+
+      <!-- <button class="search-btn" id="openSearch" aria-label="Search">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
           <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
         </svg>
-      </button>
+      </button> -->
     </div>
   </nav>
+
+  <!-- Search modal -->
   <div class="search-modal" id="searchModal" aria-hidden="true">
     <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
       <h2 id="searchTitle">Search this site</h2>
@@ -67,32 +78,230 @@
       </form>
     </div>
   </div>
-  <main class="container">
-    <h1 class="page-title">Projects</h1>
-    <div class="grid-2">
-      <article class="card">
-        <h2>Operational Backbone case study</h2>
-        <p>Course project applying Designed for Digital concepts to a real organization, with a focus on process standardization and platform thinking.</p>
-        <p><a href="#" target="_blank" rel="noopener">View summary</a></p>
-      </article>
-      <article class="card">
-        <h2>OSRS progression tracker</h2>
-        <p>Front end build that organizes milestones and gear sets with a simple JSON schema and tabbed interface.</p>
-        <p><a href="#" target="_blank" rel="noopener">View repository</a></p>
-      </article>
-      <article class="card">
-        <h2>BoomTown Home Services plan</h2>
-        <p>Residential maintenance and capital planning concept with service catalog and annual client plan.</p>
-        <p><a href="#" target="_blank" rel="noopener">Read overview</a></p>
-      </article>
-      <article class="card">
-        <h2>SQL and R analytics</h2>
-        <p>Selected coursework and mini cases exploring data modeling, queries, and simple visualization.</p>
-        <p><a href="#" target="_blank" rel="noopener">Project notes</a></p>
-      </article>
-    </div>
-  </main>
+
+<main>
+  <section class="proj_hero">
+    <h1>Projects</h1>
+    <p>I build interesting things for work and for fun</p>
+  </section>
+
+  <nav class="proj_filters" aria-label="Project filters">
+    <button class="pf_btn is_active" data_filter="all">All</button>
+    <button class="pf_btn" data_filter="professional">Professional</button>
+    <button class="pf_btn" data_filter="personal">Personal</button>
+  </nav>
+
+  <section class="proj_grid" id="proj_grid">
+
+    <!-- Red Dirt Rendition • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="images/projects/red-dirt.jpg" alt="Artwork preview for Red Dirt Rendition">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Red Dirt Rendition</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">A creative study that blends local culture with exciting stories.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">design</span>
+        <span class="proj_tag">creative</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">Lastest Episode</a>
+      </footer>
+    </article>
+
+    <!-- OSRS Progression Tracker • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/osrs-tracker.jpg" alt="Screenshot of the OSRS progression tracker">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">OSRS Progression Tracker</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">A small front end app that tracks game goals and gear progression with localStorage.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">web</span>
+        <span class="proj_tag">javascript</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="https://buffalocodes.github.io/InteractiveGearProg/" target="_blank" rel="noopener">View Webpage</a>
+      </footer>
+    </article>
+
+    <!-- Army Unit Commodities Forecast • Professional -->
+    <article class="proj_card" data_kind="professional">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/commodities-forecast.jpg" alt="Chart preview for the commodities forecast">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Army Unit Commodities Forecast</h2>
+        <span class="proj_kind">Professional</span>
+      </header>
+      <p class="proj_one">A planning model that forecasts class items to support readiness decisions.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">analytics</span>
+        <span class="proj_tag">planning</span>
+    </article>
+
+    <!-- MBA Case Studies • Professional -->
+    <article class="proj_card" data_kind="professional">
+      <div class="proj_thumb">
+        <img src="images/projects/mba-cases.jpg" alt="Case study exhibits preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">MBA Case Studies</h2>
+        <span class="proj_kind">Professional</span>
+      </header>
+      <p class="proj_one">One page briefs with exhibits that show structured thinking and clear takeaways.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">strategy</span>
+        <span class="proj_tag">writing</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">Browse Cases</a>
+      </footer>
+    </article>
+
+    <!-- BoomTown Home Services • Professional -->
+    <article class="proj_card" data_kind="professional">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/boomtown.jpg" alt="BoomTown toolkit preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">BoomTown Home Services</h2>
+        <span class="proj_kind">Professional</span>
+      </header>
+      <p class="proj_one">Veteran-owned, Oklahoma City–based company committed to helping homeowners care for the places they love season after season, year after year.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">ops</span>
+        <span class="proj_tag">small business</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="https://www.boomtownservice.com" target="_blank" rel="noopener">Schedule Services</a>
+      </footer>
+    </article>
+
+    <!-- Case Interview and Consulting Prep • Professional -->
+    <article class="proj_card" data_kind="professional">
+      <div class="proj_thumb">
+        <img src="images/projects/case-prep.jpg" alt="Consulting prep plan preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Case Interview & Consulting Prep</h2>
+        <span class="proj_kind">Professional</span>
+      </header>
+      <p class="proj_one">My personal study plan with dedicated blocks and frameworks that guide daily practice.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">consulting</span>
+        <span class="proj_tag">playbook</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">View Notes</a>
+      </footer>
+    </article>
+
+    <!-- Personal Webpage Build • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/site-build.jpg" alt="Personal site build preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Personal Webpage Build</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">An ongoing build where I refine layout, theme, and small scripts.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">frontend</span>
+        <span class="proj_tag">design</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">Changelog</a>
+      </footer>
+    </article>
+
+    <!-- Google Sheets Financial Dashboard • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/finance-dashboard.jpg" alt="Finance dashboard preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Google Sheets Financial Dashboard</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">A clean dashboard that tracks spend, savings, and simple forecasts.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">finance</span>
+        <span class="proj_tag">sheets</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">View Dashboard</a>
+      </footer>
+    </article>
+
+    <!-- American Political History Case Study • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="images/projects/history-study.jpg" alt="History study notes preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">American Political History Case Study</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">Reading notes and small exhibits that explore ideas across eras.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">history</span>
+        <span class="proj_tag">notes</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">Bookshelf</a>
+      </footer>
+    </article>
+
+    <!-- Home Server • Personal -->
+    <article class="proj_card" data_kind="personal">
+      <div class="proj_thumb">
+        <img src="assets/images/projects/home-server.jpg" alt="Home server setup preview">
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title">Home Server</h2>
+        <span class="proj_kind">Personal</span>
+      </header>
+      <p class="proj_one">A home lab for storage and simple services with a clean setup guide.</p>
+      <div class="proj_tags">
+        <span class="proj_tag">hardware</span>
+        <span class="proj_tag">self host</span>
+      </div>
+      <footer class="proj_foot">
+        <a class="proj_link" href="coming-soon.html" target="_blank" rel="noopener">My Build</a>
+      </footer>
+    </article>
+
+  </section>
+</main>
+
+
   <script>
+    // Filter logic without libraries
+    const grid = document.getElementById('proj_grid');
+    const buttons = document.querySelectorAll('.pf_btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(x => x.classList.remove('is_active'));
+        btn.classList.add('is_active');
+        const f = btn.getAttribute('data_filter');
+        grid.querySelectorAll('.proj_card').forEach(card => {
+          const kind = card.getAttribute('data_kind');
+          const show = f === 'all' || f === kind;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  </script>
+  <script>
+    // Search
     const SITE_HOST = "buffalocodes.github.io";
     const SITE_PATH = "PersonalWebpage";
     const PAGES = [
@@ -107,16 +316,8 @@
     const closeBtn = document.getElementById("closeSearch");
     const input = document.getElementById("q");
     const form = document.getElementById("siteSearchForm");
-    function openModal() {
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      setTimeout(() => { if (input) input.focus(); }, 50);
-    }
-    function closeModal() {
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
-      if (openBtn) openBtn.focus();
-    }
+    function openModal() { modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); setTimeout(() => { if (input) input.focus(); }, 50); }
+    function closeModal() { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); if (openBtn) openBtn.focus(); }
     if (openBtn) openBtn.addEventListener("click", openModal);
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
     if (modal) modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
@@ -124,11 +325,7 @@
     function ensureResultsContainer() {
       const panel = document.querySelector(".search-panel");
       let box = panel.querySelector(".results");
-      if (!box) {
-        box = document.createElement("div");
-        box.className = "results";
-        panel.appendChild(box);
-      }
+      if (!box) { box = document.createElement("div"); box.className = "results"; panel.appendChild(box); }
       return box;
     }
     async function fetchText(url) {
@@ -139,9 +336,7 @@
         const tmp = document.createElement("div");
         tmp.innerHTML = html;
         return tmp.textContent || "";
-      } catch {
-        return "";
-      }
+      } catch { return ""; }
     }
     async function localSearch(query) {
       const q = query.toLowerCase();
@@ -164,21 +359,13 @@
       const box = ensureResultsContainer();
       box.innerHTML = "<p>Searching this site…</p>";
       const results = await localSearch(query);
-      if (!results.length) {
-        box.innerHTML = `<p>No in site results.</p><p><a href="${googleUrl(query)}">Search on Google instead</a></p>`;
-        return;
-      }
+      if (!results.length) { box.innerHTML = `<p>No in site results.</p><p><a href="${googleUrl(query)}">Search on Google instead</a></p>`; return; }
       const base = location.origin + location.pathname.replace(/[^/]*$/, "");
       box.innerHTML = results.map(r => `<div class="card" style="margin-top:0.75rem"><strong><a href="${r.url}">${r.title}</a></strong><div style="font-size:0.95rem;color:#555">${base}${r.url}</div></div>`).join("") + `<p style="margin-top:0.75rem"><a href="${googleUrl(query)}">See web results on Google</a></p>`;
     }
-    if (form) {
-      form.addEventListener("submit", async e => {
-        e.preventDefault();
-        const q = (input && input.value || "").trim();
-        if (!q) return;
-        await showLocalResults(q);
-      });
-    }
+    if (form) form.addEventListener("submit", async e => { e.preventDefault(); const q = (input && input.value || "").trim(); if (!q) return; await showLocalResults(q); });
+
+    // Nav toggle
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
     if (navToggle && navMenu) {
@@ -186,14 +373,15 @@
         const isOpen = navMenu.classList.toggle("open");
         navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
       });
-      const navLinks = navMenu.querySelectorAll("a");
-      navLinks.forEach(link => {
+      navMenu.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
           navMenu.classList.remove("open");
           navToggle.setAttribute("aria-expanded", "false");
         });
       });
     }
+
+    // Theme toggle init
     (function () {
       const root = document.documentElement;
       const toggle = document.getElementById("themeToggle");
@@ -206,11 +394,14 @@
         toggle.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
       });
     })();
+
+    // Enable transitions after first paint
     window.addEventListener("DOMContentLoaded", () => {
       document.documentElement.classList.remove("no-theme-transitions");
     });
+    
   </script>
-  <footer class="site-footer">
+<footer class="site-footer">
   <div class="footer-socials">
     <a href="https://www.linkedin.com/in/pierce-wallar" target="_blank" rel="noopener" aria-label="LinkedIn">
       <svg viewBox="0 0 24 24" class="icon"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7 19H4V9h3v10zM5.5 7.7C4.1 7.7 3 6.6 3 5.3S4.1 3 5.5 3s2.5 1.1 2.5 2.3S6.9 7.7 5.5 7.7zM21 19h-3v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V19h-3V9h2.9v1.4h.1c.4-.7 1.4-1.4 3-1.4 3.2 0 3.8 2.1 3.8 4.7V19z"/></svg>
@@ -272,6 +463,7 @@
 
   document.addEventListener("DOMContentLoaded", setLastUpdatedFromGitHub);
 </script>
+
 
 </body>
 </html>
