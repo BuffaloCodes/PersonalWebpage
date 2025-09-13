@@ -528,3 +528,317 @@ html[data-theme="dark"] .footer{background:var(--dark-gray)}
 @media (max-width:720px){
   :root{--left_col:42%;--mid_col:16%;--right_col:42%;--gap:1rem}
 }
+/* ===== Projects page palette: edit these hex codes ===== */
+:root {
+  --proj-accent: #cc3300;       /* day accent color for active buttons and outlines */
+  --proj-text:   #222222;       /* day default text color */
+  --proj-muted:  #666666;       /* day muted text color for small labels */
+  --proj-border: #000000;       /* day border color for cards and buttons */
+  --proj-card:   #ffffff;       /* day card background color */
+  --proj-btn-bg: #fafafa;       /* day filter button background color */
+  --proj-btn-tx: #222222;       /* day filter button text color */
+  --proj-hover:  #e9e9e9;       /* day button hover background color */
+  --proj-title:  #841617;
+}
+
+html[data-theme="dark"] {
+  --proj-accent: #cc3300;       /* night accent color for active buttons and outlines */
+  --proj-text:   #eaeaea;       /* night default text color */
+  --proj-muted:  #b0b0b0;       /* night muted text color */
+  --proj-border: #2a2a2a;       /* night border color */
+  --proj-card:   #141414;       /* night card background color */
+  --proj-btn-bg: #1a1a1a;       /* night filter button background color */
+  --proj-btn-tx: #eaeaea;       /* night filter button text color */
+  --proj-hover:  #222222;       /* night button hover background color */
+  --proj-title:  #a81b1f;
+}
+
+/* ===== Projects layout and typography ===== */
+.proj_hero {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--proj-text);           /* text color: edit in palette */
+  font-family: inherit;              /* font: change here if you want a different font */
+}
+.proj_hero h1 {
+  font-size: 2.2rem;                 /* text size: edit rem value */
+  margin: 0 0 .25rem;
+  color: var(--proj-title);           /* text color: edit in palette */
+  font-family: inherit;              /* font: change here to override site font */
+}
+.proj_hero p {
+  margin: 0;
+  color: var(--proj-muted);          /* text color: edit in palette */
+  font-size: 1rem;                   /* text size: edit rem value */
+  font-family: inherit;              /* font: change here if desired */
+}
+
+/* ===== Filter buttons ===== */
+.proj_filters {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin: 1rem 0 1.5rem;
+  padding: 0 1rem;
+}
+
+.pf_btn {
+  border: 1px solid var(--proj-border);   /* border color: edit in palette */
+  padding: .5rem .9rem;
+  border-radius: .4rem;
+  background: var(--proj-btn-bg);         /* background color: edit in palette */
+  color: var(--proj-btn-tx);              /* text color: edit in palette */
+  cursor: pointer;
+  font-family: inherit;                    /* font: change if needed */
+  font-size: .95rem;                       /* text size: edit rem value */
+}
+
+.pf_btn:hover {
+  background: var(--proj-hover);           /* hover background color: edit in palette */
+  border-color: #841617;        /* hover border color: edit in palette */
+  color: var(--proj-btn-tx);               /* hover text color: edit in palette */
+}
+
+.pf_btn.is_active {
+  outline: 1px solid #000000;   /* active outline color: edit in palette */
+  background: #841617;          /* active background color: edit in palette */
+  color: #ffffff;                          /* active text color: edit hex here */
+}
+
+/* ===== Grid and cards ===== */
+.proj_grid {
+  --col: 320px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
+  gap: 1rem;
+  padding: 0 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proj_card {
+  border: 2px solid var(--proj-border);    /* card border color: edit in palette */
+  border-radius: .6rem;
+  padding: 1rem;
+  background: var(--proj-card);            /* card background color: edit in palette */
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  display: grid;
+  gap: .5rem;
+  color: var(--proj-text);                 /* default text color inside cards: edit in palette */
+  font-family: inherit;                    /* font: change here if you want different in cards */
+}
+
+/* ===== Card header ===== */
+.proj_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+}
+.proj_card h2 {
+  font-size: 1.1rem;                       /* text size: edit rem value */
+  margin: 0;
+  line-height: 1.3;
+  color: var(--proj-text);                 /* text color: edit in palette */
+  font-family: inherit;                    /* font: change here if desired */
+}
+.proj_kind {
+  font-size: .85rem;                       /* text size: edit rem value */
+  color: var(--proj-muted);                /* text color: edit in palette */
+  font-family: inherit;                    /* font: change here if desired */
+}
+
+/* ===== Card body ===== */
+.proj_one {
+  margin: .25rem 0 .25rem;
+  color: var(--proj-text);                 /* text color: edit in palette */
+  font-size: .98rem;                       /* text size: edit rem value */
+  font-family: inherit;                    /* font: change here if desired */
+}
+.proj_points {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: .25rem;
+  color: var(--proj-text);                 /* text color: edit in palette */
+  font-size: .95rem;                       /* text size: edit rem value */
+  font-family: inherit;                    /* font: change here if desired */
+}
+
+/* ===== Tags ===== */
+.proj_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.proj_tags span {
+  font-size: .8rem;                        /* text size: edit rem value */
+  padding: .15rem .45rem;
+  border: 1px solid var(--proj-border);    /* tag border color: edit in palette */
+  border-radius: 999px;
+  color: var(--proj-accent);               /* tag text color: edit in palette */
+  background: transparent;                 /* tag background color: change if you want filled pills */
+  font-family: inherit;                    /* font: change here if desired */
+}
+
+/* ===== Card footer ===== */
+.proj_foot {
+  margin-top: .25rem;
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.proj_foot a {
+  color: var(--proj-accent);               /* link text color: edit in palette */
+  font-size: .95rem;                       /* text size: edit rem value */
+  font-family: inherit;                    /* font: change here if desired */
+}
+.proj_foot a:hover {
+  text-decoration: underline;
+}
+.proj_foot a[aria-disabled="true"] {
+  pointer-events: none;
+  opacity: .5;
+  text-decoration: none;
+  color: var(--proj-muted);                /* disabled link text color: edit in palette */
+}
+/* ===== Projects: card system ===== */
+
+/* Grid */
+.proj_grid {
+  --col: 320px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--col), 1fr));
+  gap: 1rem;
+  padding: 0 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card wrapper */
+.proj_card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;           /* header, body fills, footer */
+  gap: .65rem;
+  border: 1px solid var(--proj-border);        /* border color */
+  background: var(--proj-card);                /* background color */
+  border-radius: .6rem;
+  padding: 1rem;
+  color: var(--proj-text);                     /* text color */
+  text-decoration: none;                       /* lets the whole card be a link if you want */
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  min-height: 260px;                           /* keeps rows tidy */
+}
+.proj_card:focus,
+.proj_card:hover {
+  border-color: var(--proj-accent);            /* hover border */
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  outline: 0;
+  transform: translateY(-1px);
+}
+
+/* Thumbnail (optional) */
+.proj_thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;                        /* keeps consistent height */
+  border-radius: .45rem;
+  overflow: hidden;
+  background: var(--proj-hover);               /* thumb placeholder color */
+  border: 1px solid var(--proj-border);        /* thumb border */
+}
+.proj_thumb img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;                            /* cover or contain */
+  display: block;
+}
+
+/* Header line */
+.proj_head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.proj_title {
+  font-size: 1.1rem;                            /* title size */
+  font-family: inherit;                         /* title font */
+  color: var(--proj-text);                      /* title color */
+  margin: 0;
+}
+.proj_kind {
+  font-size: .85rem;                            /* label size */
+  color: var(--proj-muted);                     /* label color */
+}
+
+/* Body */
+.proj_one {
+  margin: .1rem 0 .35rem;
+  font-size: .98rem;                            /* paragraph size */
+  color: var(--proj-text);                      /* paragraph color */
+}
+.proj_points {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: .25rem;
+  font-size: .95rem;                            /* bullet size */
+  color: var(--proj-text);                      /* bullet color */
+}
+
+/* Tags */
+.proj_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.proj_tag {
+  font-size: .8rem;                             /* tag text size */
+  padding: .15rem .45rem;
+  border-radius: 999px;
+  border: 1px solid var(--proj-border);         /* tag border */
+  background: transparent;                      /* tag background */
+  color: var(--proj-accent);                    /* tag text color */
+}
+
+/* Footer */
+.proj_foot {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: .1rem;
+}
+.proj_link {
+  font-size: .95rem;                            /* link size */
+  color: var(--proj-accent);                    /* link color */
+  text-decoration: none;
+  border-bottom: 1px solid transparent;         /* subtle active affordance */
+}
+.proj_link:hover,
+.proj_link:focus {
+  border-bottom-color: var(--proj-accent);
+}
+
+/* Compact variant */
+.proj_card.compact {
+  grid-template-rows: auto auto auto;
+  min-height: 0;
+}
+.proj_card.compact .proj_points { display: none; }
+
+/* Filled tag variant (optional) */
+.proj_tag.filled {
+  background: color-mix(in srgb, var(--proj-accent) 12%, transparent);
+  color: var(--proj-accent);
+  border-color: var(--proj-accent);
+}
+
+/* Media tweaks */
+@media (max-width: 480px) {
+  .proj_title { font-size: 1.02rem; }          /* tighter on small screens */
+}
+
