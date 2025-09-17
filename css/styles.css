@@ -842,3 +842,180 @@ html[data-theme="dark"] {
   .proj_title { font-size: 1.02rem; }          /* tighter on small screens */
 }
 
+/* ================= Bookshelf: horizontal book cards ================= */
+.bookshelf .proj_grid { --col: 560px; gap: 1rem; }   /* wider min card so the layout breathes */
+
+/* Two column card: cover left, content right */
+.bookshelf .proj_card {
+  grid-template-columns: 140px 1fr;                  /* tweak 140 to 160 if you want a larger cover */
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "thumb head"
+    "thumb one"
+    "thumb tags"
+    "thumb foot";
+  min-height: 0;                                      /* let content define height */
+  padding: .85rem;                                    /* a bit tighter than Projects */
+}
+
+/* Place children into the grid areas */
+.bookshelf .proj_thumb { grid-area: thumb; }
+.bookshelf .proj_head  { grid-area: head; align-items: baseline; }
+.bookshelf .proj_one   { grid-area: one; }
+.bookshelf .proj_tags  { grid-area: tags; }
+.bookshelf .proj_foot  { grid-area: foot; }
+
+/* Book cover: portrait and no crop */
+.bookshelf .proj_thumb {
+  aspect-ratio: 2 / 3;
+  align-self: start;
+  background: #f3f3f3;
+  border: 1px solid var(--proj-border);
+  border-radius: .45rem;
+  overflow: hidden;
+}
+.bookshelf .proj_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;          /* shows the full cover */
+  object-position: center;
+}
+
+/* Typographic tweaks that suit the horizontal layout */
+.bookshelf .proj_title { font-size: 1.02rem; line-height: 1.25; }
+.bookshelf .proj_kind  { font-size: .85rem; color: var(--proj-muted); }
+.bookshelf .proj_one   { margin: .2rem 0 .35rem; font-size: .95rem; }
+
+/* Correct multi line clamp for titles and blurbs */
+.bookshelf .proj_title,
+.bookshelf .proj_one {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bookshelf .proj_title { -webkit-line-clamp: 3; line-clamp: 3; } /* was 2 */
+.bookshelf .proj_one   { -webkit-line-clamp: 3; line-clamp: 3; }
+
+/* Compact variant toggle if you want smaller cards on mobile */
+@media (max-width: 640px) {
+  .bookshelf .proj_grid { --col: 440px; }
+  .bookshelf .proj_card { grid-template-columns: 120px 1fr; }
+}
+/* Three columns on desktop, responsive fallback */
+.bookshelf .proj_grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media (max-width: 900px) {
+  .bookshelf .proj_grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .bookshelf .proj_grid { grid-template-columns: 1fr; }
+}
+
+/* Shrink cover column by twenty five percent: 140px -> 105px */
+.bookshelf .proj_card {
+  grid-template-columns: 105px 1fr;
+}
+
+/* Remove the in card year and genre tags */
+.bookshelf .proj_tags { display: none; }
+
+/* Keep portrait covers tidy */
+.bookshelf .proj_thumb { aspect-ratio: 2 / 3; }
+.bookshelf .proj_thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+/* ===== Bookshelf page tweaks ===== */
+
+/* 1. Center the page title and the disclosure line under it */
+.page_head{
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+.page_head .disclosure{
+  margin: .25rem 0 0;
+  font-size: .95rem;
+  color: var(--proj-muted);
+}
+
+/* 2. Make the Bookshelf filter pills match Projects filter buttons */
+.bookshelf .proj_filters .pill{
+  border: 1px solid var(--proj-border);
+  padding: .5rem .9rem;
+  border-radius: .4rem;
+  background: var(--proj-btn-bg);
+  color: var(--proj-btn-tx);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .95rem;
+}
+.bookshelf .proj_filters .pill:hover{
+  background: var(--proj-hover);
+  border-color: #841617;
+  color: var(--proj-btn-tx);
+}
+.bookshelf .proj_filters .pill.is-active{
+  outline: 1px solid #000000;
+  background: #841617;
+  color: #ffffff;
+}
+/* Bookshelf header spacing and title size to match Projects */
+.bookshelf .page_head h1{
+  margin-bottom: .25rem;         /* tighten space above disclosure */
+  line-height: 1.15;
+  font-size: clamp(2rem, 3vw, 2.5rem); /* align with Projects scale */
+}
+.bookshelf .page_head .disclosure{
+  margin-top: 0;                 /* remove extra gap under title */
+}
+
+/* Add breathing room between filter buttons */
+.bookshelf .proj_filters{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;                    /* space between buttons */
+}
+.bookshelf .proj_filters .pill{
+  margin: 0;                     /* rely on container gap */
+}
+
+/* If your browser target ignores gap on flex, keep this fallback */
+@supports not (gap: 1rem){
+  .bookshelf .proj_filters .pill{ margin: .25rem .5rem .25rem 0; }
+}
+/* Equal spacing between Bookshelf filter buttons */
+.bookshelf .proj_filters{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;  /* keep left aligned */
+  gap: 1rem;                   /* consistent gap between all buttons */
+}
+
+.bookshelf .proj_filters .pill{
+  margin: 0; /* remove any individual margins */
+}
+/* Make both the container and the inner span use gap */
+.bookshelf .proj_filters{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* or flex-start to left-align */
+  align-items: center;
+  gap: .5rem;               /* gap between direct children (All ↔ span) */
+}
+
+.bookshelf .proj_filters #genre-pills{
+  display: flex;            /* turn the span into a flex row too */
+  flex-wrap: wrap;
+  gap: .5rem;               /* gap between Fiction, Military, etc. */
+}
+
+/* Ensure pills don't add extra margins that fight the gap */
+.bookshelf .proj_filters .pill{
+  margin: 0;
+}
