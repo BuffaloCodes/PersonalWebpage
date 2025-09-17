@@ -1,5 +1,11 @@
 # Portfolio Website To-Do List
 
+## Book Covers to Find
+- [ ] First Train Out of Denver
+- [ ] On Assimilation: A Ranger's Return from War by Leo Jenkins
+- [ ] The Anomaly
+- [ ] The Last of the Dougboys
+
 ## Bugs & Overall To-Do
 - [ ] Pages loads in dark mode
 - [ ] Create CV & refine Resume download buttons

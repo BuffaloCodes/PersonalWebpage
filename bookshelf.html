@@ -1,62 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <!-- TEMPORARY: remove this line when the page is complete -->
-<meta http-equiv="refresh" content="0; url=coming-soon.html">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pierce A. Wallar — Bookshelf</title>
-  <script>
-    (function () {
-      const d = document.documentElement;
-      d.classList.add('no-theme-transitions');
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch {}
-      if (saved === 'dark' || saved === 'light') {
-        d.setAttribute('data-theme', saved);
-        return;
-      }
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      d.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-    })();
-  </script>
+  <title>Pierce A. Wallar — Home</title>
+
+<!-- Theme boot: default to light, only use dark if saved -->
+<script>
+  (function () {
+    const d = document.documentElement;
+    d.classList.add('no-theme-transitions');
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch {}
+    if (saved === 'dark') {
+      d.setAttribute('data-theme', 'dark');
+    } else {
+      d.setAttribute('data-theme', 'light');
+    }
+  })();
+</script>
+
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#ffffff">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://buffalocodes.github.io/PersonalWebpage/bookshelf.html">
+  <link rel="canonical" href="https://buffalocodes.github.io/PersonalWebpage/index.html">
   <meta name="robots" content="index, follow">
 </head>
-<body>
+
+<body class="bookshelf">
   <nav class="navbar">
     <div class="navbar-left">
-      <img src="assets/logo.png" alt="Logo">
+      <img src="assets/images/logo.png" alt="Logo">
       <span>Pierce A. Wallar</span>
     </div>
+
+    <!-- Mobile toggle -->
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
-      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/>
-        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/>
-        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     </button>
+
     <div class="navbar-right" id="navMenu">
       <a href="index.html">Home</a>
-      <a href="experience.html">Experience</a>
+      <!-- <a href="experience.html">Experience</a> -->
       <a href="projects.html">Projects</a>
       <a href="bookshelf.html" class="active">Bookshelf</a>
-      <a href="contact.html">Contact</a>
+      <!-- <a href="contact.html">Contact</a> -->
+
       <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
         <svg class="icon-moon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
         <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm9-9h2V1h-2v3zm7.04.46l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM17 13h3v-2h-3v2zM11 23h2v-3h-2v3zM4.22 19.78l1.41 1.41 1.8-1.79-1.42-1.42-1.79 1.8zM19.78 19.78l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/></svg>
       </button>
-      <button class="search-btn" id="openSearch" aria-label="Search">
+
+      <!-- <button class="search-btn" id="openSearch" aria-label="Search">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
           <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
         </svg>
-      </button>
+      </button> -->
     </div>
   </nav>
+
+  <!-- Search modal -->
   <div class="search-modal" id="searchModal" aria-hidden="true">
     <div class="search-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
       <h2 id="searchTitle">Search this site</h2>
@@ -67,176 +79,267 @@
       </form>
     </div>
   </div>
-  <main class="container">
-    <h1 class="page-title">Bookshelf</h1>
-    <div class="grid-3">
-      <section class="card">
-        <h2>Business and strategy</h2>
-        <ul>
-          <li>Designed for Digital</li>
-          <li>The Phoenix Project</li>
-          <li>Good Strategy Bad Strategy</li>
-        </ul>
-      </section>
-      <section class="card">
-        <h2>History and policy</h2>
-        <ul>
-          <li>1619: Jamestown and the Forging of American Democracy</li>
-          <li>The Guns of August</li>
-          <li>Destined for War</li>
-        </ul>
-      </section>
-      <section class="card">
-        <h2>Leadership and personal growth</h2>
-        <ul>
-          <li>Extreme Ownership</li>
-          <li>Atomic Habits</li>
-          <li>Peak</li>
-        </ul>
-      </section>
-    </div>
-  </main>
+
+  <header class="page_head">
+    <h1>Bookshelf</h1>
+    <p class="disclosure">As an Amazon Associate I may earn from qualifying purchases.</p>
+  </header>
+
+  <!-- Filter pills like Projects -->
+  <nav class="proj_filters" aria-label="Genre filters">
+    <button class="pill is-active" data-genre="">All</button>
+    <span id="genre-pills"></span>
+    <label style="margin-left:1rem">
+      <input id="bookshelfQ" type="search" placeholder="Search title or author" aria-label="Search books" />
+    </label>
+  </nav>
+
+  <main id="books" class="proj_grid"></main>
+
+  <template id="tpl-card">
+    <article class="proj_card">
+      <div class="proj_thumb">
+        <img alt="" loading="lazy" />
+      </div>
+      <header class="proj_head">
+        <h2 class="proj_title"></h2>
+        <span class="proj_kind"></span>
+      </header>
+      <p class="proj_one"></p>
+      <div class="proj_tags"></div>
+      <footer class="proj_foot">
+        <a class="proj_link" target="_blank" rel="noopener">View on Amazon</a>
+      </footer>
+    </article>
+  </template>
+
   <script>
-    const SITE_HOST = "buffalocodes.github.io";
-    const SITE_PATH = "PersonalWebpage";
-    const PAGES = [
-      { title: "Home", url: "index.html" },
-      { title: "Experience", url: "experience.html" },
-      { title: "Projects", url: "projects.html" },
-      { title: "Bookshelf", url: "bookshelf.html" },
-      { title: "Contact", url: "contact.html" }
-    ];
-    const openBtn = document.getElementById("openSearch");
-    const modal = document.getElementById("searchModal");
-    const closeBtn = document.getElementById("closeSearch");
-    const input = document.getElementById("q");
-    const form = document.getElementById("siteSearchForm");
-    function openModal() {
-      modal.classList.add("open");
-      modal.setAttribute("aria-hidden", "false");
-      setTimeout(() => { if (input) input.focus(); }, 50);
-    }
-    function closeModal() {
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
-      if (openBtn) openBtn.focus();
-    }
-    if (openBtn) openBtn.addEventListener("click", openModal);
-    if (closeBtn) closeBtn.addEventListener("click", closeModal);
-    if (modal) modal.addEventListener("click", e => { if (e.target === modal) closeModal(); });
-    document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
-    function ensureResultsContainer() {
-      const panel = document.querySelector(".search-panel");
-      let box = panel.querySelector(".results");
-      if (!box) {
-        box = document.createElement("div");
-        box.className = "results";
-        panel.appendChild(box);
+  const DATA_URL = "assets/json/bookshelf.json";
+  const AMAZON_TAG = "yourtag-20";
+
+  function withAmazonTag(url) {
+    try {
+      const u = new URL(url);
+      if (u.hostname.includes("amazon.") && !u.searchParams.has("tag")) {
+        u.searchParams.set("tag", AMAZON_TAG);
       }
-      return box;
+      return u.toString();
+    } catch {
+      return url;
     }
-    async function fetchText(url) {
-      try {
-        const res = await fetch(url, { cache: "no-store" });
-        if (!res.ok) return "";
-        const html = await res.text();
-        const tmp = document.createElement("div");
-        tmp.innerHTML = html;
-        return tmp.textContent || "";
-      } catch {
-        return "";
-      }
+  }
+
+  // Helpers
+  function cleanISBN(v) {
+    if (!v) return "";
+    const s = String(v).trim();
+    if (s === '=""' || s === '=\"\"' || s === '""' || s === "0") return "";
+    return s.replace(/[^0-9Xx]/g, "");
+  }
+
+  function coverUrl(isbn13, isbn, img) {
+    if (img && img.trim()) return img.trim();
+    const id = cleanISBN(isbn13) || cleanISBN(isbn);
+    if (id) return `https://covers.openlibrary.org/b/isbn/${id}-L.jpg?default=false`;
+    return "data:image/svg+xml;charset=utf8," + encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='600'>
+         <rect width='100%' height='100%' fill='#f3f3f3'/>
+         <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#777' font-family='sans-serif' font-size='18'>No cover</text>
+       </svg>`
+    );
+  }
+
+  function normalize(raw) {
+    const title = String(raw.title || "").trim();
+    const author = String(raw.author || "").trim();
+    const year = raw.year ? Number(raw.year) : "";
+
+    // New multi genre support with fallback
+    const genres = Array.isArray(raw.genres)
+      ? raw.genres.map(g => String(g || "").trim()).filter(Boolean)
+      : (raw.genres ? [String(raw.genres).trim()] : []);
+    const genre = genres[0] || "";
+
+    const isbn13 = cleanISBN(raw.isbn13 || "");
+    const isbn = cleanISBN(raw.isbn || "");
+
+    let url = String(raw.amazon_search_url || "").trim();
+    if (!url || url.includes("%3D%22%22")) {
+      const q = isbn13 || isbn || `${title} ${author}`.trim();
+      url = q ? `https://www.amazon.com/s?k=${encodeURIComponent(q)}` : "";
     }
-    async function localSearch(query) {
-      const q = query.toLowerCase();
-      const results = [];
-      for (const page of PAGES) {
-        const text = await fetchText(page.url);
-        const hay = (page.title + " " + text).toLowerCase();
-        let score = 0;
-        if (hay.includes(q)) score = 2; else q.split(/\s+/).forEach(w => { if (w && hay.includes(w)) score += 1; });
-        if (score > 0) results.push({ ...page, score });
-      }
-      results.sort((a, b) => b.score - a.score);
-      return results.slice(0, 10);
-    }
-    function googleUrl(query) {
-      const webQ = `site:${SITE_HOST} inurl:${SITE_PATH} ${query}`;
-      return "https://www.google.com/search?q=" + encodeURIComponent(webQ);
-    }
-    async function showLocalResults(query) {
-      const box = ensureResultsContainer();
-      box.innerHTML = "<p>Searching this site…</p>";
-      const results = await localSearch(query);
-      if (!results.length) {
-        box.innerHTML = `<p>No in site results.</p><p><a href="${googleUrl(query)}">Search on Google instead</a></p>`;
-        return;
-      }
-      const base = location.origin + location.pathname.replace(/[^/]*$/, "");
-      box.innerHTML = results.map(r => `<div class="card" style="margin-top:0.75rem"><strong><a href="${r.url}">${r.title}</a></strong><div style="font-size:0.95rem;color:#555">${base}${r.url}</div></div>`).join("") + `<p style="margin-top:0.75rem"><a href="${googleUrl(query)}">See web results on Google</a></p>`;
-    }
-    if (form) {
-      form.addEventListener("submit", async e => {
-        e.preventDefault();
-        const q = (input && input.value || "").trim();
-        if (!q) return;
-        await showLocalResults(q);
+
+    return {
+      title,
+      author,
+      year,
+      genres,
+      genre,
+      isbn13,
+      isbn,
+      img: String(raw.img || "").trim(),
+      url
+    };
+  }
+
+  function buildCard(b) {
+    const n = normalize(b);
+    const tpl = document.getElementById("tpl-card").content.firstElementChild.cloneNode(true);
+
+    // Store joined genres for simple data hooks
+    tpl.dataset.genre = (n.genres && n.genres.length ? n.genres.join(",").toLowerCase() : (n.genre || "")).toLowerCase();
+    tpl.dataset.author = n.author.toLowerCase();
+    tpl.dataset.title = n.title.toLowerCase();
+
+    const img = tpl.querySelector("img");
+    const title = tpl.querySelector(".proj_title");
+    const kind = tpl.querySelector(".proj_kind");
+    const one = tpl.querySelector(".proj_one");
+    const tags = tpl.querySelector(".proj_tags");
+    const link = tpl.querySelector(".proj_link");
+
+    img.src = coverUrl(n.isbn13, n.isbn, n.img);
+    img.alt = `${n.title} by ${n.author}`;
+
+    title.textContent = n.title;
+    title.title = n.title;
+    kind.textContent = n.genre || "Book";
+    one.textContent = n.year ? `${n.author} · ${n.year}` : n.author;
+
+    tags.innerHTML = "";
+    if (n.genres && n.genres.length) {
+      n.genres.forEach(g => {
+        const t = document.createElement("span");
+        t.className = "proj_tag";
+        t.textContent = g;
+        tags.appendChild(t);
       });
+    } else if (n.genre) {
+      const t = document.createElement("span");
+      t.className = "proj_tag";
+      t.textContent = n.genre;
+      tags.appendChild(t);
     }
-    const navToggle = document.getElementById("navToggle");
-    const navMenu = document.getElementById("navMenu");
-    if (navToggle && navMenu) {
-      navToggle.addEventListener("click", () => {
-        const isOpen = navMenu.classList.toggle("open");
-        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-      const navLinks = navMenu.querySelectorAll("a");
-      navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-          navMenu.classList.remove("open");
-          navToggle.setAttribute("aria-expanded", "false");
+    if (n.year) {
+      const t = document.createElement("span");
+      t.className = "proj_tag";
+      t.textContent = String(n.year);
+      tags.appendChild(t);
+    }
+
+    link.href = withAmazonTag(n.url);
+    link.addEventListener("click", () => {
+      if (window.gtag) {
+        window.gtag("event", "book_click", {
+          book_title: n.title,
+          book_author: n.author,
+          book_genre: (n.genres && n.genres.length ? n.genres.join(", ") : n.genre) || "(none)"
         });
-      });
-    }
-    (function () {
-      const root = document.documentElement;
-      const toggle = document.getElementById("themeToggle");
-      if (!toggle) return;
-      toggle.setAttribute("aria-pressed", root.getAttribute("data-theme") === "dark" ? "true" : "false");
-      toggle.addEventListener("click", () => {
-        const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch {}
-        toggle.setAttribute("aria-pressed", next === "dark" ? "true" : "false");
-      });
-    })();
-    window.addEventListener("DOMContentLoaded", () => {
-      document.documentElement.classList.remove("no-theme-transitions");
+      }
     });
-  </script>
+
+    return tpl;
+  }
+
+  function render(list) {
+    const grid = document.getElementById("books");
+    grid.innerHTML = "";
+    for (const b of list) grid.appendChild(buildCard(b));
+  }
+
+  function buildPills(data) {
+    const set = new Set();
+    for (const b of data) {
+      const list = Array.isArray(b.genres) && b.genres.length
+        ? b.genres
+        : (b.genres ? [b.genres] : []);
+      for (const g of list) {
+        const v = String(g || "").trim().toLowerCase();
+        if (v) set.add(v);
+      }
+    }
+    const pills = document.getElementById("genre-pills");
+    pills.innerHTML = "";
+    [...set].sort().forEach(g => {
+      const btn = document.createElement("button");
+      btn.className = "pill";
+      btn.dataset.genre = g;
+      btn.textContent = g.replace(/\b\w/g, c => c.toUpperCase());
+      pills.appendChild(btn);
+    });
+  }
+
+  function applyFiltering(data) {
+    const q = document.getElementById("bookshelfQ");
+    let activeGenre = "";
+
+    function go() {
+      const needle = (q.value || "").trim().toLowerCase();
+      const out = data.filter(b => {
+        const n = normalize(b);
+        const genreOk = !activeGenre || (
+          (n.genres && n.genres.some(g => String(g).toLowerCase() === activeGenre)) ||
+          (n.genre && n.genre.toLowerCase() === activeGenre)
+        );
+        const text = `${n.title} ${n.author}`.toLowerCase();
+        const qOk = !needle || text.includes(needle);
+        return genreOk && qOk;
+      });
+      render(out);
+    }
+
+    document.querySelector(".proj_filters").addEventListener("click", e => {
+      const btn = e.target.closest(".pill");
+      if (!btn) return;
+      document.querySelectorAll(".proj_filters .pill").forEach(b => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      activeGenre = btn.dataset.genre || "";
+      go();
+    });
+
+    q.addEventListener("input", go);
+    go();
+  }
+
+  fetch(DATA_URL)
+    .then(r => r.json())
+    .then(data => {
+      buildPills(data);
+      applyFiltering(data);
+      render(data);
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById("books").innerHTML = "<p style='padding:1rem'>Could not load bookshelf data.</p>";
+    });
+</script>
+
+
   <footer class="site-footer">
-  <div class="footer-socials">
-    <a href="https://www.linkedin.com/in/pierce-wallar" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" class="icon"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7 19H4V9h3v10zM5.5 7.7C4.1 7.7 3 6.6 3 5.3S4.1 3 5.5 3s2.5 1.1 2.5 2.3S6.9 7.7 5.5 7.7zM21 19h-3v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V19h-3V9h2.9v1.4h.1c.4-.7 1.4-1.4 3-1.4 3.2 0 3.8 2.1 3.8 4.7V19z"/></svg>
-    </a>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/pierce-wallar" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7 19H4V9h3v10zM5.5 7.7C4.1 7.7 3 6.6 3 5.3S4.1 3 5.5 3s2.5 1.1 2.5 2.3S6.9 7.7 5.5 7.7zM21 19h-3v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V19h-3V9h2.9v1.4h.1c.4-.7 1.4-1.4 3-1.4 3.2 0 3.8 2.1 3.8 4.7V19z"/></svg>
+      </a>
 
-    <a href="https://github.com/buffalocodes" target="_blank" rel="noopener" aria-label="GitHub">
-      <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.8 1.3 2.7 1.8.5-.4.9-.7 1.2-1-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11.3 11.3 0 0 1 5.9 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.5.4.9 1.1.9 2.2v3.2c0 .3.2.7.8.6 4.7-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-    </a>
+      <a href="https://github.com/buffalocodes" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.8 1.3 2.7 1.8.5-.4.9-.7 1.2-1-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11.3 11.3 0 0 1 5.9 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.5.4.9 1.1.9 2.2v3.2c0 .3.2.7.8.6 4.7-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+      </a>
 
-    <a href="mailto:piercewallar@gmail.com" aria-label="Email">
-      <svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-    </a>
-  </div>
-<footer class="site-footer">
-  <div class="footer-socials">
-    <!-- LinkedIn / GitHub / Email icons -->
-  </div>
+      <a href="mailto:piercewallar@gmail.com" aria-label="Email">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+    </div>
+  </footer>
 
-  <p class="last-updated">
-    Last updated: <span id="last-updated">Loading…</span>
-  </p>
-</footer>
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <!-- LinkedIn / GitHub / Email icons -->
+    </div>
+
+    <p class="last-updated">
+      Last updated: <span id="last-updated">Loading…</span>
+    </p>
+  </footer>
 
 <script>
   // Set these once
@@ -248,13 +351,11 @@
     const fmt = { year: "numeric", month: "long", day: "numeric" };
 
     try {
-      // 1 get default branch so this works if you use main or gh pages
       const repoRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`);
       if (!repoRes.ok) throw new Error("Repo lookup failed");
       const repo = await repoRes.json();
       const branch = repo.default_branch || "main";
 
-      // 2 get most recent commit on that branch
       const commitsRes = await fetch(
         `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/commits?sha=${encodeURIComponent(branch)}&per_page=1`
       );
@@ -265,7 +366,6 @@
 
       el.textContent = new Date(iso).toLocaleDateString(undefined, fmt);
     } catch (err) {
-      // graceful fallback if API rate limited or offline
       try {
         el.textContent = new Date(document.lastModified).toLocaleDateString(undefined, fmt);
       } catch {
@@ -275,6 +375,31 @@
   }
 
   document.addEventListener("DOMContentLoaded", setLastUpdatedFromGitHub);
+</script>
+<script>
+  // enable theme toggle and clean up the boot class
+  (function () {
+    const d = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+
+    // reflect the current state on first paint
+    const now = d.getAttribute("data-theme") === "dark";
+    if (btn) btn.setAttribute("aria-pressed", String(now));
+
+    // remove the no transition guard on the next frame
+    requestAnimationFrame(() => d.classList.remove("no-theme-transitions"));
+
+    // wire up the toggle
+    if (btn) {
+      btn.addEventListener("click", () => {
+        const isDark = d.getAttribute("data-theme") === "dark";
+        const next = isDark ? "light" : "dark";
+        d.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch {}
+        btn.setAttribute("aria-pressed", String(next === "dark"));
+      });
+    }
+  })();
 </script>
 
 </body>
