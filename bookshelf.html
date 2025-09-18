@@ -5,20 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Pierce A. Wallar — Home</title>
 
-<!-- Theme boot: default to light, only use dark if saved -->
-<script>
-  (function () {
-    const d = document.documentElement;
-    d.classList.add('no-theme-transitions');
-    let saved = null;
-    try { saved = localStorage.getItem('theme'); } catch {}
-    if (saved === 'dark') {
-      d.setAttribute('data-theme', 'dark');
-    } else {
-      d.setAttribute('data-theme', 'light');
-    }
-  })();
-</script>
+  <!-- Theme boot: default to light, only use dark if saved -->
+  <script>
+    (function () {
+      const d = document.documentElement;
+      d.classList.add('no-theme-transitions');
+      let saved = null;
+      try { saved = localStorage.getItem('theme'); } catch {}
+      d.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
 
   <meta name="color-scheme" content="light dark">
   <link rel="stylesheet" href="css/styles.css"/>
@@ -59,12 +55,7 @@
         <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm9-9h2V1h-2v3zm7.04.46l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM17 13h3v-2h-3v2zM11 23h2v-3h-2v3zM4.22 19.78l1.41 1.41 1.8-1.79-1.42-1.42-1.79 1.8zM19.78 19.78l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/></svg>
       </button>
 
-      <!-- <button class="search-btn" id="openSearch" aria-label="Search">
-        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
-          <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </button> -->
+      <!-- <button class="search-btn" id="openSearch" aria-label="Search">...</button> -->
     </div>
   </nav>
 
@@ -82,7 +73,7 @@
 
   <header class="page_head">
     <h1>Bookshelf</h1>
-    <p class="disclosure">As an Amazon Associate I may earn from qualifying purchases.</p>
+    <p class="disclosure">A collection of books I’m reading, studying, or just keeping on hand for reference.</p>
   </header>
 
   <!-- Filter pills like Projects -->
@@ -113,7 +104,7 @@
     </article>
   </template>
 
-  <script>
+<script>
   const DATA_URL = "assets/json/bookshelf.json";
   const AMAZON_TAG = "yourtag-20";
 
@@ -154,7 +145,7 @@
     const author = String(raw.author || "").trim();
     const year = raw.year ? Number(raw.year) : "";
 
-    // New multi genre support with fallback
+    // Multi genre support with fallback
     const genres = Array.isArray(raw.genres)
       ? raw.genres.map(g => String(g || "").trim()).filter(Boolean)
       : (raw.genres ? [String(raw.genres).trim()] : []);
@@ -169,24 +160,14 @@
       url = q ? `https://www.amazon.com/s?k=${encodeURIComponent(q)}` : "";
     }
 
-    return {
-      title,
-      author,
-      year,
-      genres,
-      genre,
-      isbn13,
-      isbn,
-      img: String(raw.img || "").trim(),
-      url
-    };
+    return { title, author, year, genres, genre, isbn13, isbn, img: String(raw.img || "").trim(), url };
   }
 
   function buildCard(b) {
     const n = normalize(b);
     const tpl = document.getElementById("tpl-card").content.firstElementChild.cloneNode(true);
 
-    // Store joined genres for simple data hooks
+    // Data hooks
     tpl.dataset.genre = (n.genres && n.genres.length ? n.genres.join(",").toLowerCase() : (n.genre || "")).toLowerCase();
     tpl.dataset.author = n.author.toLowerCase();
     tpl.dataset.title = n.title.toLowerCase();
@@ -301,16 +282,35 @@
     go();
   }
 
+  // Sorter for title then author, ignoring leading articles
+  function sortBooks(list) {
+    const collator = new Intl.Collator(undefined, { sensitivity: "base", numeric: true });
+    const strip = s => String(s || "")
+      .trim()
+      .replace(/^(a |an |the )/i, "")
+      .toLowerCase();
+
+    return list.slice().sort((a, b) => {
+      const ta = strip(a.title), tb = strip(b.title);
+      const byTitle = collator.compare(ta, tb);
+      if (byTitle !== 0) return byTitle;
+      return collator.compare(strip(a.author), strip(b.author));
+    });
+  }
+
+  // Load, sort, then initialize UI
   fetch(DATA_URL)
     .then(r => r.json())
     .then(data => {
-      buildPills(data);
-      applyFiltering(data);
-      render(data);
+      const sorted = sortBooks(data);
+      buildPills(sorted);
+      applyFiltering(sorted);
+      render(sorted);
     })
     .catch(err => {
       console.error(err);
-      document.getElementById("books").innerHTML = "<p style='padding:1rem'>Could not load bookshelf data.</p>";
+      document.getElementById("books").innerHTML =
+        "<p style='padding:1rem'>Could not load bookshelf data.</p>";
     });
 </script>
 
@@ -341,66 +341,89 @@
     </p>
   </footer>
 
-<script>
-  // Set these once
-  const GH_OWNER = "buffalocodes";
-  const GH_REPO  = "PersonalWebpage";
+  <script>
+    // Set these once
+    const GH_OWNER = "buffalocodes";
+    const GH_REPO  = "PersonalWebpage";
 
-  async function setLastUpdatedFromGitHub() {
-    const el = document.getElementById("last-updated");
-    const fmt = { year: "numeric", month: "long", day: "numeric" };
+    async function setLastUpdatedFromGitHub() {
+      const el = document.getElementById("last-updated");
+      const fmt = { year: "numeric", month: "long", day: "numeric" };
 
-    try {
-      const repoRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`);
-      if (!repoRes.ok) throw new Error("Repo lookup failed");
-      const repo = await repoRes.json();
-      const branch = repo.default_branch || "main";
-
-      const commitsRes = await fetch(
-        `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/commits?sha=${encodeURIComponent(branch)}&per_page=1`
-      );
-      if (!commitsRes.ok) throw new Error("Commits lookup failed");
-      const commits = await commitsRes.json();
-      const iso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
-      if (!iso) throw new Error("No commit date");
-
-      el.textContent = new Date(iso).toLocaleDateString(undefined, fmt);
-    } catch (err) {
       try {
-        el.textContent = new Date(document.lastModified).toLocaleDateString(undefined, fmt);
-      } catch {
-        el.textContent = "Unavailable";
+        const repoRes = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}`);
+        if (!repoRes.ok) throw new Error("Repo lookup failed");
+        const repo = await repoRes.json();
+        const branch = repo.default_branch || "main";
+
+        const commitsRes = await fetch(
+          `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/commits?sha=${encodeURIComponent(branch)}&per_page=1`
+        );
+        if (!commitsRes.ok) throw new Error("Commits lookup failed");
+        const commits = await commitsRes.json();
+        const iso = commits[0]?.commit?.author?.date || commits[0]?.commit?.committer?.date;
+        if (!iso) throw new Error("No commit date");
+
+        el.textContent = new Date(iso).toLocaleDateString(undefined, fmt);
+      } catch (err) {
+        try {
+          el.textContent = new Date(document.lastModified).toLocaleDateString(undefined, fmt);
+        } catch {
+          el.textContent = "Unavailable";
+        }
       }
     }
-  }
 
-  document.addEventListener("DOMContentLoaded", setLastUpdatedFromGitHub);
-</script>
-<script>
-  // enable theme toggle and clean up the boot class
-  (function () {
-    const d = document.documentElement;
-    const btn = document.getElementById("themeToggle");
+    document.addEventListener("DOMContentLoaded", setLastUpdatedFromGitHub);
+  </script>
 
-    // reflect the current state on first paint
-    const now = d.getAttribute("data-theme") === "dark";
-    if (btn) btn.setAttribute("aria-pressed", String(now));
+  <script>
+    // enable theme toggle and clean up the boot class
+    (function () {
+      const d = document.documentElement;
+      const btn = document.getElementById("themeToggle");
 
-    // remove the no transition guard on the next frame
-    requestAnimationFrame(() => d.classList.remove("no-theme-transitions"));
+      const now = d.getAttribute("data-theme") === "dark";
+      if (btn) btn.setAttribute("aria-pressed", String(now));
 
-    // wire up the toggle
-    if (btn) {
-      btn.addEventListener("click", () => {
-        const isDark = d.getAttribute("data-theme") === "dark";
-        const next = isDark ? "light" : "dark";
-        d.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch {}
-        btn.setAttribute("aria-pressed", String(next === "dark"));
+      requestAnimationFrame(() => d.classList.remove("no-theme-transitions"));
+
+      if (btn) {
+        btn.addEventListener("click", () => {
+          const isDark = d.getAttribute("data-theme") === "dark";
+          const next = isDark ? "light" : "dark";
+          d.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch {}
+          btn.setAttribute("aria-pressed", String(next === "dark"));
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    // Nav toggle identical to index.html
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    if (navToggle && navMenu) {
+      navToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.toggle("open");
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      navMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("open");
+          navToggle.setAttribute("aria-expanded", "false");
+        });
       });
     }
-  })();
-</script>
+  </script>
+
+  <script>
+    // Enable transitions after first paint, like index.html
+    window.addEventListener("DOMContentLoaded", () => {
+      document.documentElement.classList.remove("no-theme-transitions");
+    });
+  </script>
 
 </body>
 </html>
