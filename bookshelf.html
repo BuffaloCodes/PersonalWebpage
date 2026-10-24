@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Bookshelf | Pierce A. Wallar</title>
+  <meta name="description" content="Books Pierce A. Wallar has read, studied, and kept on hand, grouped by subject."/>
+  <script>
+    /* Starts in light mode; uses dark only if the visitor chose it before. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('no-theme-transitions');
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      d.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://piercewallar.com/bookshelf.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bookshelf | Pierce A. Wallar">
+  <meta property="og:description" content="Books Pierce A. Wallar has read, studied, and kept on hand, grouped by subject.">
+  <meta property="og:url" content="https://piercewallar.com/bookshelf.html">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="assets/images/logo.png" alt="Pierce Wallar logo">
+      <span>Pierce A. Wallar</span>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="navbar-right" id="navMenu">
+      <a href="index.html">Home</a>
+      <!-- Hidden for now. To show a page, remove the comment markers around its link. -->
+      <!-- <a href="experience.html">Experience</a> -->
+      <a href="projects.html">Projects</a>
+      <a href="bookshelf.html" class="active">Bookshelf</a>
+      <!-- <a href="contact.html">Contact</a> -->
+
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-moon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
+        <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm9-9h2V1h-2v3zm7.04.46l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM17 13h3v-2h-3v2zM11 23h2v-3h-2v3zM4.22 19.78l1.41 1.41 1.8-1.79-1.42-1.42-1.79 1.8zM19.78 19.78l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <header class="page_head">
+    <h1>Bookshelf</h1>
+    <p class="disclosure">A collection of books I’m reading, studying, or just keeping on hand for reference.</p>
+  </header>
+
+  <div class="bk_search">
+    <input id="bookshelfQ" type="search" placeholder="Search title or author" aria-label="Search books">
+  </div>
+
+  <main class="bk_list">
+    <!-- To add a book: copy one line below inside the section where it belongs and edit it.
+         To add a section: copy a whole <details> block and change its title.
+         The Amazon links are search links to start with. To use a direct or affiliate link, replace the address
+         inside href="..." on that line. If you join Amazon Associates, add rel="sponsored" to those links and
+         add a short disclosure sentence under the page title. -->
+    <div class="bk_cols">
+      <details class="bk_group" open>
+        <summary>Biography &amp; Memoir</summary>
+        <ul>
+        <li><span class="bk_text"><em>The Anthropocene Reviewed</em> &mdash; John Green</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780525555216" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>First Train Out of Denver</em> &mdash; Leo Jenkins</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781683550006" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Into the Wild</em> &mdash; Jon Krakauer</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780385486804" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Paddle Your Own Canoe</em> &mdash; Nick Offerman</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780525954217" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>A Promised Land</em> &mdash; Barack Obama</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781524763183" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Resilience: Hard-Won Wisdom for Living a Better Life</em> &mdash; Eric Greitens</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780544705265" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Spy and the Traitor</em> &mdash; Ben Macintyre</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780771060335" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Military &amp; War</summary>
+        <ul>
+        <li><span class="bk_text"><em>12 Strong</em> &mdash; Doug Stanton</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781471170829" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>All Quiet on the Western Front</em> &mdash; Erich Maria Remarque</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780449213940" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Band of Brothers</em> &mdash; Stephen E. Ambrose</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780743464116" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Five Years to Freedom</em> &mdash; James N. Rowe</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780345314604" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Guerrilla Factory</em> &mdash; Tony Schwalm</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781451623604" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Hope and Honor</em> &mdash; Sidney Shachnow</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780765307927" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Inside Delta Force</em> &mdash; Eric L. Haney</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780385339360" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Last of the Doughboys</em> &mdash; Richard Rubin</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780544290488" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Lest We Forget</em> &mdash; Leo Jenkins</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780999293799" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Mission, the Men, and Me</em> &mdash; Pete Blaber</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780425223727" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>On Assimilation: A Ranger’s Return from War</em> &mdash; Leo Jenkins</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780991286577" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Rock of Anzio</em> &mdash; Flint Whitlock</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780813343013" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Roughneck Nine-One</em> &mdash; Frank Antenori</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780312353339" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>With the Old Breed</em> &mdash; Eugene B. Sledge</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780195067149" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>History</summary>
+        <ul>
+        <li><span class="bk_text"><em>Boom Town: The Fantastical Saga of Oklahoma City</em> &mdash; Sam Anderson</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780804137317" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>In the Heart of the Sea</em> &mdash; Nathaniel Philbrick</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780141001821" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Republic of Pirates</em> &mdash; Colin Woodard</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780151013029" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Business &amp; Leadership</summary>
+        <ul>
+        <li><span class="bk_text"><em>It’s Your Ship: Management Techniques from the Best Damn Ship in the Navy</em> &mdash; D. Michael Abrashoff</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780446529112" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Thrillers &amp; Mystery</summary>
+        <ul>
+        <li><span class="bk_text"><em>Angels &amp; Demons</em> &mdash; Dan Brown</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781416524793" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Anomaly</em> &mdash; Michael Rutger</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781785764011" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Cabin at the End of the World</em> &mdash; Paul Tremblay</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780062679109" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Couple Next Door</em> &mdash; Shari Lapena</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780735221086" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Da Vinci Code</em> &mdash; Dan Brown</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9782266144346" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Inferno</em> &mdash; Dan Brown</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780385537858" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Lost Symbol</em> &mdash; Dan Brown</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780385504225" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Origin</em> &mdash; Dan Brown</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780385514231" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Someone We Know</em> &mdash; Shari Lapena</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780525557654" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Fantasy</summary>
+        <ul>
+        <li><span class="bk_text"><em>American Gods</em> &mdash; Neil Gaiman</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780063081918" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Good Omens</em> &mdash; Terry Pratchett</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780062896902" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Lies of Locke Lamora</em> &mdash; Scott Lynch</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780593725429" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>Red Seas Under Red Skies</em> &mdash; Scott Lynch</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9781596061385" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Science Fiction</summary>
+        <ul>
+        <li><span class="bk_text"><em>Ender’s Game</em> &mdash; Orson Scott Card</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780812550702" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Man in the High Castle</em> &mdash; Philip K. Dick</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780679740674" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Martian</em> &mdash; Andy Weir</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780804139021" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>World War Z</em> &mdash; Max Brooks</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780307346605" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+      <details class="bk_group" open>
+        <summary>Literary &amp; Historical Fiction</summary>
+        <ul>
+        <li><span class="bk_text"><em>The Road</em> &mdash; Cormac McCarthy</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780307265432" target="_blank" rel="noopener">Amazon</a></li>
+        <li><span class="bk_text"><em>The Sisters Brothers</em> &mdash; Patrick deWitt</span> <a class="bk_buy" href="https://www.amazon.com/s?k=9780062041265" target="_blank" rel="noopener">Amazon</a></li>
+        </ul>
+      </details>
+    </div>
+    <p class="bk_empty" id="bk_empty" hidden>No books match that search.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/pierce-wallar" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="icon"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7 19H4V9h3v10zM5.5 7.7C4.1 7.7 3 6.6 3 5.3S4.1 3 5.5 3s2.5 1.1 2.5 2.3S6.9 7.7 5.5 7.7zM21 19h-3v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V19h-3V9h2.9v1.4h.1c.4-.7 1.4-1.4 3-1.4 3.2 0 3.8 2.1 3.8 4.7V19z"/></svg></a>
+      <a href="https://github.com/buffalocodes" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" class="icon"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.8 1.3 2.7 1.8.5-.4.9-.7 1.2-1-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11.3 11.3 0 0 1 5.9 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.5.4.9 1.1.9 2.2v3.2c0 .3.2.7.8.6 4.7-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+      <a href="mailto:piercewallar@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+    <!-- Update the month and year by hand whenever you publish changes. -->
+    <p class="last-updated">Last updated: October 2026</p>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BoomTown Home Services | Pierce A. Wallar</title>
+  <meta name="description" content="A veteran-owned home services company serving the Oklahoma City metro."/>
+  <script>
+    /* Starts in light mode; uses dark only if the visitor chose it before. */
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('no-theme-transitions');
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      d.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
+  <meta name="color-scheme" content="light dark">
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" sizes="32x32">
+  <meta name="theme-color" content="#ffffff">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://piercewallar.com/project-boomtown.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BoomTown Home Services | Pierce A. Wallar">
+  <meta property="og:description" content="A veteran-owned home services company serving the Oklahoma City metro.">
+  <meta property="og:url" content="https://piercewallar.com/project-boomtown.html">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img src="assets/images/logo.png" alt="Pierce Wallar logo">
+      <span>Pierce A. Wallar</span>
+    </div>
+
+    <!-- Mobile menu button -->
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="3" y1="6"  x2="21" y2="6"  stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="navbar-right" id="navMenu">
+      <a href="index.html">Home</a>
+      <!-- Hidden for now. To show a page, remove the comment markers around its link. -->
+      <!-- <a href="experience.html">Experience</a> -->
+      <a href="projects.html" class="active">Projects</a>
+      <a href="bookshelf.html">Bookshelf</a>
+      <!-- <a href="contact.html">Contact</a> -->
+
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="icon-moon" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
+        <svg class="icon-sun" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM1 13h3v-2H1v2zm9-9h2V1h-2v3zm7.04.46l1.79-1.8-1.41-1.41-1.8 1.79 1.42 1.42zM17 13h3v-2h-3v2zM11 23h2v-3h-2v3zM4.22 19.78l1.41 1.41 1.8-1.79-1.42-1.42-1.79 1.8zM19.78 19.78l-1.8-1.79-1.41 1.41 1.79 1.8 1.42-1.42zM12 8a4 4 0 100 8 4 4 0 000-8z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main class="pp">
+    <a class="pp_back" href="projects.html">&larr; All projects</a>
+
+    <!-- EDIT: replace the three images (same file names, .jpg) in assets/images/projects/:
+         boomtown-1.jpg (top image and the card on the Projects page), boomtown-2.jpg and boomtown-3.jpg (side-by-side pair).
+         Then update each image's alt text below so it describes the picture. -->
+
+    <header>
+      <p class="pp_kicker">Entrepreneurship · Founder</p>
+      <h1>BoomTown Home Services</h1>
+      <p class="pp_sub">A veteran-owned home services company serving the Oklahoma City metro.</p>
+      <dl class="pp_facts">
+        <div><dt>Role</dt><dd>Founder</dd></div>
+        <div><dt>Founded</dt><dd>July 2024</dd></div>
+        <div><dt>Location</dt><dd>Oklahoma City metro</dd></div>
+        <div><dt>Focus</dt><dd>Home services</dd></div>
+      </dl>
+    </header>
+
+    <figure class="pp_fig">
+      <img src="assets/images/projects/boomtown-1.jpg" alt="BoomTown Home Services image 1">
+      <!-- Optional caption: remove the comment markers and edit the text.
+      <figcaption>Caption goes here.</figcaption> -->
+    </figure>
+
+    <h2>Why I started it</h2>
+    <p>I founded BoomTown Home Services in July 2024, shortly after leaving the Army, with a simple goal: help homeowners in the Oklahoma City area care for the places they love, season after season, year after year. It is veteran-owned and built around habits the Army taught me, such as showing up on time, communicating clearly, and finishing what we start.</p>
+    <h2>Running the business</h2>
+    <p>Because it is a small company, I work across every part of it: the services we offer, how jobs are scheduled and delivered, how customers hear from us, invoicing, and marketing. At that scale, every process decision shows up in the customer's experience, which has been a useful education for an operations-minded MBA student.</p>
+    <!-- EDIT: add specifics such as service lines, crew size, customers served, and the tools you use. -->
+
+    <div class="pp_gallery">
+      <figure class="pp_fig">
+        <img src="assets/images/projects/boomtown-2.jpg" alt="BoomTown Home Services image 2" loading="lazy">
+        <!-- Optional caption: remove the comment markers and edit the text.
+        <figcaption>Caption goes here.</figcaption> -->
+      </figure>
+      <figure class="pp_fig">
+        <img src="assets/images/projects/boomtown-3.jpg" alt="BoomTown Home Services image 3" loading="lazy">
+        <!-- Optional caption: remove the comment markers and edit the text.
+        <figcaption>Caption goes here.</figcaption> -->
+      </figure>
+    </div>
+
+    <h2>What it has taught me</h2>
+    <p>Running BoomTown made my entrepreneurship coursework concrete: pricing against real costs, managing cash flow in a seasonal business, and building repeatable processes so quality does not depend on any one person. It also keeps me close to the daily realities of the customers and operators I hope to advise as a consultant.</p>
+    <p><a class="pp_visit" href="https://www.boomtownservice.com" target="_blank" rel="noopener">Visit BoomTown Home Services</a></p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/pierce-wallar" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" class="icon"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7 19H4V9h3v10zM5.5 7.7C4.1 7.7 3 6.6 3 5.3S4.1 3 5.5 3s2.5 1.1 2.5 2.3S6.9 7.7 5.5 7.7zM21 19h-3v-5.5c0-1.3 0-3-2-3s-2.3 1.5-2.3 2.9V19h-3V9h2.9v1.4h.1c.4-.7 1.4-1.4 3-1.4 3.2 0 3.8 2.1 3.8 4.7V19z"/></svg></a>
+      <a href="https://github.com/buffalocodes" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" class="icon"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 .1.8 1.3 2.7 1.8.5-.4.9-.7 1.2-1-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11.3 11.3 0 0 1 5.9 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.5.4.9 1.1.9 2.2v3.2c0 .3.2.7.8.6 4.7-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+      <a href="mailto:piercewallar@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+    </div>
+    <!-- Update the month and year by hand whenever you publish changes. -->
+    <p class="last-updated">Last updated: October 2026</p>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
