@@ -11,9 +11,12 @@
   --xp-work:#841617;
   --xp-accent:#841617;   /* red used for small text; lighter in dark mode for contrast */
   --xp-edu:#323232;
-  --xp-seg1:#a9565a;   /* Army: earliest role */
-  --xp-seg2:#841617;   /* Army: middle role */
-  --xp-seg3:#4e0002;   /* Army: latest role */
+  --xp-seg1:#cc9296;   /* Army: six roles, earliest (lightest) to latest (darkest) */
+  --xp-seg2:#b86d72;
+  --xp-seg3:#a14449;
+  --xp-seg4:#841617;
+  --xp-seg5:#6a0d10;
+  --xp-seg6:#4e0002;
   --xp-band:#e3eff6;
   --xp-today:#2b6280;
   --xp-grid:#e2e2e2;
@@ -26,9 +29,12 @@ html[data-theme="dark"] .xp{
   --xp-work:#d4474c;
   --xp-accent:#f08a8e;
   --xp-edu:#aab4c0;
-  --xp-seg1:#ef9a9c;
-  --xp-seg2:#d4474c;
-  --xp-seg3:#a02a30;
+  --xp-seg1:#f7c2c4;
+  --xp-seg2:#f2a3a6;
+  --xp-seg3:#ec8387;
+  --xp-seg4:#d4474c;
+  --xp-seg5:#b8383d;
+  --xp-seg6:#a02a30;
   --xp-band:rgba(188,220,235,.13);
   --xp-today:#8ec1dc;
   --xp-grid:rgba(255,255,255,.12);
@@ -88,7 +94,10 @@ html[data-theme="dark"] .xp-group.edu{color:var(--xp-edu)}
 .xp-bar.edu{background:var(--xp-edu)}
 .xp-bar.seg1{background:var(--xp-seg1);border-radius:4px 0 0 4px}
 .xp-bar.seg2{background:var(--xp-seg2);border-radius:0}
-.xp-bar.seg3{background:var(--xp-seg3);border-radius:0 4px 4px 0}
+.xp-bar.seg3{background:var(--xp-seg3);border-radius:0}
+.xp-bar.seg4{background:var(--xp-seg4);border-radius:0}
+.xp-bar.seg5{background:var(--xp-seg5);border-radius:0}
+.xp-bar.seg6{background:var(--xp-seg6);border-radius:0 4px 4px 0}
 .xp-bar.proj{background:repeating-linear-gradient(135deg,var(--xp-edu) 0 3px,transparent 3px 6px);border:1px solid var(--xp-edu);border-radius:0 4px 4px 0}
 .xp-bar.cut-right{border-radius:4px 0 0 4px}
 .xp-row[data-selected="true"] .xp-bar{height:22px;margin-top:-11px}

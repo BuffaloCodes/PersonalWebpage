@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var DEFAULT_ID = "newmark"; // EDIT: change to any id below (ready3, newmark, green-tree, boomtown, gordian, army, univar, ucof, mst, pmp, ou)
+  var DEFAULT_ID = "newmark"; // EDIT: change to any id below (ready3, newmark, green-tree, boomtown, gordian, army, univar, guttering, ucof, mst, pmp, ou)
 
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -16,7 +16,7 @@
     /* ---------- Professional experience: most recent first ---------- */
     {
       id: "ready3", group: "work", label: "Ready 3, LLC",
-      org: "Ready 3, LLC", role: "Aerospace Engineering Intern", place: "Oklahoma City, OK",
+      org: "Ready 3, LLC", role: "Intern, Aerospace Engineering", place: "Oklahoma City, OK",
       start: [2026, 10], end: "present",
       summary: "An internship with an Oklahoma City defense contractor, applying engineering and project management training to complex aerospace programs.",
       bullets: [
@@ -30,7 +30,7 @@
     },
     {
       id: "newmark", group: "work", label: "Newmark RF",
-      org: "Newmark RF", role: "Management Consulting Intern", place: "Real estate management consulting",
+      org: "Newmark RF", role: "Summer Intern, Management Consulting", place: "Real estate management consulting",
       start: [2026, 5], end: [2026, 8],
       summary: "Management consulting work in real estate, where the quality of the underlying data decided whether anything built on it could be trusted.",
       bullets: [
@@ -90,18 +90,24 @@
     },
     {
       id: "army", group: "work", label: "U.S. Army",
-      org: "U.S. Army", role: "Engineer Officer", place: "Fort Lewis and Fort Carson",
-      start: [2017, 9], end: [2024, 1],
-      summary: "Six years as an Army engineer officer, from leading a platoon to managing facilities to running battalion logistics.",
-      /* EDIT: when you are ready, replace the months in each segment below (and the "years" text shown on the page).
-         The chart uses these start and end months to size the three shades inside the Army bar. */
+      org: "U.S. Army", role: "Cavalry Scout and Engineer Officer", shortRole: "Cavalry Scout and Engineer Officer", place: "Active Duty and Oklahoma Army National Guard",
+      start: [2014, 1], end: [2024, 1],
+      summary: "Ten years of service: from a part-time cavalry scout in the Oklahoma Army National Guard to an active-duty engineer officer who led soldiers, managed facilities and construction programs, and ran battalion logistics.",
+      /* Segments run oldest to newest; the panel lists them newest first. Each segment's start and end month sizes its shade in the Army bar.
+         Shades seg1 to seg6 are defined in css/experience.css. */
       segments: [
-        { name: "Platoon Leader", place: "Fort Lewis, WA", start: [2017, 9], end: [2020, 6], years: "2017 – 2020", shade: "seg1",
-          text: "Led a platoon, synchronizing operations, personnel, and resources and improving reporting and execution discipline." /* EDIT: confirm and add specifics */ },
-        { name: "Facilities Manager", place: "Fort Lewis, WA", start: [2020, 6], end: [2022, 11], years: "2020 – 2022", shade: "seg2",
-          text: "Managed facilities and infrastructure work, coordinating with partners on schedule and safety." /* EDIT: confirm and add specifics */ },
-        { name: "Battalion Logistics Officer", place: "Fort Carson, CO", start: [2022, 11], end: [2024, 1], years: "2022 – 2024", shade: "seg3",
-          text: "Oversaw supply and readiness in support of operations and designed processes for movement control and sustainment." /* EDIT: confirm and add specifics */ }
+        { name: "19D Cavalry Scout | Reconnaissance", place: "A/180 CAV, Oklahoma Army National Guard (part-time)", start: [2014, 1], end: [2016, 5], years: "Jan 2014 – May 2016", shade: "seg1",
+          text: "Served as a cavalry scout while completing a bachelor's degree, and responded to Oklahoma natural disasters, including ice storm and tornado cleanup." /* EDIT: confirm and add specifics */ },
+        { name: "Engineer Platoon Leader | Engineer Officer", place: "1220 ENG, Oklahoma Army National Guard (part-time)", start: [2016, 5], end: [2017, 9], years: "May 2016 – Sep 2017", shade: "seg2",
+          text: "Commissioned as an engineer officer through ROTC in May 2016 while working full time in environment, health, and safety, and responded to Oklahoma natural disasters, including ice storm and tornado cleanup." /* EDIT: confirm and add specifics */ },
+        { name: "Engineer Platoon Leader | Construction Engineering Leadership", place: "A/23 BEB · Joint Base Lewis-McChord, WA", start: [2017, 9], end: [2019, 5], years: "Sep 2017 – May 2019", shade: "seg3",
+          text: "Commanded a 28-soldier combat engineer platoon building roads, base camps, and training infrastructure, and raised platoon readiness from 82% to 96% within six months." /* EDIT: confirm and add specifics */ },
+        { name: "Engineer Company Executive Officer | Operations & Resource Management", place: "B/23 BEB · Joint Base Lewis-McChord, WA", start: [2019, 5], end: [2020, 6], years: "May 2019 – Jun 2020", shade: "seg4",
+          text: "Second-in-command of a 120-soldier engineer company: managed a $360K annual budget, introduced inventory and maintenance controls, raised equipment readiness to 95%, and delivered four major construction projects." /* EDIT: confirm and add specifics */ },
+        { name: "Deputy Group Engineer | Facilities & Construction Program Management", place: "HHC/1SFG(A) · Joint Base Lewis-McChord, WA", start: [2020, 6], end: [2022, 11], years: "Jun 2020 – Nov 2022", shade: "seg5",
+          text: "Directed an engineering staff managing $388M in construction, renovation, and maintenance projects, and served as liaison between military and civilian organizations in Asia to modernize 30+ facilities." /* EDIT: confirm and add specifics */ },
+        { name: "Battalion Logistics Officer | Logistics & Procurement Program Management", place: "HHC/299 BEB · Fort Carson, CO", start: [2022, 11], end: [2024, 1], years: "Nov 2022 – Jan 2024", shade: "seg6",
+          text: "Directed a logistics staff overseeing a $350M equipment modernization portfolio and a $15M annual commodity budget, and led the unit to full fielding of new equipment ahead of the Army's schedule." /* EDIT: confirm and add specifics */ }
       ],
       bullets: [],
       skills: ["Leadership", "Logistics", "Facilities management", "Operations", "Project management"],
@@ -109,7 +115,7 @@
     },
     {
       id: "univar", group: "work", label: "Univar Solutions",
-      org: "Univar Solutions", role: "Environment, Health and Safety Manager", place: "Houston, TX",
+      org: "Univar Solutions", role: "Environment, Health and Safety (EHS) Manager", place: "Houston, TX",
       start: [2016, 5], end: [2017, 9],
       summary: "First professional role after college, in environment, health, and safety for a chemical distribution operation.",
       bullets: [
@@ -120,30 +126,42 @@
       skills: ["EHS compliance", "Safety management", "Operations"],
       links: []
     },
+    {
+      id: "guttering", group: "work", label: "\u201cA\u201d Guttering",
+      org: "\u201cA\u201d Guttering", role: "Construction Laborer (advanced to independent project lead)", shortRole: "Construction Laborer to project lead", place: "Oklahoma City, OK",
+      /* EDIT: the bar uses these months as placeholders; replace them with your actual start and end months if you know them (the page text below shows only the years). */
+      start: [2009, 1], end: [2016, 5], dates: "2009 – 2016",
+      summary: "A family-owned construction company in Oklahoma City that let me work around a full class schedule while I earned my undergraduate degree.",
+      bullets: [
+        "Progressed from day laborer to running entire projects independently: estimating, ordering materials, leading the crew, and completing the job."
+      ],
+      skills: ["Estimating", "Materials ordering", "Crew leadership", "Project delivery"],
+      links: []
+    },
 
     /* ---------- Education: oldest first, so the most recent is at the bottom ---------- */
     {
-      id: "ucof", group: "edu", label: "University of Central Oklahoma", shortRole: "B.S., Occupational Safety and Health",
-      org: "University of Central Oklahoma", role: "B.S., Occupational Safety and Health Technology", place: "Edmond, OK",
+      id: "ucof", group: "edu", label: "University of Central Oklahoma", shortRole: "B.S., Industrial Safety",
+      org: "University of Central Oklahoma", role: "B.S., Industrial Safety", place: "Edmond, OK",
       start: [2011, 8], end: [2016, 5],
-      summary: "Undergraduate degree in occupational safety and health, the foundation for an early career in environment, health, and safety.",
+      summary: "Undergraduate degree in industrial safety, the foundation for an early career in environment, health, and safety.",
       bullets: [
         // EDIT: add honors, activities, or coursework worth naming.
         "Coursework in construction management and related fields."
       ],
-      skills: ["Occupational safety", "Construction management"],
+      skills: ["Industrial safety", "Construction management"],
       links: []
     },
     {
-      id: "mst", group: "edu", label: "Missouri S&T", shortRole: "M.S., Geological/Geophysical Engineering",
-      org: "Missouri University of Science and Technology", role: "M.S., Geological/Geophysical Engineering", place: "Rolla, MO",
+      id: "mst", group: "edu", label: "Missouri S&T", shortRole: "M.S., Geological Engineering",
+      org: "Missouri University of Science and Technology", role: "M.S., Geological Engineering", place: "Rolla, MO",
       start: [2022, 1], end: [2022, 12],
-      summary: "Graduate degree in geological and geophysical engineering, completed in a single year while serving on active duty.",
+      summary: "Graduate degree in geological engineering, completed in a single year while serving on active duty.",
       bullets: [
         // EDIT: add thesis, project, or coursework highlights.
         "Completed graduate coursework while serving on active duty."
       ],
-      skills: ["Geological engineering", "Geophysics", "Technical analysis"],
+      skills: ["Geological engineering", "Technical analysis"],
       links: []
     },
     {

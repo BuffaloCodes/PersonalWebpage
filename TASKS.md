@@ -80,7 +80,7 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [ ] Then submit `sitemap.xml` in Google Search Console and refresh the LinkedIn preview
 
 ## After launch (Experience page)
-- [ ] Add months to the three Army sub-roles (the `segments` entries in `js/experience.js`; the boundaries are placeholders at January 2020 and January 2022)
+- [X] Add months to the three Army sub-roles (the `segments` entries in `js/experience.js`; the boundaries are placeholders at January 2020 and January 2022) - COMPLETE
 
 ## Launch checks
 - [ ] Verify the phone number (no phone number appears on any site page, so this applies to the CV and resume only)
