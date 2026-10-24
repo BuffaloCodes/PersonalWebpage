@@ -96,11 +96,11 @@
       /* EDIT: when you are ready, replace the months in each segment below (and the "years" text shown on the page).
          The chart uses these start and end months to size the three shades inside the Army bar. */
       segments: [
-        { name: "Platoon Leader", place: "Fort Lewis", start: [2017, 9], end: [2019, 12], years: "2017 – 2020", shade: "seg1",
+        { name: "Platoon Leader", place: "Fort Lewis, WA", start: [2017, 9], end: [2020, 6], years: "2017 – 2020", shade: "seg1",
           text: "Led a platoon, synchronizing operations, personnel, and resources and improving reporting and execution discipline." /* EDIT: confirm and add specifics */ },
-        { name: "Facilities Manager", place: "Fort Lewis", start: [2020, 1], end: [2021, 12], years: "2020 – 2022", shade: "seg2",
+        { name: "Facilities Manager", place: "Fort Lewis, WA", start: [2020, 6], end: [2022, 11], years: "2020 – 2022", shade: "seg2",
           text: "Managed facilities and infrastructure work, coordinating with partners on schedule and safety." /* EDIT: confirm and add specifics */ },
-        { name: "Battalion Logistics Officer", place: "Fort Carson", start: [2022, 1], end: [2024, 1], years: "2022 – 2024", shade: "seg3",
+        { name: "Battalion Logistics Officer", place: "Fort Carson, CO", start: [2022, 11], end: [2024, 1], years: "2022 – 2024", shade: "seg3",
           text: "Oversaw supply and readiness in support of operations and designed processes for movement control and sustainment." /* EDIT: confirm and add specifics */ }
       ],
       bullets: [],
