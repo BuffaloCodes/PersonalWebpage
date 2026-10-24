@@ -288,7 +288,10 @@ button:hover,button:focus{background:var(--dark-crimson);border-color:var(--dark
   .navbar-right a{padding:.5rem 0;margin:0}
   .search-btn{align-self:flex-start;margin-top:.25rem}
   .container{margin:3rem auto 2rem;padding:0 1rem}
-  html,body{overflow-x:hidden}
+  /* Clip sideways overflow without turning <body> into its own scroll container
+     (html,body{overflow-x:hidden} did that because of the height:100% above). */
+  html{overflow-x:hidden}
+  body{overflow-x:clip}
   .home-layout{width:100%}
   .home-about,.home-photo{max-width:100%}
   .home-about h1{font-size:clamp(.9rem,5.5vw,2.2rem);white-space:nowrap}
@@ -315,6 +318,19 @@ html[data-theme="dark"] .tl-item,
 html[data-theme="dark"] .search-panel{background:var(--white);border-color:var(--light-gray)}
 html[data-theme="dark"] a{color:var(--black)}
 html[data-theme="dark"] .footer{background:var(--dark-gray)}
+/* Dark mode: lighter red for crimson TEXT (headings, brand name, group titles, small links).
+   Same tone the Experience page uses; about 5.6:1 on the dark page background (the dim crimson was 1.8:1).
+   Backgrounds, borders, and buttons keep the OU crimson. */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] .navbar-left span,
+html[data-theme="dark"] .search-panel h2,
+html[data-theme="dark"] .tl-item h3,
+html[data-theme="dark"] .bk_group summary,
+html[data-theme="dark"] .bk_buy,
+html[data-theme="dark"] .navbar-right a.active{color:#f08a8e}
 
 /* Smaller phones */
 @media (max-width:420px){
@@ -333,6 +349,12 @@ html[data-theme="dark"] .footer{background:var(--dark-gray)}
 @media (min-width:421px) and (max-width:720px){
   .container{padding:0}
   .home-about h1{font-size:clamp(.8rem,4.6vw,2.2rem)}
+}
+
+/* Homepage side gutters on phones: the .container{padding:0} rules above also zeroed the
+   home layout's own side padding, leaving the bio text 1-3px from the screen edge. */
+@media (max-width:720px){
+  .container.home-layout{padding-left:1rem;padding-right:1rem}
 }
 
 /* CV buttons */
@@ -542,7 +564,7 @@ html[data-theme="dark"] .footer{background:var(--dark-gray)}
 }
 
 html[data-theme="dark"] {
-  --proj-accent: #cc3300;       /* night accent color for active buttons and outlines */
+  --proj-accent: #ff7a59;       /* night accent color for active buttons and outlines (lightened for contrast) */
   --proj-text:   #eaeaea;       /* night default text color */
   --proj-muted:  #b0b0b0;       /* night muted text color */
   --proj-border: #2a2a2a;       /* night border color */
@@ -550,7 +572,7 @@ html[data-theme="dark"] {
   --proj-btn-bg: #1a1a1a;       /* night filter button background color */
   --proj-btn-tx: #eaeaea;       /* night filter button text color */
   --proj-hover:  #222222;       /* night button hover background color */
-  --proj-title:  #a81b1f;
+  --proj-title:  #f08a8e;
 }
 
 /* ===== Projects layout and typography ===== */
