@@ -15,10 +15,10 @@
 | &nbsp;&nbsp;1220 ENG, Oklahoma Army National Guard (part-time) | Engineer Platoon Leader — Engineer Officer | May 2016 – Sep 2017 | | | |
 | &nbsp;&nbsp;A/180 CAV, Oklahoma Army National Guard (part-time) | 19D Cavalry Scout — Reconnaissance | Jan 2014 – May 2016 | | | |
 | Univar Solutions | Environment, Health and Safety (EHS) Manager | May 2016 – Sep 2017 | no | yes | yes |
-| “A” Guttering | Construction Laborer (advanced to independent project lead) | 2009 – 2016 | no | yes | yes |
+| “A” Guttering | Construction Laborer (advanced to independent project lead) | Jan 2009 – May 2016 | no | yes | yes |
 | University of Central Oklahoma | B.S., Industrial Safety | Aug 2011 – May 2016 | yes | yes | yes |
 | Missouri University of Science and Technology | M.S., Geological Engineering | Jan 2022 – Dec 2022 | yes | yes | yes |
-| Project Management Professional (PMP) | Project Management Institute certification | Sep 2022 | yes | yes | yes |
+| Project Management Professional (PMP) | Project Management Institute certification | Sep 2022 | no | yes | yes |
 | University of Oklahoma | MBA, Entrepreneurship focus · Price College of Business | Aug 2025 – May 2027 | yes | yes | yes |
 
 ## Standards

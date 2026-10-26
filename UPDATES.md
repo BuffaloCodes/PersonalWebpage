@@ -26,11 +26,11 @@ Created 10-26-26. Last updated 10-26-26 (completed items removed; A7 is next). S
 
 ## A. PROFESSIONAL (built for recruiters and consulting audiences)
 
-### A2. /now page | Easy (an evening) | IDEA
+### A2. /now page | Easy (an evening) | IN PROGRESS (draft built 10-26-26; see TASKS.md)
 - Three short paragraphs: what I am working on, learning and reading this month. Update monthly (part of the Monthly block in Section E).
 - Signals activity to recruiters who revisit. Add to nav and sitemap.xml.
 
-### A3. Branded email (hello@piercewallar.com) | Easy (about an hour, plus DNS wait) | IDEA
+### A3. Branded email (hello@piercewallar.com) | Easy (about an hour, plus DNS wait) | PLANNED (guide written 10-26-26, outside the repo)
 - Cloudflare Email Routing (or the registrar's forwarding) to Gmail, plus Gmail "Send mail as."
 - Then update CV, resume, LinkedIn, site and business cards (do this before printing A12).
 
@@ -42,11 +42,12 @@ Created 10-26-26. Last updated 10-26-26 (completed items removed; A7 is next). S
 - Request email template, a short guide for the recommender, and a consent checklist (name display, title, edits allowed).
 - Supports A10.
 
-### A7. Consistency check script | Moderate (a weekend) | **HIGH PRIORITY** | IDEA
+### A7. Consistency check script | Moderate (a weekend) | **HIGH PRIORITY** | IN PROGRESS (v1 built 10-26-26)
 - A local script compares `career.json` against: resume and CV text (extracted from the .docx or PDF), the site's Experience data, and LinkedIn's Positions.csv (from LinkedIn's "Get a copy of your data" export).
 - Flags mismatched dates, titles and employers, plus banned strings (also across the site's HTML pages) (client names, "Sept", GPAs, "[Placeholder", leftover metadata names).
 - Output: a one-page pass/fail report. Run it at each quarterly review and before sending any application batch.
 - Depends on A6 (done). `career.json` already holds the `banned_strings` list, the conventions and the `docs` flags (which entries belong on the resume, CV and site) that this script should read. Note the one-page Resume currently omits Univar by design (`docs.resume` is false for it). The final Resume and CV (10-26-26, commit 4fd20c9) are the first text sources to check against; keep the final `.docx` files in a private folder, not in the public repo. Known drift already fixed by hand on 10-26-26: the Univar summary, the Green Tree place and the South Africa page text.
+- **v1 built 10-26-26:** `scripts/check_consistency.py` checks the site pages (banned text, no phone number, email links, open EDIT: count), that the generated files match a fresh build, the Resume and CV (`.docx` given on the command line, or the published PDFs when `pdftotext` and `pdfinfo` are installed: header, contact, entries, dates, exclusions, banned text, file properties), and optionally LinkedIn's `Positions.csv` (experimental). First run found: the "A" Guttering date override, PMP flagged for the Resume though it is not listed there, and a placeholder email on the retired `contact.html`. Next: try the LinkedIn export, decide on `contact.html`, and consider a quarterly reminder.
 
 ### A8. One-page PDF per project | Moderate (a weekend for the first, then repeatable) | IDEA
 - A single-page leave-behind per project: Situation, Approach, Result, What I would do differently.
@@ -227,3 +228,4 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 - 10-26-26 (AM session 3, later): Synced `career.json` (Univar summary, Green Tree place) and `project-south-africa.html` to the final CV; completed items removed from TASKS.md and UPDATES.md to cut length.
 - 10-26-26 (AM session 3, later): Decision: client names are removed everywhere (project pages, Projects cards, descriptions). Updated Renal OCT, Portugal, South Africa, Newmark, Ready 3, Green Tree, BoomTown and Army forecast pages from Pierce's answers, and synced `career.json` (Ready 3, Newmark, Green Tree, BoomTown, Gordian, and the three degrees). Political History, Home Server, and degree honors deferred at his request.
 - 10-26-26 (AM session 3, later): Added findings from Pierce's three PDFs to the Renal OCT, Portugal and Newmark pages (kept client names and people out), South Africa timeframe (Aug 2025 to Jan 2026) and client response, BoomTown (one-person operation) and Army forecast scales. Gordian sector list: the CV and Experience page use the fuller list; the one-page Resume keeps the shorter list for space, so A7 should not flag that difference.
+- 10-26-26 (evening): A7 v1 built and tested (also catches injected errors); first run fixed the "A" Guttering date override and the PMP flag. A2 draft page `now.html` created (noindex, not in nav or sitemap yet). A3 guide written as a separate .md file.

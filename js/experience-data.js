@@ -260,7 +260,6 @@ window.EXPERIENCE_ENTRIES = [
     "place": "Oklahoma City, OK",
     "start": [2009, 1],
     "end": [2016, 5],
-    "dates": "2009 \u2013 2016",
     "summary": "A family-owned construction company in Oklahoma City that let me work around a full class schedule while I earned my undergraduate degree.",
     "bullets": [
       "Progressed from day laborer to running entire projects independently: estimating, ordering materials, leading the crew, and completing the job."

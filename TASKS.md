@@ -1,12 +1,14 @@
 # Site To-Do
  
 ## Due soon
-- [ ] Commit and push the 10/26/26 content changes (everything GitHub Desktop shows as changed: `TASKS.md`, `UPDATES.md`, `data/career.json`, `js/experience-data.js`, and the project pages; `css/styles.css` should not appear). Then click both homepage download buttons on the live site and confirm each downloads the new file
+- [ ] Commit and push the 10/26/26 evening changes: `data/career.json` (removed the "A" Guttering date override, so it now reads Jan 2009 – May 2016; PMP no longer flagged for the Resume), `data/career-facts.md`, `js/experience-data.js`, the new `scripts/check_consistency.py`, and the draft `now.html`
+- [ ] A7 (tomorrow): run `python scripts/check_consistency.py --resume "<path to Resume .docx>" --cv "<path to CV .docx>"` (keep the .docx files in a private folder). First run flagged `contact.html`, a retired page still in the repo with a placeholder email (`your@email.com`). Decide: delete the file, or fix the address. Then try it with a LinkedIn `Positions.csv` export (experimental)
+- [ ] A2 (tomorrow): finish `now.html`. Confirm the two EDIT: comments (this month's learning topics and the book you are reading), then remove the `noindex` meta line, add the Now link to the nav of all 16 pages (after Experience or Projects), add `https://piercewallar.com/now.html` to `sitemap.xml`, and set the "Last updated" footers. Update it monthly (Site Sunday)
+- [ ] A3 (when you have time): follow `A3-Branded-Email-Guide.md` (about 1 hour plus DNS wait). Do it before printing business cards (A12)
 - [ ] Army forecast: build a new dashboard image (no unit names, locations, or readiness data), replace `army-forecast-1.jpg`, and send it to me for alt text (deferred at your request, 10/26/26)
 - [ ] Career Facts: re-review `data/career-facts.md` against the final Resume and CV (the Resume and CV are final and live as of 10/26/26; Career Facts has not been re-reviewed)
 - [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering Jan 2009 to May 2016; "Newmark" (not Newmark RF); the two Univar bullets; Industrial Safety and Geological Engineering degree names; PMP Sep 2022). `data/career-facts.md` is the generated reference
 - [ ] LinkedIn: apply the final CV wording (see the Career Facts item above); also note the CV Profile now says "engineer officer" and "real estate management consulting"
-- [ ] Resume line to place or drop: "managed 2 large-scale infrastructure projects" appears only on the Resume (Army block); decide which role it belongs to or remove it at the next Resume edit
 - [ ] Real images for all ten projects (`assets/images/projects/<project>-1.jpg`, `-2.jpg`, `-3.jpg`) plus alt text (due 11/1/26)
 - [ ] Review every `EDIT:` comment (Ctrl+Shift+F); South Africa and Renal OCT need the most (due 11/1/26)
 - [ ] Experience page detail text: review the `EDIT:` items in `data/career.json` (no longer in `js/experience.js`), refine each role's summary, highlights, and skills, then run `python scripts/build_career.py` and commit (include in the 11/1/26 batch)
