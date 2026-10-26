@@ -1,16 +1,20 @@
 # Site To-Do
  
 ## Due soon
-- [ ] Finalize the new Resume, CV, and Career Facts. Status 10/26/26: the one-page general Resume is final (header "Pierce A. Wallar, PMP"; no Univar block); the CV still needs structure work (key projects under each degree, Univar bullets) and Career Facts has not been re-reviewed. Next chat: upload the CV `.docx`. Then export PDFs, replace `assets/cv/Wallar_Pierce_CV_2025_09.pdf` and `assets/resume/Wallar_Pierce_Resume_2025_09.pdf`, update the two download buttons in `index.html` (file names and `download=` attributes) if the names change, and delete the old files, including the unlinked `.docx` in `assets/cv/` (still reachable by its direct URL) (originally due EOD 10/24/26)
-  - [ ] Why the old files must go: the published CV PDF repeats its Professional Summary three times, shows Gordian text under Univar, has a "[Placeholder for BoomTown Home Services]" bullet, and carries file metadata reading "CATHERINE A" / "ctull" (the `.docx` also lists "Bay Area Legal Aid"); neither old PDF has a phone number; both list the MBA as December 2026
-  - [ ] After exporting, open each PDF's Document Properties and confirm Title and Author read Pierce Wallar
+- [ ] Career Facts: re-review `data/career-facts.md` against the final Resume and CV (the Resume and CV are final and live as of 10/26/26; Career Facts has not been re-reviewed)
+  - [x] Old files removed 10/26/26 (commit 4fd20c9): the CV and Resume PDFs and the unlinked `.docx` that carried the duplicated summary, Gordian text under Univar, the BoomTown placeholder, the old metadata, no phone number, and the December 2026 MBA date
+  - [x] Verified 10/26/26: both exported PDFs show Title and Author as Pierce Wallar and include (405) 830-9772
+  - [ ] Click both homepage buttons on the live site and confirm each downloads the new file (`Wallar_Pierce_CV_2026_10.pdf`, `Wallar_Pierce_Resume_2026_10.pdf`)
 - [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering Jan 2009 to May 2016; "Newmark" (not Newmark RF); the two Univar bullets; Industrial Safety and Geological Engineering degree names; PMP Sep 2022). `data/career-facts.md` is the generated reference
 - [x] Decided 10/26/26: documents use "Pierce A. Wallar, PMP" (site navigation stays "Pierce A. Wallar"); "Newmark" everywhere (the Newmark project page keeps the RealFoundations history sentence). Experience data already updated; check LinkedIn and the CV use the same
 - [x] Univar bullets supplied 10/26/26 and live on the Experience page (VPP Star re-certification; 300+ site safety audits). "A" Guttering confirmed as Jan 2009 to May 2016
-- [ ] Univar on the documents: add the two bullets to the CV. Decide whether the one-page Resume regains a Univar block (it was dropped in your 10/26 edit and the page is full)
-- [ ] CV: add key projects under each degree. OU MBA drafts: Portugal Global Business Experience (U.S. go-to-market report and 12-slide deck) and Renal OCT commercialization strategy (five-person team), both without client names; South Africa needs your details; Missouri S&T and UCO need any thesis, capstone, or project you want named
+- [x] Univar on the documents (10/26/26): two bullets added to the CV; the one-page Resume stays without a Univar block (the page is full)
+- [x] CV key projects added under each degree (10/26/26): OU MBA (Portugal, Renal OCT, South Africa with you as team leader), Missouri S&T (leaking underground storage tank study and soils testing and site selection, both in Rolla), UCO (campus emergency plan, hearing conservation plan, Hazard Communication plan)
 - [ ] Decide the client-name rule: UPDATES.md says no client names, but the Portugal, Renal OCT, and South Africa project pages name Infosistema, OCTENDOTA, OKBioStart, and GoBuild360. Apply the rule to the pages, or limit it to the documents
-- [ ] Confirm the spelled-out Army unit names in the CV (A/23 BEB, B/23 BEB, HHC/299 BEB, HHC/1SFG(A), A/180 CAV, 1220 ENG) and the function phrases (drafted by Claude, not by you)
+- [ ] Sync the site to the final CV wording: in `data/career.json` update the Univar summary ("chemical distribution and hazardous waste disposal company") and check the Green Tree place (the CV shows Oklahoma City, OK), then run `python scripts/build_career.py` and commit; also use the new South Africa facts on `project-south-africa.html` (you led the team; U.S. market entry analysis for a South Africa-based construction technology company; market analysis report and recommendations for adjacent industries and countries). The headline recommendation still needs your files
+- [ ] LinkedIn: apply the final CV wording (see the Career Facts item above); also note the CV Profile now says "engineer officer" and "real estate management consulting"
+- [ ] Resume line to place or drop: "managed 2 large-scale infrastructure projects" appears only on the Resume (Army block); decide which role it belongs to or remove it at the next Resume edit
+- [x] Spelled-out Army unit names and function phrases in the CV confirmed by Pierce (10/26/26)
 - [ ] Real images for all ten projects (`assets/images/projects/<project>-1.jpg`, `-2.jpg`, `-3.jpg`) plus alt text (due 11/1/26)
 - [ ] Review every `EDIT:` comment (Ctrl+Shift+F); South Africa and Renal OCT need the most (due 11/1/26)
 - [ ] Experience page detail text: review the `EDIT:` items in `data/career.json` (no longer in `js/experience.js`), refine each role's summary, highlights, and skills, then run `python scripts/build_career.py` and commit (include in the 11/1/26 batch)
@@ -23,7 +27,7 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 
 ### South Africa (`project-south-africa.html`): thinnest draft
 - [ ] Images: `south-africa-1.jpg` (top image and Projects-page card), `-2.jpg`, `-3.jpg` (side-by-side pair), plus alt text
-- [ ] Describe what GoBuild360 does, the question the team was asked, the timeframe, and your role
+- [ ] Describe what GoBuild360 does, the question the team was asked, the timeframe, and your role (known from the CV: you were team leader; the team analyzed U.S. market entry for a South Africa-based construction technology company; market analysis report and recommendations for adjacent industries and countries)
 - [ ] List the deliverables, the headline recommendation, and the outcome
 
 ### Renal OCT (`project-renal-oct.html`)
@@ -92,7 +96,7 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [X] Add months to the three Army sub-roles (the `segments` entries in `js/experience.js`; the boundaries are placeholders at January 2020 and January 2022) - COMPLETE
 
 ## Launch checks
-- [ ] Verify the phone number (no phone number appears on any site page, so this applies to the CV and resume only). The new Resume and CV include (405) 830-9772; the old published PDFs do not, so confirm it appears in the exported PDFs
+- [x] Verify the phone number: (405) 830-9772 confirmed in both exported PDFs (10/26/26). No phone number appears on any site page, by design
 - [ ] Click every link by hand. The 10/24/26 automated audit found no broken internal links, images, or anchors on the published pages; still to check manually: LinkedIn, GitHub, and the Bookshelf Amazon links
 - [x] Check every page on a phone, in light and dark mode (10/24/26 automated review of all 16 pages at 320 to 1280 px: no sideways overflow; fixed dim dark-mode headings, the phone scroll container, and homepage side margins)
 - [ ] Spot-check the live site on your iPhone after the 10/24/26 CSS changes (automated review passed)
@@ -129,3 +133,5 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [x] A6 career data single source of truth, version 1 (10/26/26): `data/career.json` generates `js/experience-data.js`, `data/career-facts.md`, and the JSON-LD block in `index.html`; Experience page verified identical to before except the intended changes
 - [x] A1 structured data and icons (10/26/26): Person and WebSite JSON-LD, apple-touch-icon, 192 and 512 icons, 16/32/48 `favicon.ico`, `site.webmanifest`, tags on 16 pages
 - [x] Newmark naming, Univar bullets, and "A" Guttering months applied to the Experience page (10/26/26)
+- [x] Resume and CV finalized, exported, and published (10/26/26): `Wallar_Pierce_CV_2026_10.pdf` and `Wallar_Pierce_Resume_2026_10.pdf` in `assets/`, download buttons updated, old files deleted (commit 4fd20c9)
+- [x] CV final structure (10/26/26): header "Pierce A. Wallar, PMP", Univar bullets, key projects under each degree, "Newmark" spelling, "A" Guttering Jan 2009 to May 2016, no client names

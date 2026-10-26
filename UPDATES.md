@@ -1,7 +1,7 @@
 # UPDATES.md: piercewallar.com Idea Backlog
 
 Running idea lists for after launch. Two lists (Professional, Personal & Technical), each ordered easiest to hardest, plus Candidates, Parked, a Maintenance Rhythm and a log.
-Created 10-26-26. Last updated 10-26-26 (A1 and A6 version 1 built and live). Status key: IDEA | PLANNED | IN PROGRESS | DONE | DROPPED | FUTURE (wanted, but later) | CONSIDERING.
+Created 10-26-26. Last updated 10-26-26 (Resume and CV final and live; A7 is next). Status key: IDEA | PLANNED | IN PROGRESS | DONE | DROPPED | FUTURE (wanted, but later) | CONSIDERING.
 **IDs are permanent from this version forward.** New items get the next number; the list order shows difficulty, so numbers will not always be in sequence.
 
 ## GUIDING PRINCIPLES
@@ -13,7 +13,7 @@ Created 10-26-26. Last updated 10-26-26 (A1 and A6 version 1 built and live). St
 
 ## PRIORITY QUEUE
 1. ~~A6 Career data single source of truth~~ **DONE (v1, 10-26-26).** Follow-ups: A9 output, resume/CV text feeds for A7.
-2. **A7 Consistency check script.** The companion to A6; catches drift before a recruiter does. **Next after the Resume and CV are final** (Pierce chose to finish them first).
+2. **A7 Consistency check script.** The companion to A6; catches drift before a recruiter does. **Now next: the Resume and CV are final and live (10-26-26).** First targets: the Univar summary wording, the Green Tree place, and the South Africa project page versus the final CV.
 3. Easy wins A2 to A5, in any order alongside the above (A1 is done).
 4. **A12 Physical business cards**, timed to the next networking event or recruiting deadline.
 
@@ -56,7 +56,7 @@ Created 10-26-26. Last updated 10-26-26 (A1 and A6 version 1 built and live). St
 - A local script compares `career.json` against: resume and CV text (extracted from the .docx or PDF), the site's Experience data, and LinkedIn's Positions.csv (from LinkedIn's "Get a copy of your data" export).
 - Flags mismatched dates, titles and employers, plus banned strings (client names, "Sept", GPAs, "[Placeholder", leftover metadata names).
 - Output: a one-page pass/fail report. Run it at each quarterly review and before sending any application batch.
-- Depends on A6 (done). `career.json` already holds the `banned_strings` list, the conventions and the `docs` flags (which entries belong on the resume, CV and site) that this script should read. Note the one-page Resume currently omits Univar by design (`docs.resume` is false for it).
+- Depends on A6 (done). `career.json` already holds the `banned_strings` list, the conventions and the `docs` flags (which entries belong on the resume, CV and site) that this script should read. Note the one-page Resume currently omits Univar by design (`docs.resume` is false for it). The final Resume and CV (10-26-26, commit 4fd20c9) are the first text sources to check against; keep the final `.docx` files in a private folder, not in the public repo.
 
 ### A8. One-page PDF per project | Moderate (a weekend for the first, then repeatable) | IDEA
 - A single-page leave-behind per project: Situation, Approach, Result, What I would do differently.
@@ -233,3 +233,4 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 - 10-26-26: Promoted from Candidates: career data single source of truth (high priority), print stylesheet and automated PDFs, press and bio kit, Army-to-consulting guide, personal map layers, books behind this project, year-in-review, recommender kit. Items renumbered.
 - 10-26-26: Added from the final round: physical NFC/QR business cards (A12), one-slide teardown (A13), consistency check (A7, high priority), 60-second video bio (A17, future, with logistics plan), documents generated from career.json (A16, considering). Remaining final-round ideas moved to Candidates. Added Guiding Principles and the Maintenance Rhythm. IDs made permanent.
 - 10-26-26 (AM session 2): Decisions: document name form "Pierce A. Wallar, PMP" (site nav stays "Pierce A. Wallar"); "Newmark" everywhere; "A" Guttering Jan 2009 to May 2016; Univar bullets supplied. Built and published A6 v1 and A1; Python installed. Order set: finish Resume and CV before A7. Open: the client-name rule vs project pages.
+- 10-26-26 (AM session 3): Resume and CV finalized by Pierce and published (commit 4fd20c9): new PDFs in `assets/`, buttons updated, old files and the unlinked `.docx` deleted. CV now has the Univar bullets and key projects under each degree; South Africa filled in (team leader). Client names are kept off the CV (Walmart changed to "a new retail store"). Open: sync `career.json` and the South Africa page to the final CV wording; the client-name rule for project pages; then A7.

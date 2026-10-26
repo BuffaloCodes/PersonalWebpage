@@ -64,7 +64,7 @@ window.EXPERIENCE_ENTRIES = [
     "label": "Green Tree Risk Group",
     "org": "Green Tree Risk Group",
     "role": "COO & Co-Founder",
-    "place": "Insurtech start-up",
+    "place": "Oklahoma City, OK",
     "start": [2026, 1],
     "end": [2026, 5],
     "summary": "Early-stage groundwork for an insurtech company built around AI liability and cyber insurance: a managing general agent (MGA) platform paired with AI governance software.",
@@ -232,7 +232,7 @@ window.EXPERIENCE_ENTRIES = [
     "place": "Houston, TX",
     "start": [2016, 5],
     "end": [2017, 9],
-    "summary": "First professional role after college, in environment, health, and safety for a chemical distribution operation.",
+    "summary": "First professional role after college, in environment, health, and safety for a global chemical distribution and hazardous waste disposal company.",
     "bullets": [
       "Rewrote all company Safety and Health Management System policies, resulting in the re-certification of OSHA's Voluntary Protection Programs (VPP) Star status for 4 chemical plants and 1 petroleum refinery.",
       "Independently performed twice-weekly site safety audits at 4 chemical plants, totaling over 300 audits, while advising executive leadership on programs and initiatives to address current and changing environmental, health, and safety risks."
