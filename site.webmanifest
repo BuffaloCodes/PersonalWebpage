@@ -1,0 +1,13 @@
+{
+  "name": "Pierce A. Wallar",
+  "short_name": "Pierce Wallar",
+  "description": "Personal site of Pierce A. Wallar: MBA candidate, U.S. Army veteran, and founder of BoomTown Home Services.",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#841617",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
