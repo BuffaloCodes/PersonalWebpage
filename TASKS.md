@@ -1,11 +1,17 @@
 # Site To-Do
  
 ## Due soon
-- [ ] CV and resume cleanup, including deleting the old CV/resume files from the repo (due EOD 10/24/26). Note: the old `.docx` in `assets/cv/` is not linked anywhere but is still reachable by its direct URL; the homepage buttons (`index.html`) point to the `_2025_09` PDFs
+- [ ] Finalize the new Resume, CV, and Career Facts (drafted 10/24/26: one-page general Resume, three-page CV, one-page Career Facts; you are making the final manual edits). Then export PDFs, replace `assets/cv/Wallar_Pierce_CV_2025_09.pdf` and `assets/resume/Wallar_Pierce_Resume_2025_09.pdf`, update the two download buttons in `index.html` (file names and `download=` attributes) if the names change, and delete the old files, including the unlinked `.docx` in `assets/cv/` (still reachable by its direct URL) (originally due EOD 10/24/26)
+  - [ ] Why the old files must go: the published CV PDF repeats its Professional Summary three times, shows Gordian text under Univar, has a "[Placeholder for BoomTown Home Services]" bullet, and carries file metadata reading "CATHERINE A" / "ctull" (the `.docx` also lists "Bay Area Legal Aid"); neither old PDF has a phone number; both list the MBA as December 2026
+  - [ ] After exporting, open each PDF's Document Properties and confirm Title and Author read Pierce Wallar
+- [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering; Industrial Safety and Geological Engineering degree names; PMP Sep 2022)
+- [ ] Decide two wording questions: the site header says "Pierce A. Wallar" while the documents say "Pierce Wallar, PMP"; and the documents say "Newmark" while the Experience and Newmark pages say "Newmark RF"
+- [ ] Univar: add one or two bullets (programs run or results) to the Resume, CV, and Experience page. "A" Guttering: confirm the exact company name and the start and end months
+- [ ] Confirm the spelled-out Army unit names in the CV (A/23 BEB, B/23 BEB, HHC/299 BEB, HHC/1SFG(A), A/180 CAV, 1220 ENG) and the function phrases (drafted by Claude, not by you)
 - [ ] Real images for all ten projects (`assets/images/projects/<project>-1.jpg`, `-2.jpg`, `-3.jpg`) plus alt text (due 11/1/26)
 - [ ] Review every `EDIT:` comment (Ctrl+Shift+F); South Africa and Renal OCT need the most (due 11/1/26)
 - [ ] Experience page detail text: review the `EDIT:` comments in `js/experience.js` and refine each role's summary, highlights, and skills (include in the 11/1/26 batch)
-- [ ] Experience page: confirm the Army sub-role descriptions (Platoon Leader and Facilities Manager were adapted from the old page) and the Green Tree status line before sharing the page widely
+- [ ] Experience page: confirm the six Army role descriptions (rewritten 10/24/26 from the CV) and the Green Tree status line before sharing the page widely
 
 ## 11/1/26 content checklist (by page)
 Built 10/24/26 from a scan of every `EDIT:` comment and image slot in the repo (commit b6ea10b). Work top to bottom; the first two pages need the most. Search for `EDIT:` (Ctrl+Shift+F) to jump to each item, and delete the comment once the item is done.
@@ -67,8 +73,8 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [ ] Green Tree Risk Group: confirm or reword the status line
 - [ ] BoomTown: add service lines, crew size, customers served, tools
 - [ ] Gordian: add outcomes, portfolio sizes, or client types you can share
-- [ ] U.S. Army: confirm and add specifics to all three sub-role descriptions (Platoon Leader, Facilities Manager, Battalion Logistics Officer)
-- [ ] U.S. Army: delete the old "replace the months in each segment" `EDIT:` note above `segments` (the months were committed in b6ea10b)
+- [ ] U.S. Army: confirm and add specifics to all six role descriptions (19D Cavalry Scout, Engineer Platoon Leader (Guard), Engineer Platoon Leader, Engineer Company Executive Officer, Deputy Group Engineer, Battalion Logistics Officer)
+- [ ] "A" Guttering: confirm start and end months (the bar uses January 2009 to May 2016 as placeholders)
 - [ ] Univar: add programs you ran or results you can quantify
 - [ ] University of Central Oklahoma: add honors, activities, or coursework
 - [ ] Missouri S&T: add thesis, project, or coursework highlights
@@ -83,16 +89,19 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [X] Add months to the three Army sub-roles (the `segments` entries in `js/experience.js`; the boundaries are placeholders at January 2020 and January 2022) - COMPLETE
 
 ## Launch checks
-- [ ] Verify the phone number (no phone number appears on any site page, so this applies to the CV and resume only)
+- [ ] Verify the phone number (no phone number appears on any site page, so this applies to the CV and resume only). The new Resume and CV include (405) 830-9772; the old published PDFs do not, so confirm it appears in the exported PDFs
 - [ ] Click every link by hand. The 10/24/26 automated audit found no broken internal links, images, or anchors on the published pages; still to check manually: LinkedIn, GitHub, and the Bookshelf Amazon links
-- [ ] Check every page on a phone, in light and dark mode (Experience was tested at phone width and in dark mode; the rest still need a pass)
+- [x] Check every page on a phone, in light and dark mode (10/24/26 automated review of all 16 pages at 320 to 1280 px: no sideways overflow; fixed dim dark-mode headings, the phone scroll container, and homepage side margins)
+- [ ] Spot-check the live site on your iPhone after the 10/24/26 CSS changes (automated review passed)
 - [ ] Sitemap: `sitemap.xml` exists and lists all 14 published pages, including Experience (confirmed 10/24/26). Submit it in Google Search Console in November, after images and EDIT comments are finished
 - [ ] After pushing the Open Graph tags, refresh LinkedIn's cached preview with Post Inspector
 
 ## Later
 - [ ] Email forwarding at piercewallar.com (optional; the mailto link works for now)
 - [ ] Amazon Associates for Bookshelf links (deferred; likely a lot of work)
-- [ ] Optional polish: on phones, `css/styles.css` line 291 (`html,body{overflow-x:hidden}`) makes the page body scroll instead of the whole page; and in dark mode the site's crimson headings are dim against the dark background (the Experience page already uses a lighter red for its own text)
+- [ ] Rewrite `README.md` for a general audience (visitors, recruiters, and anyone who finds the repository) instead of as working instructions to me; no due date
+- [ ] Bookshelf: leave as is for now; you have an idea to run down later. The 10/24/26 GoodReads review (102 rows against 44 shelved books) found about ten candidate additions; none were applied
+- [ ] Optional: sync the Experience page bullets (Ready 3, Newmark, Gordian, BoomTown) with the more specific wording on the Resume and CV; the site versions are still the general drafts
 
 ## Done
 - [x] Green Tree Risk Group name confirmed for public use
@@ -106,3 +115,8 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [x] Lightweight analytics: GoatCounter live on all pages (10/24/26)
 - [x] Experience page launched (10/24/26): shared-axis timeline, clickable detail panel, phone layout, dark mode, Experience link in the nav of every page, and listed in `sitemap.xml`
 - [x] Internal link audit (10/24/26): no broken links, images, or anchors on the published pages
+- [x] CSS polish pass (10/24/26): phone scrolling fixed, lighter red for headings and small red text in dark mode, homepage side margins on phones. Live after the accidental overwrite of `css/styles.css` in commit f55c14b was restored in ddee31e
+- [x] Phone and dark-mode review of all pages (10/24/26)
+- [x] 11/1/26 content checklist built (above)
+- [x] Experience page synced to the new standards (10/24/26): Army now Jan 2014 to Jan 2024 with six roles and units (two Guard, four active duty), "A" Guttering entry added, role titles and the Industrial Safety and Geological Engineering degree names updated, six-shade Army bar
+- [x] Resume, CV, and Career Facts drafted (10/24/26); finalization is open above
