@@ -1,16 +1,19 @@
 # Site To-Do
  
 ## Due soon
-- [ ] Finalize the new Resume, CV, and Career Facts (drafted 10/24/26: one-page general Resume, three-page CV, one-page Career Facts; you are making the final manual edits). Then export PDFs, replace `assets/cv/Wallar_Pierce_CV_2025_09.pdf` and `assets/resume/Wallar_Pierce_Resume_2025_09.pdf`, update the two download buttons in `index.html` (file names and `download=` attributes) if the names change, and delete the old files, including the unlinked `.docx` in `assets/cv/` (still reachable by its direct URL) (originally due EOD 10/24/26)
+- [ ] Finalize the new Resume, CV, and Career Facts. Status 10/26/26: the one-page general Resume is final (header "Pierce A. Wallar, PMP"; no Univar block); the CV still needs structure work (key projects under each degree, Univar bullets) and Career Facts has not been re-reviewed. Next chat: upload the CV `.docx`. Then export PDFs, replace `assets/cv/Wallar_Pierce_CV_2025_09.pdf` and `assets/resume/Wallar_Pierce_Resume_2025_09.pdf`, update the two download buttons in `index.html` (file names and `download=` attributes) if the names change, and delete the old files, including the unlinked `.docx` in `assets/cv/` (still reachable by its direct URL) (originally due EOD 10/24/26)
   - [ ] Why the old files must go: the published CV PDF repeats its Professional Summary three times, shows Gordian text under Univar, has a "[Placeholder for BoomTown Home Services]" bullet, and carries file metadata reading "CATHERINE A" / "ctull" (the `.docx` also lists "Bay Area Legal Aid"); neither old PDF has a phone number; both list the MBA as December 2026
   - [ ] After exporting, open each PDF's Document Properties and confirm Title and Author read Pierce Wallar
-- [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering; Industrial Safety and Geological Engineering degree names; PMP Sep 2022)
-- [ ] Decide two wording questions: the site header says "Pierce A. Wallar" while the documents say "Pierce Wallar, PMP"; and the documents say "Newmark" while the Experience and Newmark pages say "Newmark RF"
-- [ ] Univar: add one or two bullets (programs run or results) to the Resume, CV, and Experience page. "A" Guttering: confirm the exact company name and the start and end months
+- [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering Jan 2009 to May 2016; "Newmark" (not Newmark RF); the two Univar bullets; Industrial Safety and Geological Engineering degree names; PMP Sep 2022). `data/career-facts.md` is the generated reference
+- [x] Decided 10/26/26: documents use "Pierce A. Wallar, PMP" (site navigation stays "Pierce A. Wallar"); "Newmark" everywhere (the Newmark project page keeps the RealFoundations history sentence). Experience data already updated; check LinkedIn and the CV use the same
+- [x] Univar bullets supplied 10/26/26 and live on the Experience page (VPP Star re-certification; 300+ site safety audits). "A" Guttering confirmed as Jan 2009 to May 2016
+- [ ] Univar on the documents: add the two bullets to the CV. Decide whether the one-page Resume regains a Univar block (it was dropped in your 10/26 edit and the page is full)
+- [ ] CV: add key projects under each degree. OU MBA drafts: Portugal Global Business Experience (U.S. go-to-market report and 12-slide deck) and Renal OCT commercialization strategy (five-person team), both without client names; South Africa needs your details; Missouri S&T and UCO need any thesis, capstone, or project you want named
+- [ ] Decide the client-name rule: UPDATES.md says no client names, but the Portugal, Renal OCT, and South Africa project pages name Infosistema, OCTENDOTA, OKBioStart, and GoBuild360. Apply the rule to the pages, or limit it to the documents
 - [ ] Confirm the spelled-out Army unit names in the CV (A/23 BEB, B/23 BEB, HHC/299 BEB, HHC/1SFG(A), A/180 CAV, 1220 ENG) and the function phrases (drafted by Claude, not by you)
 - [ ] Real images for all ten projects (`assets/images/projects/<project>-1.jpg`, `-2.jpg`, `-3.jpg`) plus alt text (due 11/1/26)
 - [ ] Review every `EDIT:` comment (Ctrl+Shift+F); South Africa and Renal OCT need the most (due 11/1/26)
-- [ ] Experience page detail text: review the `EDIT:` comments in `js/experience.js` and refine each role's summary, highlights, and skills (include in the 11/1/26 batch)
+- [ ] Experience page detail text: review the `EDIT:` items in `data/career.json` (no longer in `js/experience.js`), refine each role's summary, highlights, and skills, then run `python scripts/build_career.py` and commit (include in the 11/1/26 batch)
 - [ ] Experience page: confirm the six Army role descriptions (rewritten 10/24/26 from the CV) and the Green Tree status line before sharing the page widely
 
 ## 11/1/26 content checklist (by page)
@@ -66,22 +69,22 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [ ] Add hardware specs, how it is networked at home, and other services (backups, monitoring)
 - [ ] Add what you plan to build next, or something that went wrong and what you learned
 
-### Experience page text (`js/experience.js`)
-- [ ] Default selected role (`DEFAULT_ID`, currently `newmark`): keep or change
+### Experience page text (`data/career.json`; edit there, then run `python scripts/build_career.py`)
+- [ ] Default selected role (`DEFAULT_ID` in `js/experience.js`, currently `newmark`): keep or change
 - [ ] Ready 3: keep general; only what Ready 3 is comfortable having public
 - [ ] Newmark: keep client details general; confirm anything Newmark prefers not described
 - [ ] Green Tree Risk Group: confirm or reword the status line
 - [ ] BoomTown: add service lines, crew size, customers served, tools
 - [ ] Gordian: add outcomes, portfolio sizes, or client types you can share
 - [ ] U.S. Army: confirm and add specifics to all six role descriptions (19D Cavalry Scout, Engineer Platoon Leader (Guard), Engineer Platoon Leader, Engineer Company Executive Officer, Deputy Group Engineer, Battalion Logistics Officer)
-- [ ] "A" Guttering: confirm start and end months (the bar uses January 2009 to May 2016 as placeholders)
-- [ ] Univar: add programs you ran or results you can quantify
+- [x] "A" Guttering: months confirmed Jan 2009 to May 2016 (10/26/26)
+- [x] Univar: two bullets added 10/26/26 (refine only if you want more)
 - [ ] University of Central Oklahoma: add honors, activities, or coursework
 - [ ] Missouri S&T: add thesis, project, or coursework highlights
 - [ ] OU MBA: add honors, leadership roles, or case competitions
 
 ### Wrap-up after the content pass
-- [ ] Ctrl+Shift+F for `EDIT:` and confirm only `_project-template.html` still has one
+- [ ] Ctrl+Shift+F for `EDIT:` and confirm only `_project-template.html` (and the `DEFAULT_ID` line in `js/experience.js`) still has one, and that no `EDIT:` items remain in `data/career.json`
 - [ ] Open the Projects page and all ten project pages and confirm no gray "Image placeholder" boxes remain (they are image files, so a text search will not find them)
 - [ ] Then submit `sitemap.xml` in Google Search Console and refresh the LinkedIn preview
 
@@ -95,13 +98,14 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [ ] Spot-check the live site on your iPhone after the 10/24/26 CSS changes (automated review passed)
 - [ ] Sitemap: `sitemap.xml` exists and lists all 14 published pages, including Experience (confirmed 10/24/26). Submit it in Google Search Console in November, after images and EDIT comments are finished
 - [ ] After pushing the Open Graph tags, refresh LinkedIn's cached preview with Post Inspector
+- [ ] Validate the new JSON-LD: paste `https://piercewallar.com/` into validator.schema.org or Google's Rich Results Test (expect a Person and a WebSite, no errors). Optionally add the site to your iPhone home screen to confirm the new touch icon
 
 ## Later
 - [ ] Email forwarding at piercewallar.com (optional; the mailto link works for now)
 - [ ] Amazon Associates for Bookshelf links (deferred; likely a lot of work)
-- [ ] Rewrite `README.md` for a general audience (visitors, recruiters, and anyone who finds the repository) instead of as working instructions to me; no due date
+- [ ] Rewrite `README.md` for a general audience (visitors, recruiters, and anyone who finds the repository) instead of as working instructions to me; no due date. Its "Finding things you still need to edit" and Files sections are now out of date (Experience data lives in `data/career.json`; add the `data/` and `scripts/` folders and the career-data workflow)
 - [ ] Bookshelf: leave as is for now; you have an idea to run down later. The 10/24/26 GoodReads review (102 rows against 44 shelved books) found about ten candidate additions; none were applied
-- [ ] Optional: sync the Experience page bullets (Ready 3, Newmark, Gordian, BoomTown) with the more specific wording on the Resume and CV; the site versions are still the general drafts
+- [ ] Optional: sync the Experience page bullets (Ready 3, Newmark, Gordian, BoomTown) with the more specific wording on the Resume and CV by editing `data/career.json`; the site versions are still the general drafts
 
 ## Done
 - [x] Green Tree Risk Group name confirmed for public use
@@ -120,3 +124,8 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [x] 11/1/26 content checklist built (above)
 - [x] Experience page synced to the new standards (10/24/26): Army now Jan 2014 to Jan 2024 with six roles and units (two Guard, four active duty), "A" Guttering entry added, role titles and the Industrial Safety and Geological Engineering degree names updated, six-shade Army bar
 - [x] Resume, CV, and Career Facts drafted (10/24/26); finalization is open above
+- [x] General Resume finalized (10/26/26): one page, header "Pierce A. Wallar, PMP"
+- [x] Python installed locally and `scripts/build_career.py` run successfully (10/26/26)
+- [x] A6 career data single source of truth, version 1 (10/26/26): `data/career.json` generates `js/experience-data.js`, `data/career-facts.md`, and the JSON-LD block in `index.html`; Experience page verified identical to before except the intended changes
+- [x] A1 structured data and icons (10/26/26): Person and WebSite JSON-LD, apple-touch-icon, 192 and 512 icons, 16/32/48 `favicon.ico`, `site.webmanifest`, tags on 16 pages
+- [x] Newmark naming, Univar bullets, and "A" Guttering months applied to the Experience page (10/26/26)

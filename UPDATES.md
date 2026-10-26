@@ -1,7 +1,7 @@
 # UPDATES.md: piercewallar.com Idea Backlog
 
 Running idea lists for after launch. Two lists (Professional, Personal & Technical), each ordered easiest to hardest, plus Candidates, Parked, a Maintenance Rhythm and a log.
-Created 10-26-26. Last updated 10-26-26. Status key: IDEA | PLANNED | IN PROGRESS | DONE | DROPPED | FUTURE (wanted, but later) | CONSIDERING.
+Created 10-26-26. Last updated 10-26-26 (A1 and A6 version 1 built and live). Status key: IDEA | PLANNED | IN PROGRESS | DONE | DROPPED | FUTURE (wanted, but later) | CONSIDERING.
 **IDs are permanent from this version forward.** New items get the next number; the list order shows difficulty, so numbers will not always be in sequence.
 
 ## GUIDING PRINCIPLES
@@ -9,21 +9,23 @@ Created 10-26-26. Last updated 10-26-26. Status key: IDEA | PLANNED | IN PROGRES
 - Test for every addition: does it show a real facet, is it accurate, and can I maintain it?
 - Rules: no client names, no LogStat or other sensitive screenshots, no private notes on public pages, no home address or real-time location, nothing that conflicts with employer or internship confidentiality.
 - Family: decide the line in advance. Suggested default: no children's names, faces or identifying details on the public site. (Pierce to decide.)
+- **Open conflict (10-26-26):** the "no client names" rule above vs. the Portugal, Renal OCT and South Africa project pages, which name Infosistema, OCTENDOTA, OKBioStart and GoBuild360. Pierce to decide whether the rule covers pages or only documents. `data/career.json` `banned_strings` currently blocks these names in generated Experience data, the Career Facts table and the JSON-LD.
 
 ## PRIORITY QUEUE
-1. **A6 Career data single source of truth (HIGH PRIORITY).** It underpins the standardization of resume, CV, website and LinkedIn.
-2. **A7 Consistency check script.** The companion to A6; catches drift before a recruiter does.
-3. Easy wins A1 to A5, in any order alongside the above.
+1. ~~A6 Career data single source of truth~~ **DONE (v1, 10-26-26).** Follow-ups: A9 output, resume/CV text feeds for A7.
+2. **A7 Consistency check script.** The companion to A6; catches drift before a recruiter does. **Next after the Resume and CV are final** (Pierce chose to finish them first).
+3. Easy wins A2 to A5, in any order alongside the above (A1 is done).
 4. **A12 Physical business cards**, timed to the next networking event or recruiting deadline.
 
 ---
 
 ## A. PROFESSIONAL (built for recruiters and consulting audiences)
 
-### A1. Structured data, favicon and touch icon | Easy (an evening) | IDEA
+### A1. Structured data, favicon and touch icon | Easy (an evening) | DONE (10-26-26)
 - Add schema.org `Person` JSON-LD to index.html (name, jobTitle, alumniOf, sameAs for LinkedIn/GitHub, url).
 - Add favicon set, apple-touch-icon and `theme-color` meta to all pages.
 - Goal: a clean Google result for "Pierce Wallar" and a polished browser tab.
+- Built 10-26-26: Person and WebSite JSON-LD (generated from `career.json` into `index.html` between `career-jsonld` markers), `apple-touch-icon.png` (180, full-bleed), `icon-192.png`, `icon-512.png`, `favicon.ico` (16/32/48), `site.webmanifest`, and the icon tags on 16 pages. The favicon and `theme-color` already existed. JSON-LD `worksFor` lists BoomTown only (`works_for_ids` in `career.json`); add `ready3` there if wanted. Still to do: validate at validator.schema.org; the dark-mode `theme-color` was left out because the site defaults to light.
 
 ### A2. /now page | Easy (an evening) | IDEA
 - Three short paragraphs: what I am working on, learning and reading this month. Update monthly (part of the Monthly block in Section E).
@@ -41,17 +43,20 @@ Created 10-26-26. Last updated 10-26-26. Status key: IDEA | PLANNED | IN PROGRES
 - Request email template, a short guide for the recommender, and a consent checklist (name display, title, edits allowed).
 - Supports A10.
 
-### A6. Career data single source of truth | Moderate (a weekend) | **HIGH PRIORITY** | IDEA
+### A6. Career data single source of truth | Moderate (a weekend) | **HIGH PRIORITY** | DONE (v1, 10-26-26)
 - One `data/career.json` holding every employer, title, unit, date, credential and approved wording (the "decided career facts").
 - A local Python script reads it and outputs static pieces: the Experience page data, the At a Glance page (A9), the JSON-LD (A1) and a Career Facts table. The site stays no-build-step because the outputs are committed files.
 - Fixing a date or title once updates everything.
 - Keep the conventions in the file: official Army duty title first, plain-English phrase after " | ", "Mon YYYY" dates, no client names, no GPAs.
+- Built 10-26-26: `data/career.json` (entries, person, contact, conventions, `banned_strings`, JSON-LD settings, per-entry `docs` flags for resume, CV and site, and `EDIT:` todos), `scripts/build_career.py` (Python standard library only; run `python scripts/build_career.py`), outputs `js/experience-data.js`, `data/career-facts.md`, `data/jsonld-person.html` and the JSON-LD block in `index.html`. `js/experience.js` now reads `window.EXPERIENCE_ENTRIES`; `experience.html` loads `js/experience-data.js` first. Segment date strings are derived from the month numbers. Verified identical to the previous inline data except the Newmark rename and the Univar bullets.
+- Not built yet: the At a Glance page (A9), the Positions.csv and document text comparisons (A7), and generated resume or CV text (A16, still CONSIDERING).
+- Edit workflow: change `career.json`, run the script, commit the outputs. Never hand-edit `js/experience-data.js`.
 
 ### A7. Consistency check script | Moderate (a weekend) | **HIGH PRIORITY** | IDEA
 - A local script compares `career.json` against: resume and CV text (extracted from the .docx or PDF), the site's Experience data, and LinkedIn's Positions.csv (from LinkedIn's "Get a copy of your data" export).
 - Flags mismatched dates, titles and employers, plus banned strings (client names, "Sept", GPAs, "[Placeholder", leftover metadata names).
 - Output: a one-page pass/fail report. Run it at each quarterly review and before sending any application batch.
-- Depends on A6.
+- Depends on A6 (done). `career.json` already holds the `banned_strings` list, the conventions and the `docs` flags (which entries belong on the resume, CV and site) that this script should read. Note the one-page Resume currently omits Univar by design (`docs.resume` is false for it).
 
 ### A8. One-page PDF per project | Moderate (a weekend for the first, then repeatable) | IDEA
 - A single-page leave-behind per project: Situation, Approach, Result, What I would do differently.
@@ -206,7 +211,7 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 |---|---|---|
 | Weekly | 30 min, same slot each week (for example Sunday evening) | Open GoatCounter (downloads, /for/ page hits, referrers); follow up on any firm whose page was opened; confirm the Actions check (B4, once built) is green; drop one note into the running capture file (a win, a photo, a book finished, a topic idea). |
 | Monthly | "Site Sunday," first Sunday, 2.5 to 3 hours | Update /now (30 min); write and publish the one-slide teardown (about 2 hours); update the bookshelf if books were finished (15 min); send the network update if built; scan analytics for the month. |
-| Quarterly | Half day (about 4 hours) in Jan, Apr, Jul, Oct | Update `career.json`; run the consistency check (A7) across resume, CV, site and LinkedIn; export fresh PDFs and replace old files; refresh one project page (new image, result or lessons learned); run the link and Lighthouse check; prune stale /for/ pages; check the "Last updated" footer; review recommendation quotes. |
+| Quarterly | Half day (about 4 hours) in Jan, Apr, Jul, Oct | Update `career.json` and run `python scripts/build_career.py`; run the consistency check (A7) across resume, CV, site and LinkedIn; export fresh PDFs and replace old files; refresh one project page (new image, result or lessons learned); run the link and Lighthouse check; prune stale /for/ pages; check the "Last updated" footer; review recommendation quotes. |
 | Annually | One weekend in December | Year-in-review (B6); check domain auto-renew and DNS; accessibility pass; bump GitHub Action versions; reorder or reprint cards if the inventory is low; review the video bio for freshness; archive the year's teardowns; reset the yearly goals in this file. |
 
 **Event triggers (do these within a week):** new role or title, certification, graduation, a finished project, a new publication, a move, or a change of contact details.
@@ -219,7 +224,7 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 5. Never add something you cannot maintain; use the Candidates list as a holding pen.
 6. Protect the capture file: ten minutes of weekly notes makes Site Sunday easy.
 
-**Suggested rollout order after launch:** A6, A7, A1 to A5, A12 (cards), A2 and A13 (start the monthly habit), then B2, B3, B4, and the larger items (A15, A16, A17, B5) one at a time.
+**Suggested rollout order after launch:** A6 (done), A7, A1 (done), A2 to A5, A12 (cards), A2 and A13 (start the monthly habit), then B2, B3, B4, and the larger items (A15, A16, A17, B5) one at a time.
 
 ---
 
@@ -227,3 +232,4 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 - 10-26-26: File created. Selected from the first list of 18: items 2, 3, 4, 6, 7 (PDF part only), 8, 10, 11, 14, 15.
 - 10-26-26: Promoted from Candidates: career data single source of truth (high priority), print stylesheet and automated PDFs, press and bio kit, Army-to-consulting guide, personal map layers, books behind this project, year-in-review, recommender kit. Items renumbered.
 - 10-26-26: Added from the final round: physical NFC/QR business cards (A12), one-slide teardown (A13), consistency check (A7, high priority), 60-second video bio (A17, future, with logistics plan), documents generated from career.json (A16, considering). Remaining final-round ideas moved to Candidates. Added Guiding Principles and the Maintenance Rhythm. IDs made permanent.
+- 10-26-26 (AM session 2): Decisions: document name form "Pierce A. Wallar, PMP" (site nav stays "Pierce A. Wallar"); "Newmark" everywhere; "A" Guttering Jan 2009 to May 2016; Univar bullets supplied. Built and published A6 v1 and A1; Python installed. Order set: finish Resume and CV before A7. Open: the client-name rule vs project pages.
