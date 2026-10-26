@@ -43,7 +43,7 @@ window.EXPERIENCE_ENTRIES = [
     "bullets": [
       "Merged fragmented ownership records into one interactive online tool, giving the client its first unified view of an ownership structure of 500+ entities.",
       "Standardized roughly 550 real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
-      "Built a fully formula-driven Excel tool that auto-generates Mermaid.js diagram syntax and plain-English summaries to create standardized, stakeholder-ready swimlane flowcharts.",
+      "Built a fully formula-driven Excel tool that auto-generates Mermaid.js diagram syntax and plain-English summaries to create standardized, stakeholder-ready swimlane flowcharts; now in use on a second project.",
       "Created Design Confirmation Testing (DCT) scripts for Accounts Payable, Commercial Management, and General Ledger, building branded, formula-linked workbooks that validated data conversion accuracy ahead of a January 2027 go-live.",
       "Built a UAT and DCT testing progress tracker with status roll-ups, charts, and a one-click refresh."
     ],
@@ -105,7 +105,7 @@ window.EXPERIENCE_ENTRIES = [
     "bullets": [
       "Work across every part of a small business: the services offered, how jobs are scheduled and delivered, customer communication, invoicing, and marketing.",
       "Price against real costs, manage cash flow in a seasonal business, and build repeatable processes so quality does not depend on any one person.",
-      "Serve roughly 50 or more households a year across routine, seasonal, and one-off residential maintenance and preventive services, scheduling through Google's free tools."
+      "Run as a one-person operation serving roughly 50 or more households a year across routine, seasonal, and one-off residential maintenance and preventive services, scheduling through Google's free tools."
     ],
     "skills": [
       "Operations",
@@ -353,7 +353,7 @@ window.EXPERIENCE_ENTRIES = [
       "Applying coursework directly through BoomTown Home Services, Green Tree Risk Group, and consulting internships.",
       "Key project: Global Business Experience in Portugal (May 2026), analyzing U.S. market entry for a Portugal-based technology company, with a market analysis report and a 12-slide deck.",
       "Key project: team leader for a five-person team developing a commercialization strategy for a medical imaging technology, in partnership with a bioscience organization.",
-      "Key project: team leader for a market expansion analysis for a South Africa-based construction technology company, recommending a few smaller European markets first and then partnerships with large U.S. hardware retailers."
+      "Key project: team leader for an analysis of U.S. market entry for a South Africa-based construction technology company, recommending a few smaller European markets first and then partnerships with large U.S. hardware retailers."
     ],
     "skills": [
       "Entrepreneurship",

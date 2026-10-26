@@ -2,9 +2,8 @@
  
 ## Due soon
 - [ ] Commit and push the 10/26/26 content changes (`TASKS.md`, `UPDATES.md`, `data/career.json`, `js/experience-data.js`, `projects.html`, and eight project pages: Army forecast, BoomTown, Green Tree, Newmark, Portugal, Ready 3, Renal OCT, South Africa; `css/styles.css` should not appear). Then click both homepage download buttons on the live site and confirm each downloads the new file
-- [ ] Send me the Renal OCT final presentation, the Portugal market analysis, and the Newmark final presentation (the 10/26/26 attachments did not arrive). I will add each project's headline recommendation and client response to the pages
-- [ ] Army forecast: build a new dashboard image (no unit names, locations, or readiness data), replace `army-forecast-1.jpg`, and send it to me for alt text
-- [ ] CV wording, your call: the Renal OCT bullet could say you were team leader, and the South Africa bullet reads "analysis of U.S. market entry" while the recommendation was a few smaller European markets first, then partnerships with large U.S. hardware retailers
+- [ ] Army forecast: build a new dashboard image (no unit names, locations, or readiness data), replace `army-forecast-1.jpg`, and send it to me for alt text (deferred at your request, 10/26/26)
+- [ ] CV wording, your call: the Renal OCT bullet could say you were team leader (the South Africa bullet is accurate as written)
 - [ ] Career Facts: re-review `data/career-facts.md` against the final Resume and CV (the Resume and CV are final and live as of 10/26/26; Career Facts has not been re-reviewed)
 - [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering Jan 2009 to May 2016; "Newmark" (not Newmark RF); the two Univar bullets; Industrial Safety and Geological Engineering degree names; PMP Sep 2022). `data/career-facts.md` is the generated reference
 - [ ] LinkedIn: apply the final CV wording (see the Career Facts item above); also note the CV Profile now says "engineer officer" and "real estate management consulting"
@@ -21,16 +20,13 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 
 ### South Africa (`project-south-africa.html`): thinnest draft
 - [ ] Images: `south-africa-1.jpg` (top image and Projects-page card), `-2.jpg`, `-3.jpg` (side-by-side pair), plus alt text
-- [ ] Add the timeframe of the engagement
-- [ ] Add how the client responded and the outcome
 
 ### Renal OCT (`project-renal-oct.html`)
 - [ ] Images: `renal-oct-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
-- [ ] Add the main recommendation and the client's response (needs the final presentation)
+- [ ] Add how the client responded to the final presentation
 
 ### Portugal (`project-portugal.html`)
 - [ ] Images: `portugal-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
-- [ ] Add the headline finding or recommendation from the market analysis (needs the analysis)
 
 ### Newmark (`project-newmark.html`)
 - [ ] Images: `newmark-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
@@ -43,11 +39,9 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 
 ### BoomTown (`project-boomtown.html`)
 - [ ] Image `boomtown-1.jpg` is real; replace `boomtown-2.jpg` and `-3.jpg`, then write alt text for all three
-- [ ] Add crew size and any other tools you use
 
 ### Army Unit Commodities Forecast (`project-army-forecast.html`)
 - [ ] Images: replace `army-forecast-1.jpg` with the new dashboard image, replace `-2.jpg` and `-3.jpg`, then write alt text for all three
-- [ ] Add the time horizon and any measurable results
 
 ### American Political History (`project-political-history.html`)
 - [ ] Images: `political-history-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
@@ -60,7 +54,6 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 
 ### Experience page text (`data/career.json`; edit there, then run `python scripts/build_career.py`)
 - [ ] Default selected role (`DEFAULT_ID` in `js/experience.js`, currently `newmark`): keep or change
-- [ ] BoomTown: add crew size and any other tools
 - [ ] U.S. Army: confirm and add specifics to all six role descriptions (19D Cavalry Scout, Engineer Platoon Leader (Guard), Engineer Platoon Leader, Engineer Company Executive Officer, Deputy Group Engineer, Battalion Logistics Officer)
 - [ ] University of Central Oklahoma: add honors or activities (deferred at your request, 10/26/26)
 - [ ] OU MBA: add honors, leadership roles, or case competitions (deferred at your request, 10/26/26)
