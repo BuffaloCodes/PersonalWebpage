@@ -113,9 +113,9 @@
       "end": "present",
       "summary": "An internship with an Oklahoma City defense contractor, applying engineering and project management training to complex aerospace programs.",
       "bullets": [
-        "Contribute to engineering and program work alongside the team, with attention to schedule, scope, and the information leaders need to make decisions.",
-        "Bring Army engineering leadership, graduate work in geological engineering, and PMP training to programs with tight accountability for schedule and cost.",
-        "Learn how requirements, budgets, and customer expectations pull on the same program from inside a contractor."
+        "Leading development of a facility expansion execution plan for the Engineering function, including the Gantt schedule, work breakdown structure, decision gates, and risk register, tracking 65 deliverables across 7 workstreams in coordination with the Director of Engineering and executive leadership.",
+        "Designing a standardized SOP package (template, numbering convention, and 5 to 8 priority procedures) and restructuring the Engineering SharePoint knowledge base so it scales to future projects.",
+        "Developing a prioritized RFI process to resolve open scope, site, and approval dependencies ahead of leadership gate decisions."
       ],
       "skills": [
         "Program management",
@@ -134,9 +134,7 @@
         "cv": true,
         "site": true
       },
-      "todo": [
-        "EDIT: keep this general; add only what Ready 3 is comfortable with you sharing publicly."
-      ]
+      "todo": []
     },
     {
       "id": "newmark",
@@ -155,9 +153,11 @@
       ],
       "summary": "Management consulting work in real estate, where the quality of the underlying data decided whether anything built on it could be trusted.",
       "bullets": [
-        "Took responsibility for cleaning up a client's Master Entity List, standardizing roughly 550 real estate entities into a consistent five-digit ID scheme and verifying it against the client's hierarchy diagram.",
-        "Traced numbers stored as text that were breaking lookup formulas across thousands of rows, corrected the cause systematically, and documented four quality issues for the team to resolve with the client.",
-        "Built a UAT and DCT testing progress tracker for a client deliverable, with status roll-ups, donut and stacked bar charts, and a one-click refresh."
+        "Merged fragmented ownership records into one interactive online tool, giving the client its first unified view of an ownership structure of 500+ entities.",
+        "Standardized roughly 550 real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
+        "Built a fully formula-driven Excel tool that auto-generates Mermaid.js diagram syntax and plain-English summaries to create standardized, stakeholder-ready swimlane flowcharts.",
+        "Created Design Confirmation Testing (DCT) scripts for Accounts Payable, Commercial Management, and General Ledger, building branded, formula-linked workbooks that validated data conversion accuracy ahead of a January 2027 go-live.",
+        "Built a UAT and DCT testing progress tracker with status roll-ups, charts, and a one-click refresh."
       ],
       "skills": [
         "Excel (XLOOKUP, formulas, VBA)",
@@ -176,9 +176,7 @@
         "cv": true,
         "site": true
       },
-      "todo": [
-        "EDIT: keep client details general; confirm anything Newmark prefers not to be described."
-      ]
+      "todo": []
     },
     {
       "id": "green-tree",
@@ -200,7 +198,8 @@
         "Coordinated weekly customer discovery interview rounds across a team of six, with more than ten interviews grounding the Business Model Canvas.",
         "Built the six-year financial model from scratch, including partnership structures, a detailed expense build, and a balanced balance sheet, with cell-level source notes for every assumption.",
         "Developed a valuation approach based on public market multiples that values the underwriting and software businesses separately and then combines them.",
-        "Led work on market sizing, pricing benchmarks, and the company's name and brand identity, and produced a pitch deck and brand guidelines."
+        "Led work on market sizing, pricing benchmarks, and the company's name and brand identity, and produced a pitch deck and brand guidelines.",
+        "Groundwork concluded in May 2026, when the founding team moved on to other pursuits."
       ],
       "note": "Status: groundwork concluded in May 2026, when the founding team moved on to other pursuits.",
       "skills": [
@@ -221,9 +220,7 @@
         "cv": true,
         "site": true
       },
-      "todo": [
-        "EDIT: confirm you are comfortable with this status line, or reword it."
-      ]
+      "todo": []
     },
     {
       "id": "boomtown",
@@ -240,7 +237,8 @@
       "summary": "A veteran-owned home services company serving the Oklahoma City metro, founded shortly after leaving the Army.",
       "bullets": [
         "Work across every part of a small business: the services offered, how jobs are scheduled and delivered, customer communication, invoicing, and marketing.",
-        "Price against real costs, manage cash flow in a seasonal business, and build repeatable processes so quality does not depend on any one person."
+        "Price against real costs, manage cash flow in a seasonal business, and build repeatable processes so quality does not depend on any one person.",
+        "Serve roughly 50 or more households a year across routine, seasonal, and one-off residential maintenance and preventive services, scheduling through Google's free tools."
       ],
       "skills": [
         "Operations",
@@ -266,7 +264,7 @@
         "site": true
       },
       "todo": [
-        "EDIT: add specifics such as service lines, crew size, customers served, and tools you use."
+        "EDIT: add crew size and any other tools you use (not yet supplied 10-26-26)."
       ]
     },
     {
@@ -286,9 +284,10 @@
       ],
       "summary": "Capital planning consulting focused on facility assessments and portfolio analysis for clients across sectors.",
       "bullets": [
-        "Led multi-site facility assessments and portfolio analysis across sectors.",
-        "Coordinated schedules, quality assurance, and stakeholder reviews.",
-        "Delivered outputs that informed executive decisions."
+        "Managed 18+ assessments totaling over 80 million square feet across government, higher education, healthcare, K-12, manufacturing, and pharmaceutical sectors; supported capital planning that helped clients secure 4 to 17% increases in annual capital funding.",
+        "Directed teams of 3 to 35 professionals delivering facility condition assessments and capital planning models for portfolios from 400,000 to more than 30,000,000 square feet, integrating results into client CMMS/EAM systems.",
+        "Identified and eliminated wasteful spending of 8 to 13% through portfolio-level prioritization and lifecycle analysis.",
+        "Built repeat business by delivering on time and within 3% of budget baselines where tracked, and by establishing a consistent data model transferable across consulting providers."
       ],
       "skills": [
         "Capital planning",
@@ -303,9 +302,7 @@
         "cv": true,
         "site": true
       },
-      "todo": [
-        "EDIT: add outcomes, portfolio sizes, or client types you can share."
-      ]
+      "todo": []
     },
     {
       "id": "army",
@@ -517,7 +514,10 @@
       ],
       "summary": "Undergraduate degree in industrial safety, the foundation for an early career in environment, health, and safety.",
       "bullets": [
-        "Coursework in construction management and related fields."
+        "Coursework in construction management and related fields.",
+        "Key project: fire, tornado, and egress emergency plan for the campus.",
+        "Key project: hearing conservation plan and factory-floor plan for an Oklahoma City manufacturing plant.",
+        "Key project: Hazard Communication plan for an Oklahoma City environmental services firm, updated for the 2016 Safety Data Sheet (SDS) changes."
       ],
       "skills": [
         "Industrial safety",
@@ -551,7 +551,9 @@
       ],
       "summary": "Graduate degree in geological engineering, completed in a single year while serving on active duty.",
       "bullets": [
-        "Completed graduate coursework while serving on active duty."
+        "Completed graduate coursework while serving on active duty.",
+        "Key project: environmental impact study of a leaking underground storage tank in downtown Rolla, MO.",
+        "Key project: soils testing and site selection for a new retail store in Rolla, MO."
       ],
       "skills": [
         "Geological engineering",
@@ -563,9 +565,7 @@
         "cv": true,
         "site": true
       },
-      "todo": [
-        "EDIT: add thesis, project, or coursework highlights."
-      ]
+      "todo": []
     },
     {
       "id": "pmp",
@@ -613,7 +613,10 @@
       ],
       "summary": "Full-time MBA at the Gene Rainbolt Graduate School of Business with an entrepreneurship focus, paired with hands-on ventures and consulting internships.",
       "bullets": [
-        "Applying coursework directly through BoomTown Home Services, Green Tree Risk Group, and consulting internships."
+        "Applying coursework directly through BoomTown Home Services, Green Tree Risk Group, and consulting internships.",
+        "Key project: Global Business Experience in Portugal (May 2026), analyzing U.S. market entry for a Portugal-based technology company, with a market analysis report and a 12-slide deck.",
+        "Key project: team leader for a five-person team developing a commercialization strategy for a medical imaging technology, in partnership with a bioscience organization.",
+        "Key project: team leader for a market expansion analysis for a South Africa-based construction technology company, recommending a few smaller European markets first and then partnerships with large U.S. hardware retailers."
       ],
       "skills": [
         "Entrepreneurship",
