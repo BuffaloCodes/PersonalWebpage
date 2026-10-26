@@ -1,7 +1,6 @@
-# Site To-Do
+# Site To-Do (last updated 10/26/26, end of day; origin/main d38f54f plus this file)
  
 ## Due soon
-- [ ] Commit and push the 10/26/26 evening changes: `data/career.json` (removed the "A" Guttering date override, so it now reads Jan 2009 – May 2016; PMP no longer flagged for the Resume), `data/career-facts.md`, `js/experience-data.js`, the new `scripts/check_consistency.py`, and the draft `now.html`
 - [ ] A7 (tomorrow): run `python scripts/check_consistency.py --resume "<path to Resume .docx>" --cv "<path to CV .docx>"` (keep the .docx files in a private folder). First run flagged `contact.html`, a retired page still in the repo with a placeholder email (`your@email.com`). Decide: delete the file, or fix the address. Then try it with a LinkedIn `Positions.csv` export (experimental)
 - [ ] A2 (tomorrow): finish `now.html`. Confirm the two EDIT: comments (this month's learning topics and the book you are reading), then remove the `noindex` meta line, add the Now link to the nav of all 16 pages (after Experience or Projects), add `https://piercewallar.com/now.html` to `sitemap.xml`, and set the "Last updated" footers. Update it monthly (Site Sunday)
 - [ ] A3 (when you have time): follow `A3-Branded-Email-Guide.md` (about 1 hour plus DNS wait). Do it before printing business cards (A12)
@@ -64,11 +63,9 @@ Image status: 3 of 30 slots hold real images (`army-forecast-1`, `boomtown-1`, `
 - [ ] Then submit `sitemap.xml` in Google Search Console and refresh the LinkedIn preview
 
 ## Launch checks
-- [ ] Click every link by hand. The 10/24/26 automated audit found no broken internal links, images, or anchors on the published pages; still to check manually: LinkedIn, GitHub, and the Bookshelf Amazon links
 - [ ] Spot-check the live site on your iPhone after the 10/24/26 CSS changes (automated review passed)
 - [ ] Sitemap: `sitemap.xml` exists and lists all 14 published pages, including Experience (confirmed 10/24/26). Submit it in Google Search Console in November, after images and EDIT comments are finished
 - [ ] After pushing the Open Graph tags, refresh LinkedIn's cached preview with Post Inspector
-- [ ] Validate the new JSON-LD: paste `https://piercewallar.com/` into validator.schema.org or Google's Rich Results Test (expect a Person and a WebSite, no errors). Optionally add the site to your iPhone home screen to confirm the new touch icon
 
 ## Later
 - [ ] Email forwarding at piercewallar.com (optional; the mailto link works for now)

@@ -19,14 +19,14 @@ Created 10-26-26. Last updated 10-26-26 (completed items removed; A7 is next). S
 ---
 
 ## DONE (kept short; details are in the git history and the log)
-- **A1 Structured data and icons (10-26-26):** Person and WebSite JSON-LD (generated from `career.json` into `index.html` between the `career-jsonld` markers), icons, manifest, tags on 16 pages. Still to do: validate at validator.schema.org. `worksFor` lists BoomTown only (`works_for_ids` in `career.json`); add `ready3` there if wanted.
+- **A1 Structured data and icons (10-26-26):** Person and WebSite JSON-LD (generated from `career.json` into `index.html` between the `career-jsonld` markers), icons, manifest, tags on 16 pages. Validated 10-26-26 (validator.schema.org and Google Rich Results Test: no errors). `worksFor` lists BoomTown only (`works_for_ids` in `career.json`); add `ready3` there if wanted.
 - **A6 Career data single source of truth, v1 (10-26-26):** `data/career.json` generates `js/experience-data.js`, `data/career-facts.md`, `data/jsonld-person.html` and the JSON-LD block in `index.html` via `python scripts/build_career.py` (standard library only). Edit workflow: change `career.json`, run the script, commit the outputs; never hand-edit `js/experience-data.js`. Conventions live in the file: official Army duty title first, plain-English phrase after " | ", "Mon YYYY" dates, no client names, no GPAs. Not built yet: the At a Glance page (A9), the document and Positions.csv comparisons (A7), and generated resume or CV text (A16, still CONSIDERING).
 
 ---
 
 ## A. PROFESSIONAL (built for recruiters and consulting audiences)
 
-### A2. /now page | Easy (an evening) | IN PROGRESS (draft built 10-26-26; see TASKS.md)
+### A2. /now page | Easy (an evening) | IN PROGRESS (draft page `now.html` committed 10-26-26, noindex, not yet in nav or sitemap; see TASKS.md)
 - Three short paragraphs: what I am working on, learning and reading this month. Update monthly (part of the Monthly block in Section E).
 - Signals activity to recruiters who revisit. Add to nav and sitemap.xml.
 
@@ -229,3 +229,4 @@ Logistics plan (about 6 to 8 weeks in small blocks):
 - 10-26-26 (AM session 3, later): Decision: client names are removed everywhere (project pages, Projects cards, descriptions). Updated Renal OCT, Portugal, South Africa, Newmark, Ready 3, Green Tree, BoomTown and Army forecast pages from Pierce's answers, and synced `career.json` (Ready 3, Newmark, Green Tree, BoomTown, Gordian, and the three degrees). Political History, Home Server, and degree honors deferred at his request.
 - 10-26-26 (AM session 3, later): Added findings from Pierce's three PDFs to the Renal OCT, Portugal and Newmark pages (kept client names and people out), South Africa timeframe (Aug 2025 to Jan 2026) and client response, BoomTown (one-person operation) and Army forecast scales. Gordian sector list: the CV and Experience page use the fuller list; the one-page Resume keeps the shorter list for space, so A7 should not flag that difference.
 - 10-26-26 (evening): A7 v1 built and tested (also catches injected errors); first run fixed the "A" Guttering date override and the PMP flag. A2 draft page `now.html` created (noindex, not in nav or sitemap yet). A3 guide written as a separate .md file.
+- 10-26-26 (end of day): Everything committed through d38f54f ("Now Page Added"). Validation done: JSON-LD (schema validator and Rich Results Test, no errors) and a manual link check (no errors). Session ended; work continues in a new chat (see SESSION-SUMMARY - 10-26-26 - PM.md). Next: A7 follow-ups (decide on contact.html, try Positions.csv), finish A2, then the 11/1 content batch (images, alt text, EDIT comments).
