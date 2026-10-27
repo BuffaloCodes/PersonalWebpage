@@ -1,4 +1,4 @@
-# Site To-Do (last updated 10/27/26, morning; origin/main 92a7f64 plus this file)
+# Site To-Do (last updated 10/27/26, late morning; origin/main a4d670e plus this file)
  
 ## Due soon
 - [ ] A7 (tomorrow): run `python scripts/check_consistency.py --resume "<path to Resume .docx>" --cv "<path to CV .docx>"` (keep the .docx files in a private folder). First run flagged `contact.html`, a retired page still in the repo with a placeholder email (`your@email.com`). Decide: delete the file, or fix the address. Then try it with a LinkedIn `Positions.csv` export (experimental)
@@ -8,24 +8,26 @@
 - [ ] Career Facts: re-review `data/career-facts.md` against the final Resume and CV (the Resume and CV are final and live as of 10/26/26; Career Facts has not been re-reviewed)
 - [ ] Make the Career Facts sheet the standard everywhere: update LinkedIn to match (official Army title plus function phrase; the six Army roles with units; Guard roles; "A" Guttering Jan 2009 to May 2016; "Newmark" (not Newmark RF); the two Univar bullets; Industrial Safety and Geological Engineering degree names; PMP Sep 2022). `data/career-facts.md` is the generated reference
 - [ ] LinkedIn: apply the final CV wording (see the Career Facts item above); also note the CV Profile now says "engineer officer" and "real estate management consulting"
+- [ ] CV: update the South Africa "Key project" bullet in the CV Word file (new wording is in `data/career.json`: five-person team, August 2025 to January 2026, screened international markets, financial model with upside and downside scenarios, sequenced market-entry plan), export the PDF, replace `assets/cv/Wallar_Pierce_CV_2026_10.pdf` (update `index.html` only if the file name changes), then run `python scripts/check_consistency.py --cv "<path to CV .docx>"`
 - [ ] Real images for all ten projects (`assets/images/projects/<project>-1.jpg`, `-2.jpg`, `-3.jpg`) plus alt text (due 11/1/26)
-- [ ] Review every `EDIT:` comment (Ctrl+Shift+F); South Africa needs the most; Renal OCT is done (due 11/1/26)
+- [ ] Review every `EDIT:` comment (Ctrl+Shift+F); Renal OCT, Portugal and South Africa are done (due 11/1/26)
 - [ ] Experience page detail text: review the `EDIT:` items in `data/career.json` (no longer in `js/experience.js`), refine each role's summary, highlights, and skills, then run `python scripts/build_career.py` and commit (include in the 11/1/26 batch)
 - [ ] Experience page: confirm the six Army role descriptions (rewritten 10/24/26 from the CV) and the Green Tree status line before sharing the page widely
 
 ## 11/1/26 content checklist (by page)
 Built 10/24/26 from a scan of every `EDIT:` comment and image slot in the repo (commit b6ea10b). Work top to bottom; the first two pages need the most. Search for `EDIT:` (Ctrl+Shift+F) to jump to each item, and delete the comment once the item is done.
 
-Image status (10/27/26): 5 slots hold real images (`army-forecast-1`, `boomtown-1`, `home-server-1`, `renal-oct-1`, `renal-oct-2`); the other 24 are still the gray "Image placeholder" files. Renal OCT is finished and uses two images (its third slot was retired). Alt text is still the generic default everywhere else (for example "Home server image 1"), including the three older real images, so each needs a real description. Each page is being finished in its own "PROJECT EDIT" chat. Keep each file name and the `.jpg` extension.
+Image status (10/27/26): 12 slots hold real images (`army-forecast-1`, `boomtown-1`, `home-server-1`, `renal-oct-1`, `renal-oct-2`, `portugal-1` to `-6`, `south-africa-1`); the other 18 are still the gray "Image placeholder" files. Renal OCT (two images), Portugal (six) and South Africa (one) are finished; their unused slots were retired. Alt text is still the generic default on the remaining pages (for example "Home server image 1"), including the three older real images, so each needs a real description. Each page is being finished in its own "PROJECT EDIT" chat. Keep each file name and the `.jpg` extension.
 
-### South Africa (`project-south-africa.html`): thinnest draft
-- [ ] Images: `south-africa-1.jpg` (top image and Projects-page card), `-2.jpg`, `-3.jpg` (side-by-side pair), plus alt text
+### South Africa (`project-south-africa.html`): DONE 10/27/26 (commit a4d670e)
+- [x] Page rewritten, title now "Global Business Experience: South Africa", one free-license hero image with alt text and an "illustrative" caption, card text and career data updated, no `EDIT:` comments left, unused images deleted
+- [ ] CV bullet update (see Due soon)
 
 ### Renal OCT (`project-renal-oct.html`): DONE 10/27/26 (commit 92a7f64)
 - [x] Page rewritten, title now "Healthcare Technology Consulting Engagement", two images with alt text, card text and career data updated, no `EDIT:` comments left
 
-### Portugal (`project-portugal.html`)
-- [ ] Images: `portugal-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
+### Portugal (`project-portugal.html`): DONE (commits 5fe618e and 76995fe)
+- [x] Page updated, six images in place (`portugal-1` to `-6`), no `EDIT:` comments left
 
 ### Newmark (`project-newmark.html`)
 - [ ] Images: `newmark-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
