@@ -352,7 +352,7 @@ window.EXPERIENCE_ENTRIES = [
       "Applying coursework directly through BoomTown Home Services, Green Tree Risk Group, and consulting internships.",
       "Key project: Global Business Experience in Portugal (January to May 2026), a study abroad program in Lisbon and Porto that included visits with organizations in AI, defense technology, manufacturing and logistics, and a live U.S. market-entry engagement for a Portugal-based technology company, with a market analysis report and a 12-slide deck presented in person to the client's leadership.",
       "Key project: team leader for a five-person team (January to May 2026) that built a market analysis, five-year financial model and 30-month commercialization plan for a medical imaging technology, in partnership with a bioscience organization.",
-      "Key project: team leader for an analysis of U.S. market entry for a South Africa-based construction technology company, recommending a few smaller European markets first and then partnerships with large U.S. hardware retailers."
+      "Key project: team leader for a five-person team (August 2025 to January 2026) that screened international markets, built a financial model with upside and downside scenarios, and recommended a sequenced market-entry plan for a South Africa-based construction technology company."
     ],
     "skills": [
       "Entrepreneurship",
