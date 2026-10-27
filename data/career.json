@@ -63,7 +63,9 @@
     "GoBuildBoM",
     "Cashbuild",
     "Builders Warehouse",
-    "African Bank"
+    "African Bank",
+    "Hawkins",
+    "Cabot"
   ],
   "jsonld": {
     "job_title": "Founder",
@@ -159,8 +161,8 @@
       ],
       "summary": "Management consulting work in real estate, where the quality of the underlying data decided whether anything built on it could be trusted.",
       "bullets": [
-        "Merged fragmented ownership records into one interactive online tool, giving the client its first unified view of an ownership structure of 500+ entities.",
-        "Standardized roughly 550 real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
+        "Merged fragmented ownership records into one interactive online tool, giving the client its first unified view of an ownership structure of 552 entities.",
+        "Standardized 552 real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
         "Built a fully formula-driven Excel tool that auto-generates Mermaid.js diagram syntax and plain-English summaries to create standardized, stakeholder-ready swimlane flowcharts; now in use on a second project.",
         "Created Design Confirmation Testing (DCT) scripts for Accounts Payable, Commercial Management, and General Ledger, building branded, formula-linked workbooks that validated data conversion accuracy ahead of a January 2027 go-live.",
         "Built a UAT and DCT testing progress tracker with status roll-ups, charts, and a one-click refresh."
