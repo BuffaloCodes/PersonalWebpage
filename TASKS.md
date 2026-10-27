@@ -1,4 +1,4 @@
-# Site To-Do (last updated 10/27/26, late morning; origin/main a4d670e plus this file)
+# Site To-Do (last updated 10/27/26, midday; origin/main d62deb5 plus this file)
  
 ## Due soon
 - [ ] A7 (tomorrow): run `python scripts/check_consistency.py --resume "<path to Resume .docx>" --cv "<path to CV .docx>"` (keep the .docx files in a private folder). First run flagged `contact.html`, a retired page still in the repo with a placeholder email (`your@email.com`). Decide: delete the file, or fix the address. Then try it with a LinkedIn `Positions.csv` export (experimental)
@@ -17,7 +17,7 @@
 ## 11/1/26 content checklist (by page)
 Built 10/24/26 from a scan of every `EDIT:` comment and image slot in the repo (commit b6ea10b). Work top to bottom; the first two pages need the most. Search for `EDIT:` (Ctrl+Shift+F) to jump to each item, and delete the comment once the item is done.
 
-Image status (10/27/26): 12 slots hold real images (`army-forecast-1`, `boomtown-1`, `home-server-1`, `renal-oct-1`, `renal-oct-2`, `portugal-1` to `-6`, `south-africa-1`); the other 18 are still the gray "Image placeholder" files. Renal OCT (two images), Portugal (six) and South Africa (one) are finished; their unused slots were retired. Alt text is still the generic default on the remaining pages (for example "Home server image 1"), including the three older real images, so each needs a real description. Each page is being finished in its own "PROJECT EDIT" chat. Keep each file name and the `.jpg` extension.
+Image status (10/27/26): 15 slots hold real images (`army-forecast-1`, `boomtown-1`, `home-server-1`, `newmark-1` to `-3`, `renal-oct-1`, `renal-oct-2`, `portugal-1` to `-6`, `south-africa-1`); the other 15 are still the gray "Image placeholder" files. Renal OCT (two images), Portugal (six), South Africa (one) and Newmark (three) are finished; their unused slots were retired. Alt text is still the generic default on the remaining pages (for example "Home server image 1"), including the three older real images, so each needs a real description. Each page is being finished in its own "PROJECT EDIT" chat. Keep each file name and the `.jpg` extension.
 
 ### South Africa (`project-south-africa.html`): DONE 10/27/26 (commit a4d670e)
 - [x] Page rewritten, title now "Global Business Experience: South Africa", one free-license hero image with alt text and an "illustrative" caption, card text and career data updated, no `EDIT:` comments left, unused images deleted
@@ -29,8 +29,9 @@ Image status (10/27/26): 12 slots hold real images (`army-forecast-1`, `boomtown
 ### Portugal (`project-portugal.html`): DONE (commits 5fe618e and 76995fe)
 - [x] Page updated, six images in place (`portugal-1` to `-6`), no `EDIT:` comments left
 
-### Newmark (`project-newmark.html`)
-- [ ] Images: `newmark-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
+### Newmark (`project-newmark.html`): DONE 10/27/26 (commit d62deb5)
+- [x] Page rewritten, three images and alt text in place (logo hero, summary slide, redrawn process diagram), no `EDIT:` comments left; Newmark HR approved the logo image
+- [ ] When the CV and Resume are next exported, check both say 552 entities (the site and `data/career.json` now say 552; older drafts said "500+" or "roughly 550"), then run `python scripts/check_consistency.py --cv "<path to CV .docx>"`
 
 ### Ready 3 (`project-ready3.html`)
 - [ ] Images: `ready3-1.jpg`, `-2.jpg`, `-3.jpg`, plus alt text
