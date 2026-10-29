@@ -65,7 +65,9 @@
     "Builders Warehouse",
     "African Bank",
     "Hawkins",
-    "Cabot"
+    "Cabot",
+    "Walnut Street",
+    "American Fidelity"
   ],
   "jsonld": {
     "job_title": "Founder",
@@ -200,10 +202,10 @@
       ],
       "summary": "Early-stage groundwork for an insurtech company built around AI liability and cyber insurance: a managing general agent (MGA) platform paired with AI governance software.",
       "bullets": [
-        "Coordinated weekly customer discovery interview rounds across a team of six, with more than ten interviews grounding the Business Model Canvas.",
+        "Coordinated weekly customer discovery interview rounds across a team of six, with more than 80 interviews of insurance, cyber and AI industry professionals over 16 weeks grounding the Business Model Canvas.",
         "Built the six-year financial model from scratch, including partnership structures, a detailed expense build, and a balanced balance sheet, with cell-level source notes for every assumption.",
         "Developed a valuation approach based on public market multiples that values the underwriting and software businesses separately and then combines them.",
-        "Led work on market sizing, pricing benchmarks, and the company's name and brand identity, and produced a pitch deck and brand guidelines.",
+        "Led work on market sizing and pricing benchmarks and produced the pitch deck for the course's closing investor pitch to two venture capital investors.",
         "Groundwork concluded in May 2026, when the founding team moved on to other pursuits."
       ],
       "note": "Status: groundwork concluded in May 2026, when the founding team moved on to other pursuits.",
