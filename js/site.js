@@ -77,4 +77,33 @@
       if (empty) empty.hidden = anyVisible;
     });
   }
+
+  /* ---- "Site under update" banner ----
+     Shown at the top of every page while the site is being finished.
+     To remove it at launch, change SHOW_UPDATE_BANNER to false (or delete this block).
+     A visitor who selects Dismiss will not see it again until they come back in a new browser session. */
+  var SHOW_UPDATE_BANNER = true;
+  if (SHOW_UPDATE_BANNER) {
+    var bannerDismissed = false;
+    try { bannerDismissed = sessionStorage.getItem("bannerDismissed") === "1"; } catch (e) {}
+    if (!bannerDismissed && document.body) {
+      var banner = document.createElement("div");
+      banner.className = "site-banner";
+      banner.setAttribute("role", "region");
+      banner.setAttribute("aria-label", "Site update notice");
+      var msg = document.createElement("p");
+      msg.textContent = "This site is being updated. Some pages and images are still in progress. Thank you for your patience.";
+      var closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.textContent = "Dismiss";
+      closeBtn.setAttribute("aria-label", "Dismiss site update notice");
+      closeBtn.addEventListener("click", function () {
+        banner.remove();
+        try { sessionStorage.setItem("bannerDismissed", "1"); } catch (e) {}
+      });
+      banner.appendChild(msg);
+      banner.appendChild(closeBtn);
+      document.body.insertBefore(banner, document.body.firstChild);
+    }
+  }
 })();

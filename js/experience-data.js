@@ -23,12 +23,7 @@ window.EXPERIENCE_ENTRIES = [
       "Schedule and scope control",
       "Engineering"
     ],
-    "links": [
-      {
-        "href": "project-ready3.html",
-        "label": "Read the project write-up"
-      }
-    ]
+    "links": []
   },
   {
     "id": "newmark",

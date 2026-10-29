@@ -131,18 +131,15 @@
         "Schedule and scope control",
         "Engineering"
       ],
-      "links": [
-        {
-          "href": "project-ready3.html",
-          "label": "Read the project write-up"
-        }
-      ],
+      "links": [],
       "docs": {
         "resume": true,
         "cv": true,
         "site": true
       },
-      "todo": []
+      "todo": [
+        "EDIT: restore the link {\"href\": \"project-ready3.html\", \"label\": \"Read the project write-up\"} to \"links\" when the Ready 3 project page is published"
+      ]
     },
     {
       "id": "newmark",
