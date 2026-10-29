@@ -1,5 +1,11 @@
 # Site To-Do (last updated 10/27/26, midday; origin/main d62deb5 plus this file)
- 
+
+## Pierce's Notes for Claude / Reply to these before updating this file
+- I think I want to drop the Ready 3 from the list of Projects until the project is finished
+- I'd like to also schedule a deep dive to update the Experience page with more detials for the positions, similar to how we updated the Projects
+- Also need to run a basic website check to make sure it has everything pertinent - privacy policy example
+- Need to add a banner at the top of all pages explaining to excuse the mess while we update the website - since its already live and anyone can find it
+
 ## Due soon
 - [ ] A7 (tomorrow): run `python scripts/check_consistency.py --resume "<path to Resume .docx>" --cv "<path to CV .docx>"` (keep the .docx files in a private folder). First run flagged `contact.html`, a retired page still in the repo with a placeholder email (`your@email.com`). Decide: delete the file, or fix the address. Then try it with a LinkedIn `Positions.csv` export (experimental)
 - [ ] A2 (tomorrow): finish `now.html`. Confirm the two EDIT: comments (this month's learning topics and the book you are reading), then remove the `noindex` meta line, add the Now link to the nav of all 16 pages (after Experience or Projects), add `https://piercewallar.com/now.html` to `sitemap.xml`, and set the "Last updated" footers. Update it monthly (Site Sunday)
