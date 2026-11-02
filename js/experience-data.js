@@ -1,6 +1,6 @@
 /* GENERATED FILE. Do not edit by hand.
    Edit data/career.json, then run:  python scripts/build_career.py
-   Built from career.json (last updated 2026-10-26). */
+   Built from career.json (last updated 2026-11-02). */
 window.EXPERIENCE_ENTRIES = [
   {
     "id": "ready3",
@@ -31,16 +31,17 @@ window.EXPERIENCE_ENTRIES = [
     "label": "Newmark",
     "org": "Newmark",
     "role": "Summer Intern, Management Consulting",
-    "place": "Real estate management consulting",
+    "place": "Remote (Oklahoma City), with Dallas office visits",
     "start": [2026, 5],
     "end": [2026, 8],
     "summary": "Management consulting work in real estate, where the quality of the underlying data decided whether anything built on it could be trusted.",
     "bullets": [
-      "Merged fragmented ownership records into one interactive online tool, giving the client its first unified view of an ownership structure of 552 entities.",
-      "Standardized 552 real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
+      "Merged fragmented ownership records into one interactive online tool, mapping 43,642 ownership paths from a 6,982-row export and giving the client its first unified view of an ownership structure of 500+ entities.",
+      "Standardized 500+ real estate entities into a consistent five-digit ID scheme verified against the client's hierarchy diagram; traced and corrected the cause of numbers stored as text that were breaking lookup formulas across thousands of rows, and documented four data quality issues for resolution with the client.",
       "Built a fully formula-driven Excel tool that auto-generates Mermaid.js diagram syntax and plain-English summaries to create standardized, stakeholder-ready swimlane flowcharts; now in use on a second project.",
       "Created Design Confirmation Testing (DCT) scripts for Accounts Payable, Commercial Management, and General Ledger, building branded, formula-linked workbooks that validated data conversion accuracy ahead of a January 2027 go-live.",
-      "Built a UAT and DCT testing progress tracker with status roll-ups, charts, and a one-click refresh."
+      "Built a UAT and DCT testing progress tracker with status roll-ups, charts, and a one-click refresh.",
+      "Attended 54 client meetings during discovery as a participant, then turned the transcripts into summaries and due-outs for the team and the client."
     ],
     "skills": [
       "Excel (XLOOKUP, formulas, VBA)",
@@ -66,13 +67,13 @@ window.EXPERIENCE_ENTRIES = [
     "end": [2026, 5],
     "summary": "Early-stage groundwork for an insurtech company built around AI liability and cyber insurance: a managing general agent (MGA) platform paired with AI governance software.",
     "bullets": [
-      "Coordinated weekly customer discovery interview rounds across a team of six, with more than 80 interviews of insurance, cyber and AI industry professionals over 16 weeks grounding the Business Model Canvas.",
+      "As COO, coordinated weekly customer discovery interview rounds across a team of six, with more than 80 interviews of insurance, cyber and AI industry professionals over 16 weeks grounding the Business Model Canvas.",
       "Built the six-year financial model from scratch, including partnership structures, a detailed expense build, and a balanced balance sheet, with cell-level source notes for every assumption.",
       "Developed a valuation approach based on public market multiples that values the underwriting and software businesses separately and then combines them.",
       "Led work on market sizing and pricing benchmarks and produced the pitch deck for the course's closing investor pitch to two venture capital investors.",
-      "Groundwork concluded in May 2026, when the founding team moved on to other pursuits."
+      "Groundwork complete; not launched. After the May 2026 investor pitch, the founding team went separate ways."
     ],
-    "note": "Status: groundwork concluded in May 2026, when the founding team moved on to other pursuits.",
+    "note": "Status: Groundwork complete; not launched. After the May 2026 investor pitch, the founding team went separate ways.",
     "skills": [
       "Customer discovery",
       "Financial modeling",
@@ -98,9 +99,10 @@ window.EXPERIENCE_ENTRIES = [
     "end": "present",
     "summary": "A veteran-owned home maintenance company in Oklahoma City that brings facility capital-planning methods to residential homeowners, founded in July 2024.",
     "bullets": [
-      "Founded the company in July 2024 to bring the capital-planning approach used on facility assessments at Gordian to residential homeowners, building and running it on nights and weekends alongside full-time work and, later, the MBA.",
-      "Own every part of a small business: services offered, scheduling and delivery, customer communication, invoicing, and marketing, using Google Maps, Gmail, and Sheets; built the website, and win customers through a Google listing and neighborhood canvassing.",
-      "Serve roughly 50 or more households a year across four service areas (appliance care, lawn and exterior, seasonal prep, and home planning); delivered a home plan that inventories installed components, service life, and replacement cost to set a repair and replacement budget."
+      "Founded the company as an LLC in July 2024 to bring the capital-planning approach used on facility assessments at Gordian to residential homeowners, building and running it on nights and weekends alongside full-time work and, later, the MBA.",
+      "Own every part of a small business: services offered, scheduling and delivery, customer communication, invoicing, and marketing, using Google Maps, Gmail, and Sheets; built the website (live since February 2025), and win customers through a Google listing and neighborhood canvassing.",
+      "Serve roughly 50 or more households a year across four service areas (appliance care, lawn and exterior, seasonal prep, and home planning); delivered a home plan that inventories installed components, service life, and replacement cost to set a repair and replacement budget.",
+      "Price against real costs, manage cash flow in a seasonal business, and build repeatable processes so quality does not depend on any one person."
     ],
     "skills": [
       "Operations",

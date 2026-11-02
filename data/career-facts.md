@@ -1,4 +1,4 @@
-# Career Facts (generated from data/career.json, updated 2026-10-26)
+# Career Facts (generated from data/career.json, updated 2026-11-02)
 
 | Employer or institution | Title | Dates | Resume | CV | Site |
 |---|---|---|---|---|---|
