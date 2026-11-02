@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Home Server | Pierce A. Wallar</title>
-  <meta name="description" content="A home lab for local storage, media, and lightweight self-hosted services."/>
+  <title>DadFlix: A Personal Media Server | Pierce A. Wallar</title>
+  <meta name="description" content="A personal Plex media server that digitizes a family’s physical media, with a live-TV style channel of favorite movies that removes the choice of what to watch."/>
   <script>
     /* Starts in light mode; uses dark only if the visitor chose it before. */
     (function () {
@@ -27,8 +27,8 @@
   <link rel="canonical" href="https://piercewallar.com/project-home-server.html">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Home Server | Pierce A. Wallar">
-  <meta property="og:description" content="A home lab for local storage, media, and lightweight self-hosted services.">
+  <meta property="og:title" content="DadFlix: A Personal Media Server | Pierce A. Wallar">
+  <meta property="og:description" content="A personal Plex media server that digitizes a family’s physical media, with a live-TV style channel of favorite movies that removes the choice of what to watch.">
      <meta property="og:url" content="https://piercewallar.com/project-home-server.html">
      <meta property="og:site_name" content="Pierce A. Wallar">
      <meta property="og:image" content="https://piercewallar.com/assets/images/og-image.jpg">
@@ -71,49 +71,42 @@
   <main class="pp">
     <a class="pp_back" href="projects.html">&larr; All projects</a>
 
-    <!-- EDIT: replace the three images (same file names, .jpg) in assets/images/projects/:
-         home-server-1.jpg (top image and the card on the Projects page), home-server-2.jpg and home-server-3.jpg (side-by-side pair).
-         Then update each image's alt text below so it describes the picture. -->
-
     <header>
-      <p class="pp_kicker">Personal · Tinkering</p>
-      <h1>Home Server</h1>
-      <p class="pp_sub">A home lab for local storage, media, and lightweight self-hosted services.</p>
+      <p class="pp_kicker">Personal &middot; Home technology</p>
+      <h1>DadFlix: A Personal Media Server</h1>
+      <p class="pp_sub">A Plex media server that holds my family&rsquo;s digitized movies and TV shows, with a live-TV style channel of my favorite films that removes the need to choose what to watch.</p>
       <dl class="pp_facts">
-        <div><dt>Hardware</dt><dd>Repurposed mini PC</dd></div>
-        <div><dt>Operating system</dt><dd>Debian Linux</dd></div>
-        <div><dt>Services</dt><dd>Jellyfin, Syncthing</dd></div>
+        <div><dt>Built</dt><dd>January to May 2023; in daily use since</dd></div>
+        <div><dt>Platform</dt><dd>Plex on an always-on Windows PC I built</dd></div>
+        <div><dt>Library</dt><dd>500+ movies and 40+ TV shows</dd></div>
+        <div><dt>Users</dt><dd>About nine, across family and friends</dd></div>
       </dl>
     </header>
 
     <figure class="pp_fig">
-      <img src="assets/images/projects/home-server-1.jpg" alt="Home server image 1">
-      <!-- Optional caption: remove the comment markers and edit the text.
-      <figcaption>Caption goes here.</figcaption> -->
+      <img src="assets/images/projects/home-server-1.jpg" alt="Illustrative stock photograph: a pair of eyeglasses resting on a desk in the foreground, in front of out-of-focus monitors showing lines of code and video-editing software.">
     </figure>
 
-    <h2>Why I built it</h2>
-    <p>I started with an old mini PC that would otherwise have sat unused. Turning it into a server gave me a way to learn Linux administration hands-on, with real stakes: if something breaks, my own files and media go with it.</p>
-    <h2>What it runs</h2>
-    <p>The machine runs a clean Debian installation. Jellyfin handles media, and Syncthing keeps files in sync across my devices without relying on a third-party cloud service.</p>
-    <!-- EDIT: add the hardware specs, how it is networked at home, and any other services you have added, such as backups or monitoring. -->
+    <h2>The problem</h2>
+    <p>When my first child was born, I was awake at all hours of the night, holding the baby and wishing it were easier to find something to watch on mute. It was harder than it should have been. My physical media was scattered around the house, there were too many streaming platforms to check for something good, and the real obstacle was the decision itself. Scrolling through options is a poor use of the few free minutes a new parent has.</p>
 
-    <div class="pp_gallery">
-      <figure class="pp_fig">
-        <img src="assets/images/projects/home-server-2.jpg" alt="Home server image 2" loading="lazy">
-        <!-- Optional caption: remove the comment markers and edit the text.
-        <figcaption>Caption goes here.</figcaption> -->
-      </figure>
-      <figure class="pp_fig">
-        <img src="assets/images/projects/home-server-3.jpg" alt="Home server image 3" loading="lazy">
-        <!-- Optional caption: remove the comment markers and edit the text.
-        <figcaption>Caption goes here.</figcaption> -->
-      </figure>
-    </div>
+    <h2>What I built</h2>
+    <p>I went down the research rabbit hole and learned about Plex, software that turns a computer into a private streaming service. I compared it with Jellyfin and chose Plex because it was the easiest to run out of the box, and because several friends already managed their own Plex servers and could answer my questions. This was early 2023, before AI tools could walk me through a build, so I did the research the old-fashioned way.</p>
+    <p>The server is a Windows PC I built and keep running at home, connected to a 16 TB external hard drive that stores the library. I bought an external disc drive and digitized every disc I own, and I added royalty-free public media where it was something I wanted. Plex identifies and labels most files on its own, so the most time-consuming step was simply moving everything onto the drive. The idea came in January 2023, and the server was live in May.</p>
+    <p>The library has two sections, Movies and TV Shows, organized into collections such as Kids Movies, Middle Earth, Star Wars, Marvel, the Breaking Bad universe, Avatar, and War Movies. Today it holds more than 500 movies and more than 40 TV shows.</p>
 
-    <h2>What I am learning</h2>
-    <p>A home lab is an inexpensive way to practice habits that matter in any technical environment: documenting what you change, keeping backups, and fixing problems methodically rather than by guesswork.</p>
-    <!-- EDIT: add what you plan to build next, or something that went wrong and what you learned from it. -->
+    <h2>DadFlix</h2>
+    <p>The part of the project I care about most is a channel I named DadFlix. It works like live television without the commercials: an endless loop of my personal favorite movies, running all the time. You do not pick the movie, and you do not pick where in the movie you start. You press &ldquo;View,&rdquo; not &ldquo;Play,&rdquo; because it is always playing. It might be the opening scene, the middle, or the last ten minutes. The rule for what belongs on the channel is simple: if I saw it playing, I would sit down and watch it. That removes the one step that made finding something to watch so tiring.</p>
+
+    <h2>How it is used</h2>
+    <p>About nine people use the server, including my household, extended family, and a few friends. They watch on TVs, phones, laptops, and tablets, and some use it in hotel rooms and on flights. At home it is used every day.</p>
+    <p>My family was hesitant at first because they expected it to be clunky. Once they tried it, they said it had a polished, Netflix-like interface, and they started requesting titles to be added.</p>
+
+    <h2>Keeping it running</h2>
+    <p>The server is never really finished. I keep adding new media and removing older titles to make room, and I keep improving how the library is organized. It takes about an hour a week, more when I want to make a larger change. The project is entirely mine, from the original research and the build to the digitizing and the upkeep.</p>
+
+    <h2>What I took away</h2>
+    <p>The most useful decision was subtraction. The problem was not a lack of content, it was the effort of choosing, so the best feature removes the choice. Starting from the friction a real user feels, rather than from the technology, shaped the design. Adoption followed the same pattern: skeptical users became active ones once the experience was easy, and their requests became my list of improvements. And a system people rely on every day is mostly a maintenance commitment, which is a lesson I see in any operational work.</p>
 
   </main>
 
@@ -124,7 +117,7 @@
       <a href="mailto:piercewallar@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
     </div>
     <!-- Update the month and year by hand whenever you publish changes. -->
-    <p class="last-updated">Last updated: October 2026</p>
+    <p class="last-updated">Last updated: November 2026</p>
   </footer>
 
   <script src="js/site.js"></script>
