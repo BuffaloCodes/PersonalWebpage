@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Army Unit Commodities Forecast | Pierce A. Wallar</title>
-  <meta name="description" content="A planning model that forecasts class items to support readiness decisions."/>
+  <meta name="description" content="A days-of-supply planning model, built in Excel, that anticipated shortages across five supply classes for a battalion preparing for a large-scale combat exercise."/>
   <script>
     /* Starts in light mode; uses dark only if the visitor chose it before. */
     (function () {
@@ -28,7 +28,7 @@
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Army Unit Commodities Forecast | Pierce A. Wallar">
-  <meta property="og:description" content="A planning model that forecasts class items to support readiness decisions.">
+  <meta property="og:description" content="A days-of-supply planning model, built in Excel, that anticipated shortages across five supply classes for a battalion preparing for a large-scale combat exercise.">
      <meta property="og:url" content="https://piercewallar.com/project-army-forecast.html">
      <meta property="og:site_name" content="Pierce A. Wallar">
      <meta property="og:image" content="https://piercewallar.com/assets/images/og-image.jpg">
@@ -71,53 +71,40 @@
   <main class="pp">
     <a class="pp_back" href="projects.html">&larr; All projects</a>
 
-    <!-- EDIT: replace the three images (same file names, .jpg) in assets/images/projects/:
-         army-forecast-1.jpg (top image and the card on the Projects page), army-forecast-2.jpg and army-forecast-3.jpg (side-by-side pair).
-         Then update each image's alt text below so it describes the picture. -->
-
     <header>
       <p class="pp_kicker">Operations · Army logistics</p>
       <h1>Army Unit Commodities Forecast</h1>
-      <p class="pp_sub">A planning model that forecasts class items to support readiness decisions.</p>
+      <p class="pp_sub">A days-of-supply planning model that anticipated shortages across five supply classes for a battalion.</p>
       <dl class="pp_facts">
         <div><dt>Setting</dt><dd>Battalion logistics, Fort Carson</dd></div>
         <div><dt>Role</dt><dd>Battalion Logistics Officer</dd></div>
-        <div><dt>Scope</dt><dd>$15M annual commodity budget, 500+ Soldiers</dd></div>
-        <div><dt>Format</dt><dd>Spreadsheet planning model</dd></div>
+        <div><dt>Scope</dt><dd>$15M annual commodity budget, about 500 Soldiers</dd></div>
+        <div><dt>Format</dt><dd>Excel planning model, updated twice daily</dd></div>
       </dl>
     </header>
 
     <figure class="pp_fig">
-      <img src="assets/images/projects/army-forecast-1.jpg" alt="Army commodities forecast image 1">
-      <!-- Optional caption: remove the comment markers and edit the text.
-      <figcaption>Caption goes here.</figcaption> -->
+      <img src="assets/images/projects/army-forecast-1.jpg" alt="Illustrative mock-up of a days-of-supply dashboard: six units listed against five supply classes, each cell showing days of supply in green, amber or red, with an overall status for each unit.">
+      <figcaption>Illustrative mock-up with invented data, created for this page. It is not an image of the actual model.</figcaption>
     </figure>
 
     <h2>The problem</h2>
-    <p>As Battalion Logistics Officer at Fort Carson, I controlled a $15 million annual commodity budget covering fuel, food, water, and repair parts for more than 500 Soldiers. Those items have to be on hand when training and operations need them. Ordering too little or too late carries an immediate readiness cost, while ordering too much ties up money the unit needs elsewhere.</p>
+    <p>When I became Battalion Logistics Officer at Fort Carson in November 2022, the logistics section's daily work was routine administration. The planning side, looking ahead at what the battalion would need, had to be built. Nine months later the battalion was scheduled for a two-week, large-scale combat exercise at an Army combat training center, where demand for supplies is high, units are dispersed, and other units flow in and out of the battalion's support.</p>
+    <p>The battalion was about 500 Soldiers and could grow toward 800 with attachments. I held a $15 million annual commodity budget. Ordering too little or too late carries an immediate readiness cost, while ordering too much ties up money the unit needs elsewhere. I needed to see shortages before they happened.</p>
+
     <h2>The model</h2>
-    <p>I built a planning model around days of supply. It compared the supplies on hand against the number of Soldiers and vehicles to support, using consumption rates for food, fuel, water, ammunition, and construction supplies to show when to order new supplies and when to issue them down to subordinate units.</p>
-    <p>The model also showed how many fully packed days of supply each subordinate unit had on hand at that moment and rated each unit on a Green, Amber, Red, or Black scale. That gave the battalion commander a quick visual read on unit readiness, with the assumptions behind each number visible so they could be questioned and refined.</p>
-    <p>The model worked at two scales: short-range planning in windows from 96 hours down to 12 hours, and fiscal-year planning to allocate supplies and budget. Every unit I supplied was supplied and ready, and we never ran into a logistics shortfall.</p>
-    <!-- EDIT: replace army-forecast-1.jpg with a new dashboard image (deferred by Pierce 10-26-26). -->
+    <p>I built a planning model in Excel around days of supply, covering food, fuel, construction materials, ammunition, and repair parts. Each subordinate company and attachment sent me a logistics report, and I compiled those reports into the model twice a day. The model compared supplies on hand against consumption rates for the Soldiers and vehicles being supported, showing how many days of supply each unit held in each class and when to order new supplies or issue them down.</p>
+    <p>Each unit was rated Green, Amber, Red, or Black against Army standards, which gave the battalion a quick visual read on readiness while keeping the assumptions behind every number visible so they could be questioned and refined. The model worked at two scales: short-range planning in windows from 96 hours down to 12 hours, and fiscal-year planning to allocate supplies and budget. During the exercise the timelines compressed, because the event lasted only two weeks.</p>
+    <p>The hardest part was not the spreadsheet. It was the inputs. A forecast is only as good as the reports behind it, and getting subordinate units to report accurately and on time required constant attention.</p>
 
-    <div class="pp_gallery">
-      <figure class="pp_fig">
-        <img src="assets/images/projects/army-forecast-2.jpg" alt="Army commodities forecast image 2" loading="lazy">
-        <!-- Optional caption: remove the comment markers and edit the text.
-        <figcaption>Caption goes here.</figcaption> -->
-      </figure>
-      <figure class="pp_fig">
-        <img src="assets/images/projects/army-forecast-3.jpg" alt="Army commodities forecast image 3" loading="lazy">
-        <!-- Optional caption: remove the comment markers and edit the text.
-        <figcaption>Caption goes here.</figcaption> -->
-      </figure>
-    </div>
+    <h2>A reporting tool alongside it</h2>
+    <p>I also built a tool that let me enter subordinate units' reports once and automatically transposed them into the format required by brigade. The battalion and brigade report formats did not nest, so converting by hand took time. I built versions for equipment status, vehicle recovery, and battle damage reports.</p>
 
-    <h2>How it fit the larger effort</h2>
-    <p>The forecast sat alongside other systems I introduced: kanban boards for visual management, automated supply reporting, and regular audits to find bottlenecks. The same disciplined approach to tracking and planning supported the unit's 2023 modernization effort, in which it became the first in its Brigade to reach 100% fielding of new equipment.</p>
+    <h2>The outcome</h2>
+    <p>No mission was delayed by a supply shortfall, even when that meant waking up at midnight to run a supply mission ourselves, with my operations sergeant major, under night-vision goggles. When I left in January 2024 as the battalion prepared to deploy again, I handed the model off, and as far as I know it was still in use.</p>
+
     <h2>What I took away</h2>
-    <p>A forecast earns trust when people can see how it works. I learned to build simple tools that busy leaders will actually use, and to treat accuracy and transparency as equally important. Both carry directly into consulting work.</p>
+    <p>A forecast earns trust when people can see how it works, and it is only as reliable as the data feeding it. Much of the work was turning late, inconsistent reports into a tool leaders could act on. I chose Excel because it was what I knew best. Today I would use AI tools to help build it faster, but the principle would not change: keep the tool simple, make the assumptions visible, and put the effort into the quality of the inputs. Each of those carries directly into consulting work.</p>
 
   </main>
 
@@ -128,7 +115,7 @@
       <a href="mailto:piercewallar@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" class="icon"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
     </div>
     <!-- Update the month and year by hand whenever you publish changes. -->
-    <p class="last-updated">Last updated: October 2026</p>
+    <p class="last-updated">Last updated: November 2026</p>
   </footer>
 
   <script src="js/site.js"></script>
