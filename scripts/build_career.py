@@ -101,16 +101,32 @@ def write_experience_js(data):
 
 def write_facts(data):
     rows = ["# Career Facts (generated from data/career.json, updated %s)" % data["updated"], "",
-            "| Employer or institution | Title | Dates | Resume | CV | Site |", "|---|---|---|---|---|---|"]
+            "| Employer or institution | Title | Location | Dates | Resume | CV | Site |", "|---|---|---|---|---|---|---|"]
     yn = lambda b: "yes" if b else "no"
     for e in data["entries"]:
         d = e["docs"]
         if e.get("segments"):
-            rows.append("| %s | (all roles below) | %s | %s | %s | %s |" % (e["org"], span(e), yn(d["resume"]), yn(d["cv"]), yn(d["site"])))
+            rows.append("| %s | (all roles below) | %s | %s | %s | %s | %s |" % (e["org"], e.get("place", ""), span(e), yn(d["resume"]), yn(d["cv"]), yn(d["site"])))
             for s in reversed(e["segments"]):
-                rows.append("| &nbsp;&nbsp;%s | %s | %s \u2013 %s | | | |" % (s["place"], s["name"].replace(" | ", " \u2014 "), fmt(s["start"]), fmt(s["end"])))
+                rows.append("| &nbsp;&nbsp;%s | %s | | %s \u2013 %s | | | |" % (s["place"], s["name"].replace(" | ", " \u2014 "), fmt(s["start"]), fmt(s["end"])))
         else:
-            rows.append("| %s | %s | %s | %s | %s | %s |" % (e["org"], e["role"], span(e), yn(d["resume"]), yn(d["cv"]), yn(d["site"])))
+            rows.append("| %s | %s | %s | %s | %s | %s | %s |" % (e["org"], e["role"], e.get("place", ""), span(e), yn(d["resume"]), yn(d["cv"]), yn(d["site"])))
+    notes = [e for e in data["entries"] if e.get("note") or e.get("docs_note")]
+    if notes:
+        rows += ["", "## Status notes"]
+        for e in notes:
+            for key in ("note", "docs_note"):
+                if e.get(key):
+                    rows.append("- **%s**: %s" % (e["label"], e[key]))
+    edu = [e for e in data["entries"] if e.get("group") == "edu"]
+    rows += ["", "## Education, certification and honors"]
+    for e in edu:
+        rows.append("")
+        rows.append("### %s: %s (%s)" % (e["label"], e["role"], span(e)))
+        if e.get("summary") and not e.get("bullets"):
+            rows.append("- %s" % e["summary"])
+        for bl in e.get("bullets", []):
+            rows.append("- %s" % bl)
     c = data["conventions"]
     rows += ["", "## Standards"] + ["- **%s**: %s" % (k.replace("_", " "), v if isinstance(v, str) else "; ".join(v)) for k, v in c.items()]
     p, k = data["person"], data["contact"]

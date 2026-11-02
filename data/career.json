@@ -42,6 +42,20 @@
       "BoomTown Home Services",
       "\"A\" Guttering",
       "Univar Solutions (as of 10-26-26)"
+    ],
+    "army_profile_line": "Ten years of Army service as a cavalry scout (Jan 2014 to May 2016) and engineer officer (May 2016 to Jan 2024); never \"ten years as an engineer officer\"",
+    "guard_role_names": "Guard roles read \"(Oklahoma Army National Guard, part-time)\" after the role, then the function phrase: Engineer Platoon Leader (1220th Engineer Company, 120th Engineer Battalion, Muskogee, OK) and 19D Cavalry Scout (A Troop, 180th Cavalry, Durant, OK)",
+    "gordian_title": "Capital Planning Consultant, Facilities Assessments & Capital Planning (the site timeline label is the short form, Capital Planning Consultant)",
+    "newmark_line": "Newmark - Remote (Oklahoma City), with Dallas office visits; ownership structure of 500+ entities (the newmark-3 slide image still shows 552)",
+    "acronyms": "Spell out on first use, then abbreviate (for example Voluntary Protection Programs (VPP))",
+    "education_titles": "B.S. in Industrial Safety with a minor in Military Science (UCO); M.S. in Geological Engineering plus Graduate Certificate in Military Geological Engineering, Dec 2022 (Missouri S&T); MBA, Entrepreneurship focus (OU: Price College of Business is the college, Gene Rainbolt Graduate School of Business is the graduate school)",
+    "client_descriptors": "Portugal: a Portugal-based technology company; South Africa: a South Africa-based construction technology company; Renal OCT: a medical imaging technology in partnership with a bioscience organization; Newmark: the client; Gordian: a large university, county facilities, a hospital",
+    "intentional_differences": [
+      "1220 ENG function phrase: CV keeps \"Engineer Officer\"; the site and this sheet say \"Construction Engineering Leadership\"",
+      "Campus fire, tornado and egress plan is on the site but not the CV",
+      "Newmark 54-client-meetings bullet is on the CV and the site, not the Resume",
+      "Resume keeps the shorter Gordian sector list (government, higher education, healthcare, pharmaceutical) and combined Army role lines",
+      "Resume omits Univar, Green Tree, BoomTown and \"A\" Guttering for space"
     ]
   },
   "banned_strings": [
