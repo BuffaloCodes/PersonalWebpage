@@ -6,14 +6,14 @@
 | Newmark | Summer Intern, Management Consulting | May 2026 – Aug 2026 | yes | yes | yes |
 | Green Tree Risk Group | COO & Co-Founder | Jan 2026 – May 2026 | no | yes | yes |
 | BoomTown Home Services | Founder | Jul 2024 – Present | no | yes | yes |
-| Gordian | Capital Planning Consultant | Jan 2024 – Jun 2025 | yes | yes | yes |
+| Gordian | Capital Planning Consultant, Facilities Assessments & Capital Planning | Jan 2024 – Jun 2025 | yes | yes | yes |
 | U.S. Army | (all roles below) | Jan 2014 – Jan 2024 | yes | yes | yes |
-| &nbsp;&nbsp;HHC/299 BEB · Fort Carson, CO | Battalion Logistics Officer — Logistics & Procurement Program Management | Nov 2022 – Jan 2024 | | | |
-| &nbsp;&nbsp;HHC/1SFG(A) · Joint Base Lewis-McChord, WA | Deputy Group Engineer — Facilities & Construction Program Management | Jun 2020 – Nov 2022 | | | |
-| &nbsp;&nbsp;B/23 BEB · Joint Base Lewis-McChord, WA | Engineer Company Executive Officer — Operations & Resource Management | May 2019 – Jun 2020 | | | |
-| &nbsp;&nbsp;A/23 BEB · Joint Base Lewis-McChord, WA | Engineer Platoon Leader — Construction Engineering Leadership | Sep 2017 – May 2019 | | | |
-| &nbsp;&nbsp;1220 ENG, Oklahoma Army National Guard (part-time) | Engineer Platoon Leader — Engineer Officer | May 2016 – Sep 2017 | | | |
-| &nbsp;&nbsp;A/180 CAV, Oklahoma Army National Guard (part-time) | 19D Cavalry Scout — Reconnaissance | Jan 2014 – May 2016 | | | |
+| &nbsp;&nbsp;Headquarters and Headquarters Company, 299th Brigade Engineer Battalion (HHC/299 BEB) · Fort Carson, CO | Battalion Logistics Officer — Logistics & Procurement Program Management | Nov 2022 – Jan 2024 | | | |
+| &nbsp;&nbsp;Headquarters and Headquarters Company, 1st Special Forces Group (Airborne) (HHC/1SFG(A)) · Joint Base Lewis-McChord, WA | Deputy Group Engineer — Facilities & Construction Program Management | Jun 2020 – Nov 2022 | | | |
+| &nbsp;&nbsp;B Company, 23rd Brigade Engineer Battalion (B/23 BEB) · Joint Base Lewis-McChord, WA | Engineer Company Executive Officer — Operations & Resource Management | May 2019 – Jun 2020 | | | |
+| &nbsp;&nbsp;A Company, 23rd Brigade Engineer Battalion (A/23 BEB) · Joint Base Lewis-McChord, WA | Engineer Platoon Leader — Construction Engineering Leadership | Sep 2017 – May 2019 | | | |
+| &nbsp;&nbsp;1220th Engineer Company, 120th Engineer Battalion (1220 ENG) · Muskogee, OK | Engineer Platoon Leader (Oklahoma Army National Guard, part-time) — Construction Engineering Leadership | May 2016 – Sep 2017 | | | |
+| &nbsp;&nbsp;A Troop, 180th Cavalry (A/180 CAV) · Durant, OK | 19D Cavalry Scout (Oklahoma Army National Guard, part-time) — Reconnaissance | Jan 2014 – May 2016 | | | |
 | Univar Solutions | Environment, Health and Safety (EHS) Manager | May 2016 – Sep 2017 | no | yes | yes |
 | “A” Guttering | Construction Laborer (advanced to independent project lead) | Jan 2009 – May 2016 | no | yes | yes |
 | University of Central Oklahoma | B.S., Industrial Safety | Aug 2011 – May 2016 | yes | yes | yes |
