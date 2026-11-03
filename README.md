@@ -1,42 +1,79 @@
-# Pierce A. Wallar — Personal Website
+# piercewallar.com
 
-Source for https://piercewallar.com, hosted on GitHub Pages. The site is plain HTML, CSS, and a little JavaScript. There is no build step: what you see in the files is what gets published.
+This repository holds the source for [piercewallar.com](https://piercewallar.com), the personal website of Pierce A. Wallar: MBA candidate at the University of Oklahoma, U.S. Army veteran, and founder of BoomTown Home Services. The site is where I keep my story, my project write-ups and my résumé in one place, for recruiters, classmates, colleagues and anyone curious about the work.
 
-## Previewing changes in VS Code
-1. Install the **Live Server** extension (Ritwick Dey).
-2. Right-click `index.html` and choose **Open with Live Server**.
-3. Edit and save any file; the browser refreshes on its own.
+If you arrived here from the site or from LinkedIn, the live version is easier to read than the code. If you are interested in how it is built, read on.
+
+## What is on the site
+
+| Page | What you will find |
+|---|---|
+| Home | A short introduction and downloads of my CV and one-page résumé |
+| Experience | An interactive timeline of roles, education and credentials, with detail for each |
+| Projects | Case-study write-ups from consulting engagements, start-up work, Army operations and personal builds |
+| Bookshelf | The books I read and keep for reference, with search |
+| Privacy | What visitor information the site and its services handle |
+
+Project pages describe organizations generically. They contain no client names and no confidential material.
+
+## How it is built
+
+The site is deliberately simple: plain HTML, CSS and a small amount of JavaScript, with no framework and no build step. What is in the repository is what gets published. It is hosted on GitHub Pages and served from the custom domain in `CNAME`.
+
+A few design choices worth noting:
+
+- **One source of truth for career facts.** Every date, title and bullet on the Experience page, in the structured data (JSON-LD) on the home page and in the Career Facts reference comes from a single file, `data/career.json`. A small Python script regenerates the dependent files, and a second script checks that the site, the published CV and résumé, and the data still agree.
+- **Light and dark themes**, chosen by the visitor and remembered in the browser. The site never sets cookies.
+- **Accessibility basics:** semantic landmarks, descriptive alt text, a skip-to-content link, visible keyboard focus and responsive layouts that work on a phone.
+- **Privacy-minded analytics.** The site uses [GoatCounter](https://www.goatcounter.com/), which does not use cookies or store IP addresses. The [privacy page](https://piercewallar.com/privacy.html) lists everything else.
+- **Search and sharing metadata:** a sitemap, canonical URLs, Open Graph tags for link previews and schema.org markup.
+
+## Repository layout
+
+| Path | Purpose |
+|---|---|
+| `index.html`, `experience.html`, `projects.html`, `bookshelf.html`, `privacy.html` | Main pages |
+| `project-*.html` | One page per project |
+| `_project-template.html` | Blank template for a new project (not published) |
+| `now.html` | A monthly "what I am working on" page (unpublished draft) |
+| `404.html`, `coming-soon.html` | Error page and a legacy placeholder (neither is indexed) |
+| `css/` | `styles.css` (site-wide) and `experience.css` (timeline) |
+| `js/` | `site.js` (menu, theme toggle, filters, search), `experience.js` (timeline) and `experience-data.js` (generated; do not edit by hand) |
+| `data/` | `career.json` (the source of truth) and the files generated from it: `career-facts.md` and `jsonld-person.html` |
+| `scripts/` | `build_career.py` and `check_consistency.py` |
+| `assets/` | Images, the CV and résumé PDFs, and icons |
+| `sitemap.xml`, `robots.txt`, `site.webmanifest`, `CNAME` | Search engine, app and domain settings |
+| `TASKS.md` | The working to-do list and idea backlog for the site |
+
+## Running the site locally
+
+No installation is needed to read the code. To preview the site, either open `index.html` in a browser or serve the folder:
+
+```
+python -m http.server 8000
+```
+
+then visit `http://localhost:8000`. In Visual Studio Code, the Live Server extension also works and refreshes as you save.
+
+## Updating career information
+
+Edit `data/career.json`, then run these two commands from the repository root (Python 3.8 or newer, standard library only):
+
+```
+python scripts/build_career.py
+python scripts/check_consistency.py
+```
+
+The first rebuilds the generated files. The second reports whether the site, the generated files and the published CV and résumé still match; PDF checks need the free Poppler tools (`pdftotext`, `pdfinfo`) and are skipped without them. Commit the generated files along with the data.
 
 ## Publishing
-Commit your changes in VS Code (Source Control panel) and push to `main`. GitHub Pages publishes within a minute or two. Update the month and year in the "Last updated" footer line when you publish (search the files for `Last updated`).
 
-## Finding things you still need to edit
-Press **Ctrl+Shift+F** in VS Code and search for `EDIT:`. Every draft passage that needs your input is marked with an HTML comment starting with `EDIT:`. Delete the comment once you have handled it.
+Commit and push to `main`. GitHub Pages publishes within a minute or two. When a page changes, update the month and year in its "Last updated" footer line.
 
-## Files
-| File | What it is |
-|---|---|
-| `index.html` | Home page and bio |
-| `projects.html` | Project grid with category filter |
-| `project-*.html` | One page per project (ten of them) |
-| `_project-template.html` | Blank template for a new project (see below); not published |
-| `bookshelf.html` | Grouped book list with search |
-| `experience.html`, `contact.html` | Hidden for now (see below) |
-| `css/styles.css` | All styling |
-| `js/site.js` | Menu, dark mode toggle, project filter, bookshelf search |
-| `assets/images/projects/` | Project images, named `<project>-1.jpg`, `-2.jpg`, `-3.jpg` |
-| `sitemap.xml`, `robots.txt`, `CNAME` | Search engine and domain settings; leave `CNAME` alone |
+## Copyright and reuse
 
-## Common tasks
-**Swap a project image.** Save your picture as a `.jpg` with the same name as the placeholder (for example `portugal-2.jpg`) in `assets/images/projects/`. Then update the image's `alt` text in the project page. `-1` is the top image and also the card picture on the Projects page. To add a caption, find the commented-out `<figcaption>` under the image and remove the comment markers.
+Unless a file says otherwise, the contents of this repository, including the code, written content, project descriptions, photographs and images, are copyright Pierce A. Wallar, all rights reserved. Nothing here is licensed for reuse. You are welcome to read the code and take ideas from how the site is built, but please do not copy the content or the design.
 
-**Add a project.** Copy `_project-template.html` to `project-your-name.html`, fill it in, add images, then copy an existing card in `projects.html` and point it at the new page. Add the page to `sitemap.xml`. The `data-category` on the card must match one of the filter buttons.
+## Contact
 
-**Add a book.** In `bookshelf.html`, copy one `<li>` line inside the right section and edit it. Each line includes an Amazon search link; replace the address inside `href="..."` with a direct or affiliate link when you have one. To add a section, copy a whole `<details>` block.
-
-**Show Experience or Contact later.** Both pages currently redirect to `coming-soon.html`. To bring one back: remove the `<meta http-equiv="refresh" ...>` line at the top of the page, change its `noindex, nofollow` robots tag to `index, follow`, remove the comment markers around its link in the nav (on every page), and add it to `sitemap.xml`. Those two pages still need their own cleanup first (they reference older file paths).
-
-**Change colors.** The main palette is at the top of `css/styles.css`; the Projects palette is the block labeled "Projects page palette".
-
-## License
-MIT. Reuse the structure, but replace the personal content with your own.
+The best way to reach me is through [LinkedIn](https://www.linkedin.com/in/pierce-wallar) or by email at [piercewallar@gmail.com](mailto:piercewallar@gmail.com).
