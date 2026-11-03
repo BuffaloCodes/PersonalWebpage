@@ -936,3 +936,8 @@ html[data-theme="dark"] .site-banner{background:#1d3a4a;color:#e8f1f6;border-bot
 html[data-theme="dark"] .site-banner button{border-color:#e8f1f6;color:#e8f1f6}
 html[data-theme="dark"] .site-banner button:hover,html[data-theme="dark"] .site-banner button:focus-visible{background:#e8f1f6;color:#1d3a4a}
 @media (max-width:720px){.site-banner{flex-direction:column;gap:.4rem;padding:.6rem 1rem}}
+
+/* Skip link: hidden until a keyboard user tabs to it */
+.skip-link{position:absolute;left:.75rem;top:-4rem;z-index:1000;padding:.6rem 1rem;background:var(--crimson);color:#fff;border-radius:6px;border-bottom:none;font-weight:600}
+.skip-link:focus,.skip-link:focus-visible{top:.75rem;color:#fff;font-weight:600;outline:2px solid var(--sky);outline-offset:2px}
+main:focus{outline:none}
